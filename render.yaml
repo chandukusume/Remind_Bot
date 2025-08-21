@@ -1,30 +1,25 @@
-# This blueprint tells Render how to deploy your Rasa chatbot.
-# It creates two services: one for the main Rasa server and one for the action server.
+# This is the corrected blueprint for deploying a pre-built Rasa Docker image.
 
 services:
   # --- The main Rasa Server ---
-  # This is the service that users will talk to.
   - name: rasa-server
     type: web
-    env: docker
-    plan: free # Use the free instance type
+    env: image      # Corrected from 'docker' to 'image'
+    plan: free
     healthCheckPath: /
-    envVars:
-      - key: RASA_MODEL_SERVER_URL
-        fromService:
-          name: rasa-server
-          type: web
-          envVarKey: RASA_MODEL_SERVER_URL
-    dockerCommand: rasa run -m models --enable-api --cors "*" --port 8080
-    # You may want to use a specific version of Rasa here
-    dockerImage: rasa/rasa:latest-full
+    # The image to pull from Docker Hub
+    image:
+      url: rasa/rasa:latest-full
+    # The command to run after pulling the image
+    startCommand: rasa run -m models --enable-api --cors "*" --port 8080
 
   # --- The Rasa Action Server ---
-  # This service runs your custom Python code from the /actions folder.
   - name: action-server
     type: web
-    env: docker
-    plan: free # Use the free instance type
-    # Make sure your actions code is in the /actions directory
-    dockerCommand: rasa run actions --port 8080
-    dockerImage: rasa/rasa-sdk:latest
+    env: image      # Corrected from 'docker' to 'image'
+    plan: free
+    # The image to pull from Docker Hub
+    image:
+      url: rasa/rasa-sdk:latest
+    # The command to run after pulling the image
+    startCommand: rasa run actions --port 8080
