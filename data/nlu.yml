@@ -1,0 +1,34 @@
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+  - intent: track_form
+    examples: |
+      - track form [1abcxyz1234567890](sheet_id)
+      - set form to [1abcxyz1234567890](sheet_id)
+  - intent: get_count
+    examples: |
+      - how many have filled
+      - what's the current count
+  - intent: send_reminder
+    examples: |
+      - send reminder
+      - remind everyone
+  - intent: check_current_form
+    examples: |
+      - what form is being tracked
+      - current forms
+  - intent: start
+    examples: |
+      - /start
+  - intent: track_form
+    examples: |
+      - track this form [1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE](sheet_id)
+      - start tracking form [xyz123](sheet_id)
+      - use form [abcd](sheet_id)

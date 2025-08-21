@@ -1,0 +1,49 @@
+# rules.yml
+rules:
+- rule: Greet on start
+  steps:
+    - intent: start
+    - action: utter_greet
+
+- rule: Respond to greet
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Respond to goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Track form
+  steps:
+    - intent: track_form
+    - action: action_track_form
+
+- rule: Get count
+  steps:
+    - intent: get_count
+    - action: action_get_count
+
+- rule: Check current form
+  steps:
+    - intent: check_current_form
+    - action: action_check_current_form
+
+- rule: Send reminder from user command
+  steps:
+    - intent: send_reminder
+    - action: action_send_reminder
+
+# This rule triggers the reminder process when the scheduled event is received.
+- rule: Handle the external reminder event
+  steps:
+    - intent: EXTERNAL_form_reminder
+    - action: action_form_reminder
+
+# CORRECTED RULE: This rule ensures the bot always listens after sending a reminder,
+# which fixes the loop and prepares it for the next user message or event.
+- rule: After sending a reminder, listen for the next message
+  steps:
+    - action: action_send_reminder
+    - action: action_listen

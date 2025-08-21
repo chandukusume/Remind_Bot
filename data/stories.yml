@@ -1,0 +1,28 @@
+version: "3.1"
+nlu:
+  - intent: view_timetable
+    examples: |
+      - Show me the timetable for [CS101](course_code)
+      - What is the schedule for [Math202](course_code)?
+  - intent: get_syllabus
+    examples: |
+      - Can I get the syllabus for [Physics101](course_code)?
+      - Syllabus for [Chemistry](course_code), please.
+  - intent: ask_faq
+    examples: |
+      - When is the exam for [Math](subject)?
+      - Who is the faculty for [Computer Science](subject)?
+  - intent: submit_feedback
+    examples: |
+      - I want to give feedback about [faculty](feedback_topic)
+      - Submit feedback on [course material](feedback_topic)
+  - intent: admin_view_feedback
+    examples: |
+      - Show me all feedback
+  - intent: admin_broadcast
+    examples: |
+      - Broadcast a message to all students
+  - intent: send_reminder
+    examples: |
+      - Remind me about [assignment](reminder_event) on [2025-08-15](reminder_date)
+      - Set a reminder for [event](reminder_event) on [2025-08-20](reminder_date)
