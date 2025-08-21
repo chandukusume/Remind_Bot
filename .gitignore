@@ -1,0 +1,20 @@
+# Virtual Environment
+rasa_env/
+venv/
+.venv/
+
+# Rasa Models and Logs
+models/*.tar.gz
+results/
+.rasa/cache
+.rasa/logs
+credentials.json
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# IDE and OS files
+.idea/
+.vscode/
+*.DS_Store

@@ -1,0 +1,65 @@
+intents:
+  - greet
+  - goodbye
+  - track_form
+  - get_count
+  - send_reminder
+  - check_current_form
+  - EXTERNAL_form_reminder
+
+entities:
+  - sheet_id
+
+slots:
+  sheet_id:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: sheet_id
+        intent: track_form
+
+actions:
+  - action_track_form
+  - action_get_count
+  - action_send_reminder
+  - action_check_current_form
+  - action_form_reminder
+  
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: UnexpecTEDIntentPolicy
+
+  
+responses:
+  utter_greet:
+    - text: "Hello! How can I help you?"
+  utter_goodbye:
+    - text: "Goodbye!"
+  utter_tracking_set:
+    - text: "Now tracking the form with sheet ID {sheet_id}."
+  utter_count:
+    - text: "Currently, {count} out of 205 have filled the form."
+  utter_reminder_sent:
+    - text: "Reminder sent to the group."
+  utter_not_authorized:
+    - text: "You are not authorized to perform this action."
+  utter_no_form_tracked:
+    - text: "No form is currently being tracked."
+  utter_current_form:
+    - text: "Currently tracking form ID: {form_id}, sheet ID: {sheet_id}."
+  utter_tracking_started:
+    - text: "✅ Now tracking the form."
+  utter_all_filled:
+    - text: "✅ All members have filled the form."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+
+
+
+  

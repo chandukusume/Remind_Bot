@@ -1,0 +1,386 @@
+[2025-08-09 11:21:59] Scheduler started. First run will happen now.
+[2025-08-09 11:21:59] Running reminder for sheet_id=1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-08-09 11:22:02] Reminder sent successfully ✅
+[2025-08-14 18:36:13.691032] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:36:18.698219] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:36:18.702223] Next reminder scheduled in 1 min.
+[2025-08-14 18:38:22.517481] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:38:25.734732] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:38:25.736239] Next reminder scheduled in 1 min.
+[2025-08-14 18:39:48.103163] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:39:51.745249] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:39:51.746247] Next reminder scheduled in 1 min.
+[2025-08-14 18:42:00.032997] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:42:04.399392] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:42:04.400410] Next reminder scheduled in 1 min.
+[2025-08-14 18:44:05.531121] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:44:09.024050] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:44:09.024559] Next reminder scheduled in 1 min.
+[2025-08-14 18:45:30.397017] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:45:51.446065] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:45:51.447060] Next reminder scheduled in 1 min.
+[2025-08-14 18:47:36.957830] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:47:40.011367] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:47:40.012371] Next reminder scheduled in 1 min.
+[2025-08-14 18:49:20.479408] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:49:27.934156] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:49:27.934156] Next reminder scheduled in 1 min.
+[2025-08-14 18:50:32.718806] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:50:37.560438] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:50:37.561361] Next reminder scheduled in 1 min.
+[2025-08-14 18:52:06.459263] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 18:52:12.565784] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 18:52:12.565784] Next reminder scheduled in 1 min.
+[2025-08-14 19:10:39.393447] Triggered by sender 1301082863
+[2025-08-14 19:10:48.602333] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:10:48.639534] Next reminder scheduled at 2025-08-14T19:13:48.638534+05:30 (Asia/Kolkata)
+[2025-08-14 19:10:48.643537] Triggered by sender 1301082863
+[2025-08-14 19:10:53.350539] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:10:53.350539] Next reminder scheduled at 2025-08-14T19:13:53.350539+05:30 (Asia/Kolkata)
+[2025-08-14 19:10:53.354700] Triggered by sender 1301082863
+[2025-08-14 19:10:57.543147] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:10:57.544147] Next reminder scheduled at 2025-08-14T19:13:57.543147+05:30 (Asia/Kolkata)
+[2025-08-14 19:10:57.546241] Triggered by sender 1301082863
+[2025-08-14 19:11:00.700459] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:11:00.701456] Next reminder scheduled at 2025-08-14T19:14:00.701456+05:30 (Asia/Kolkata)
+[2025-08-14 19:11:00.704969] Triggered by sender 1301082863
+[2025-08-14 19:11:04.459129] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:11:04.459129] Next reminder scheduled at 2025-08-14T19:14:04.459129+05:30 (Asia/Kolkata)
+[2025-08-14 19:12:12.136690] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 19:12:22.462502] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:12:22.466069] Next reminder scheduled in 3 min.
+[2025-08-14 19:12:26.736854] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 19:12:30.543397] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:12:30.544389] Next reminder scheduled in 3 min.
+[2025-08-14 19:12:35.279704] ActionSendReminder triggered for sender 1301082863
+[2025-08-14 19:12:40.203164] Reminder sent. Message: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:12:40.203164] Next reminder scheduled in 3 min.
+[2025-08-14 19:16:59.656287] Triggered by sender 1301082863
+[2025-08-14 19:17:06.882189] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:17:06.910520] Next reminder scheduled at 2025-08-14T19:19:06.909495+05:30 (Asia/Kolkata)
+[2025-08-14 19:29:50.273853] Triggered by sender 1301082863
+[2025-08-14 19:29:53.980279] Triggered by sender 1301082863
+[2025-08-14 19:30:00.582189] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:30:00.582189] Next reminder scheduled at 2025-08-14T19:32:00.582189+05:30 (Asia/Kolkata)
+[2025-08-14 19:30:00.588200] Triggered by sender 1301082863
+[2025-08-14 19:30:07.086721] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-14 19:30:07.087230] Next reminder scheduled at 2025-08-14T19:32:07.087230+05:30 (Asia/Kolkata)
+[2025-08-15 17:49:41.672621] Triggered by sender 1301082863
+[2025-08-15 17:49:47.788804] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 17:49:47.886554] Next reminder scheduled at 2025-08-15T17:51:47.883651+05:30 (Asia/Kolkata)
+[2025-08-15 18:12:38.038123] Triggered by sender 1301082863
+[2025-08-15 18:12:42.407981] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 18:12:42.452216] Next reminder scheduled at 2025-08-15T12:44:42.451498+00:00 UTC (name=form_reminder_1755261762)
+[2025-08-15 18:12:42.459250] Triggered by sender 1301082863
+[2025-08-15 18:12:46.231208] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 18:12:46.232208] Next reminder scheduled at 2025-08-15T12:44:46.231208+00:00 UTC (name=form_reminder_1755261766)
+[2025-08-15 18:12:46.239944] Triggered by sender 1301082863
+[2025-08-15 18:12:51.553367] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 18:12:51.554360] Next reminder scheduled at 2025-08-15T12:44:51.554360+00:00 UTC (name=form_reminder_1755261771)
+[2025-08-15 18:12:51.562824] Triggered by sender 1301082863
+[2025-08-15 18:12:55.997070] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 18:12:55.998087] Next reminder scheduled at 2025-08-15T12:44:55.997070+00:00 UTC (name=form_reminder_1755261775)
+[2025-08-15 18:12:56.005090] Triggered by sender 1301082863
+[2025-08-15 18:12:59.195156] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 18:12:59.196157] Next reminder scheduled at 2025-08-15T12:44:59.195156+00:00 UTC (name=form_reminder_1755261779)
+[2025-08-15 18:12:59.203212] Triggered by sender 1301082863
+[2025-08-15 18:13:02.706984] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 18:13:02.707980] Next reminder scheduled at 2025-08-15T12:45:02.707980+00:00 UTC (name=form_reminder_1755261782)
+[2025-08-15 18:13:02.716146] Triggered by sender 1301082863
+[2025-08-15 18:13:11.325988] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 18:13:11.326994] Next reminder scheduled at 2025-08-15T12:45:11.326994+00:00 UTC (name=form_reminder_1755261791)
+[2025-08-15 18:13:33.699593] Triggered by sender 1301082863
+[2025-08-15 18:13:41.208478] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 18:13:41.209492] Next reminder scheduled at 2025-08-15T12:45:41.209492+00:00 UTC (name=form_reminder_1755261821)
+[2025-08-15 20:41:38.724113] Triggered by sender 1301082863
+[2025-08-15 20:41:51.255858] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 20:41:51.297552] Next reminder scheduled at 2025-08-15T15:13:51.295161+00:00 UTC (name=form_reminder_1755270711)
+[2025-08-15 20:55:38.784418] Triggered by sender 1301082863
+[2025-08-15 20:55:48.623599] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 20:55:48.700600] UNCAUGHT EXCEPTION: local variable 'reminder_name' referenced before assignment
+[2025-08-15 20:58:23.520784] Triggered by sender 1301082863
+[2025-08-15 20:58:30.114330] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 20:58:30.141178] Next reminder scheduled at 2025-08-15T15:30:30.141178+00:00 UTC / 2025-08-15 21:00:30 IST IST (name=form_reminder_1755271710)
+[2025-08-15 20:58:30.142683] Next reminder scheduled at 2025-08-15T15:30:30.141178+00:00 UTC (name=form_reminder_1755271710)
+[2025-08-15 21:03:38.775893] Triggered by sender 1301082863
+[2025-08-15 21:04:06.896580] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 21:04:06.926023] Next reminder scheduled at 2025-08-15T15:36:06.926023+00:00 UTC / 2025-08-15 21:06:06 IST IST (name=form_reminder_1755272046)
+[2025-08-15 21:17:56.842187] Triggered by sender 1301082863
+[2025-08-15 21:18:05.132020] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 21:18:05.165614] Next reminder scheduled at 2025-08-15T15:50:05.165614+00:00 UTC / 2025-08-15 21:20:05 IST IST (name=form_reminder_1755272885)
+[2025-08-15 21:18:05.168630] Triggered by sender 1301082863
+[2025-08-15 21:19:13.869654] Triggered by sender 1301082863
+[2025-08-15 21:19:30.885766] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 21:19:30.919889] Next reminder scheduled at 2025-08-15T15:51:30.919889+00:00 UTC / 2025-08-15 21:21:30 IST IST (name=form_reminder_1755272970)
+[2025-08-15 21:28:14.819113] Triggered by sender 1301082863
+[2025-08-15 21:29:12.402415] Count returned message: Error getting count: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2025-08-15 21:29:13.919079] Triggered by sender 1301082863
+[2025-08-15 21:29:24.260102] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 21:29:24.292218] Next reminder scheduled at 2025-08-15T16:01:24.292218+00:00 UTC / 2025-08-15 21:31:24 IST IST (name=form_reminder_1755273564)
+[2025-08-15 21:31:28.480163] Triggered by sender 1301082863
+[2025-08-15 21:31:34.907000] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 21:31:34.907999] Next reminder scheduled at 2025-08-15T16:03:34.907000+00:00 UTC / 2025-08-15 21:33:34 IST IST (name=form_reminder_1755273694)
+[2025-08-15 21:48:47.110469] Triggered by sender 1301082863
+[2025-08-15 21:48:51.140148] Triggered by sender 1301082863
+[2025-08-15 21:53:24.892772] Triggered by sender 1301082863
+[2025-08-15 21:53:33.186627] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 21:53:33.222449] Next reminder scheduled at 2025-08-15T16:25:43.220454+00:00 UTC / 2025-08-15 21:55:43 IST IST (name=form_reminder_1755275013)
+[2025-08-15 21:53:36.456452] Triggered by sender 1301082863
+[2025-08-15 21:53:47.279169] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-15 21:53:47.280165] Next reminder scheduled at 2025-08-15T16:25:57.280165+00:00 UTC / 2025-08-15 21:55:57 IST IST (name=form_reminder_1755275027)
+[2025-08-15 22:02:16.776412] Triggered by sender 1301082863
+[2025-08-16 08:36:08.216908] Triggered by sender 1301082863
+[2025-08-16 08:36:17.285832] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-16 08:36:17.326032] Next reminder scheduled at 2025-08-16T03:08:27.326032+00:00 UTC / 2025-08-16 08:38:27 IST IST (name=form_reminder_1755313577)
+[2025-08-16 08:38:31.523775] Triggered by sender 1301082863
+[2025-08-16 08:38:37.265893] Reminder sent: Reminder sent: 2 out of 205 have filled.
+[2025-08-16 08:38:37.265893] Next reminder scheduled at 2025-08-16T03:10:47.265893+00:00 UTC / 2025-08-16 08:40:47 IST IST (name=form_reminder_1755313717)
+[2025-08-16 11:58:31.870947] Triggered by sender 1301082863
+[2025-08-16 11:58:35.260372] Reminder sent: Master sheet not configured.
+[2025-08-16 11:58:35.261372] Reminder sent: Master sheet not configured.
+[2025-08-16 11:58:35.322233] Next reminder scheduled at 2025-08-16T06:38:45.320724+00:00 UTC / 2025-08-16 12:08:45 IST IST (name=form_reminder_1755325715)
+[2025-08-16 12:02:25.118893] Triggered by sender 1301082863
+[2025-08-16 12:02:29.216863] Reminder sent: Master sheet not configured.
+[2025-08-16 12:02:29.217856] Reminder sent: Master sheet not configured.
+[2025-08-16 12:02:29.304748] Next reminder scheduled at 2025-08-16T06:42:39.304748+00:00 UTC / 2025-08-16 12:12:39 IST IST (name=form_reminder_1755325949)
+[2025-08-16 12:08:49.507530] Triggered by sender 1301082863
+[2025-08-16 12:08:51.969032] Reminder sent: Master sheet not configured.
+[2025-08-16 12:08:51.970731] Reminder sent: Master sheet not configured.
+[2025-08-16 12:08:51.970731] Next reminder scheduled at 2025-08-16T06:49:01.970731+00:00 UTC / 2025-08-16 12:19:01 IST IST (name=form_reminder_1755326331)
+[2025-08-16 12:12:43.509067] Triggered by sender 1301082863
+[2025-08-16 12:12:44.648554] Reminder sent: Master sheet not configured.
+[2025-08-16 12:12:44.649573] Reminder sent: Master sheet not configured.
+[2025-08-16 12:12:44.650572] Next reminder scheduled at 2025-08-16T06:52:54.649573+00:00 UTC / 2025-08-16 12:22:54 IST IST (name=form_reminder_1755326564)
+[2025-08-16 12:32:58.688457] Triggered by sender 1301082863
+[2025-08-16 12:33:01.583930] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:01.590307] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:01.619357] Next reminder scheduled at 2025-08-16T07:13:11.619357+00:00 UTC / 2025-08-16 12:43:11 IST IST (name=form_reminder_1755327781)
+[2025-08-16 12:33:01.621617] Triggered by sender 1301082863
+[2025-08-16 12:33:02.834006] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:02.837013] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:02.838097] Next reminder scheduled at 2025-08-16T07:13:12.837013+00:00 UTC / 2025-08-16 12:43:12 IST IST (name=form_reminder_1755327782)
+[2025-08-16 12:33:02.839999] Triggered by sender 1301082863
+[2025-08-16 12:33:04.114784] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:04.115806] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:04.115806] Next reminder scheduled at 2025-08-16T07:13:14.115806+00:00 UTC / 2025-08-16 12:43:14 IST IST (name=form_reminder_1755327784)
+[2025-08-16 12:33:04.117620] Triggered by sender 1301082863
+[2025-08-16 12:33:05.439944] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:05.442960] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:05.443956] Next reminder scheduled at 2025-08-16T07:13:15.443956+00:00 UTC / 2025-08-16 12:43:15 IST IST (name=form_reminder_1755327785)
+[2025-08-16 12:33:05.447961] Triggered by sender 1301082863
+[2025-08-16 12:33:06.652393] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:06.659391] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:06.660393] Next reminder scheduled at 2025-08-16T07:13:16.659391+00:00 UTC / 2025-08-16 12:43:16 IST IST (name=form_reminder_1755327786)
+[2025-08-16 12:33:47.567467] Triggered by sender 1301082863
+[2025-08-16 12:33:51.162071] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:51.163070] Reminder sent: Master sheet not configured.
+[2025-08-16 12:33:51.193246] Next reminder scheduled at 2025-08-16T07:14:01.193246+00:00 UTC / 2025-08-16 12:44:01 IST IST (name=form_reminder_1755327831)
+[2025-08-16 12:40:12.686976] Triggered by sender 1301082863
+[2025-08-16 12:40:15.051129] Reminder sent: Master sheet not configured.
+[2025-08-16 12:40:15.053126] Reminder sent: Master sheet not configured.
+[2025-08-16 12:40:15.085372] Next reminder scheduled at 2025-08-16T07:20:25.084361+00:00 UTC / 2025-08-16 12:50:25 IST IST (name=form_reminder_1755328215)
+[2025-08-16 12:50:29.421237] Triggered by sender 1301082863
+[2025-08-16 12:50:31.746746] Reminder sent: Master sheet not configured.
+[2025-08-16 12:50:31.749748] Reminder sent: Master sheet not configured.
+[2025-08-16 12:50:31.751753] Next reminder scheduled at 2025-08-16T07:30:41.750756+00:00 UTC / 2025-08-16 13:00:41 IST IST (name=form_reminder_1755328831)
+[2025-08-16 12:51:23.536916] Triggered by sender 1301082863
+[2025-08-16 12:51:26.081584] Reminder sent: Master sheet not configured.
+[2025-08-16 12:51:26.081584] Reminder sent: Master sheet not configured.
+[2025-08-16 12:51:26.108973] Next reminder scheduled at 2025-08-16T07:31:36.107972+00:00 UTC / 2025-08-16 13:01:36 IST IST (name=form_reminder_1755328886)
+[2025-08-16 17:46:05.902172] Triggered by sender 1301082863
+[2025-08-16 17:46:08.094811] Reminder sent: Master sheet not configured.
+[2025-08-16 17:46:08.097147] Reminder sent: Master sheet not configured.
+[2025-08-16 17:46:08.143069] Next reminder scheduled at 2025-08-16T12:26:18.143069+00:00 UTC / 2025-08-16 17:56:18 IST IST (name=form_reminder_1755346568)
+[2025-08-16 17:46:08.145987] Triggered by sender 1301082863
+[2025-08-16 17:46:09.344125] Reminder sent: Master sheet not configured.
+[2025-08-16 17:46:09.347127] Reminder sent: Master sheet not configured.
+[2025-08-16 17:46:09.348129] Next reminder scheduled at 2025-08-16T12:26:19.347127+00:00 UTC / 2025-08-16 17:56:19 IST IST (name=form_reminder_1755346569)
+[2025-08-16 17:46:09.373238] Triggered by sender 1301082863
+[2025-08-16 17:46:10.617082] Reminder sent: Master sheet not configured.
+[2025-08-16 17:46:10.618999] Reminder sent: Master sheet not configured.
+[2025-08-16 17:46:10.619998] Next reminder scheduled at 2025-08-16T12:26:20.618999+00:00 UTC / 2025-08-16 17:56:20 IST IST (name=form_reminder_1755346570)
+[2025-08-16 17:46:10.625057] Triggered by sender 1301082863
+[2025-08-16 17:46:11.800720] Reminder sent: Master sheet not configured.
+[2025-08-16 17:46:11.804737] Reminder sent: Master sheet not configured.
+[2025-08-16 17:46:11.804737] Next reminder scheduled at 2025-08-16T12:26:21.804737+00:00 UTC / 2025-08-16 17:56:21 IST IST (name=form_reminder_1755346571)
+[2025-08-16 17:47:58.059276] Triggered by sender 1301082863
+[2025-08-16 17:48:00.199333] Reminder sent: Master sheet not configured.
+[2025-08-16 17:48:00.200333] Reminder sent: Master sheet not configured.
+[2025-08-16 17:48:00.238612] Next reminder scheduled at 2025-08-16T12:28:10.238612+00:00 UTC / 2025-08-16 17:58:10 IST IST (name=form_reminder_1755346680)
+[2025-08-16 17:48:35.426816] Triggered by sender 1301082863
+[2025-08-16 17:48:36.709047] Reminder sent: Master sheet not configured.
+[2025-08-16 17:48:36.712066] Reminder sent: Master sheet not configured.
+[2025-08-16 17:48:36.713066] Next reminder scheduled at 2025-08-16T12:28:46.712066+00:00 UTC / 2025-08-16 17:58:46 IST IST (name=form_reminder_1755346716)
+[2025-08-16 17:49:04.255332] Triggered by sender 1301082863
+[2025-08-16 17:49:05.448766] Reminder sent: Master sheet not configured.
+[2025-08-16 17:49:05.451230] Reminder sent: Master sheet not configured.
+[2025-08-16 17:49:05.451230] Next reminder scheduled at 2025-08-16T12:29:15.451230+00:00 UTC / 2025-08-16 17:59:15 IST IST (name=form_reminder_1755346745)
+[2025-08-16 17:54:41.023776] Triggered by sender 1301082863
+[2025-08-16 17:54:47.438583] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 17:55:01.622346] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 17:55:01.671182] Next reminder scheduled at 2025-08-16T12:35:11.671182+00:00 UTC / 2025-08-16 18:05:11 IST IST (name=form_reminder_1755347101)
+[2025-08-16 17:58:14.786529] Triggered by sender 1301082863
+[2025-08-16 17:58:19.516407] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 17:58:22.617253] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 17:58:22.617253] Next reminder scheduled at 2025-08-16T12:38:32.617253+00:00 UTC / 2025-08-16 18:08:32 IST IST (name=form_reminder_1755347302)
+[2025-08-16 17:58:51.085859] Triggered by sender 1301082863
+[2025-08-16 17:58:55.622867] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 17:58:58.767366] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 17:58:58.768822] Next reminder scheduled at 2025-08-16T12:39:08.767366+00:00 UTC / 2025-08-16 18:09:08 IST IST (name=form_reminder_1755347338)
+[2025-08-16 17:59:19.699645] Triggered by sender 1301082863
+[2025-08-16 17:59:23.907356] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 17:59:27.078482] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 17:59:27.079554] Next reminder scheduled at 2025-08-16T12:39:37.079554+00:00 UTC / 2025-08-16 18:09:37 IST IST (name=form_reminder_1755347367)
+[2025-08-16 18:05:15.969383] Triggered by sender 1301082863
+[2025-08-16 18:05:20.901768] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 18:05:24.139620] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 18:05:24.141004] Next reminder scheduled at 2025-08-16T12:45:34.139620+00:00 UTC / 2025-08-16 18:15:34 IST IST (name=form_reminder_1755347724)
+[2025-08-16 18:22:06.456151] Triggered by sender 1301082863
+[2025-08-16 18:22:10.767294] Reminder sent: Error sending reminder: 'tuple' object has no attribute 'items'
+[2025-08-16 18:22:10.950693] Next reminder scheduled at 2025-08-16T13:02:20.950693+00:00 UTC / 2025-08-16 18:32:20 IST IST (name=form_reminder_1755348730)
+[2025-08-16 18:30:56.985381] Triggered by sender 1301082863
+[2025-08-16 18:35:59.172715] Triggered by sender 1301082863
+[2025-08-16 18:36:04.554272] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 18:36:04.583437] Next reminder scheduled at 2025-08-16T13:16:14.583437+00:00 UTC / 2025-08-16 18:46:14 IST IST (name=form_reminder_1755349564)
+[2025-08-16 18:36:57.038702] Triggered by sender 1301082863
+[2025-08-16 18:37:01.345706] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 18:37:01.347476] Next reminder scheduled at 2025-08-16T13:17:11.346708+00:00 UTC / 2025-08-16 18:47:11 IST IST (name=form_reminder_1755349621)
+[2025-08-16 18:46:18.819480] Triggered by sender 1301082863
+[2025-08-16 18:48:04.988983] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 18:48:04.988983] Next reminder scheduled at 2025-08-16T13:28:14.988983+00:00 UTC / 2025-08-16 18:58:14 IST IST (name=form_reminder_1755350284)
+[2025-08-16 18:48:07.185922] Triggered by sender 1301082863
+[2025-08-16 18:48:20.164177] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 18:48:20.165364] Next reminder scheduled at 2025-08-16T13:28:30.165364+00:00 UTC / 2025-08-16 18:58:30 IST IST (name=form_reminder_1755350300)
+[2025-08-16 18:50:08.989107] Triggered by sender 1301082863
+[2025-08-16 18:50:14.924508] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 18:50:14.925504] Next reminder scheduled at 2025-08-16T13:30:24.925504+00:00 UTC / 2025-08-16 19:00:24 IST IST (name=form_reminder_1755350414)
+[2025-08-16 18:50:54.437304] Triggered by sender 1301082863
+[2025-08-16 18:51:03.907227] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 18:51:03.908345] Next reminder scheduled at 2025-08-16T13:31:13.908345+00:00 UTC / 2025-08-16 19:01:13 IST IST (name=form_reminder_1755350463)
+[2025-08-16 19:00:29.238133] Triggered by sender 1301082863
+[2025-08-16 19:00:33.932965] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 19:00:33.934362] Next reminder scheduled at 2025-08-16T13:40:43.932965+00:00 UTC / 2025-08-16 19:10:43 IST IST (name=form_reminder_1755351033)
+[2025-08-16 19:01:18.189250] Triggered by sender 1301082863
+[2025-08-16 19:01:46.342657] Reminder sent: Reminder sent with missing students list.
+[2025-08-16 19:01:46.342657] Next reminder scheduled at 2025-08-16T13:41:56.342657+00:00 UTC / 2025-08-16 19:11:56 IST IST (name=form_reminder_1755351106)
+[2025-08-17 09:50:44.544998] Triggered by sender 1301082863
+[2025-08-17 09:50:50.243054] Reminder sent: Reminder sent with missing students list.
+[2025-08-17 09:50:50.274644] Next reminder scheduled at 2025-08-17T04:31:00.274644+00:00 UTC / 2025-08-17 10:01:00 IST IST (name=form_reminder_1755404450)
+[2025-08-17 10:01:04.590724] Triggered by sender 1301082863
+[2025-08-17 10:01:10.909677] Reminder sent: Reminder sent with missing students list.
+[2025-08-17 10:01:10.912064] Next reminder scheduled at 2025-08-17T04:41:20.910676+00:00 UTC / 2025-08-17 10:11:20 IST IST (name=form_reminder_1755405070)
+[2025-08-18 21:10:36.683470] Triggered by sender 1301082863
+[2025-08-18 21:10:50.765944] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:10:50.824677] Next reminder scheduled at 2025-08-18T15:51:00.824677+00:00 UTC / 2025-08-18 21:21:00 IST IST (name=form_reminder_1755531650)
+[2025-08-18 21:10:50.824677] UNCAUGHT EXCEPTION: ReminderScheduled() got an unexpected keyword argument 'trigger_date'
+[2025-08-18 21:12:17.946395] Triggered by sender -4781374828
+[2025-08-18 21:14:13.573271] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:14:13.623862] Next reminder scheduled at 2025-08-18T15:54:23.622850+00:00 UTC / 2025-08-18 21:24:23 IST IST (name=form_reminder_1755531853)
+[2025-08-18 21:14:13.628533] Triggered by sender -4781374828
+[2025-08-18 21:14:26.322158] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:14:26.324161] Next reminder scheduled at 2025-08-18T15:54:36.323158+00:00 UTC / 2025-08-18 21:24:36 IST IST (name=form_reminder_1755531866)
+[2025-08-18 21:14:26.332159] Triggered by sender -4781374828
+[2025-08-18 21:14:41.315283] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:14:41.315283] Next reminder scheduled at 2025-08-18T15:54:51.315283+00:00 UTC / 2025-08-18 21:24:51 IST IST (name=form_reminder_1755531881)
+[2025-08-18 21:15:20.742446] Triggered by sender -4781374828
+[2025-08-18 21:17:04.050376] Reminder sent: Error sending reminder: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2025-08-18 21:17:04.051381] Next reminder scheduled at 2025-08-18T15:57:14.050376+00:00 UTC / 2025-08-18 21:27:14 IST IST (name=form_reminder_1755532024)
+[2025-08-18 21:17:04.057560] Triggered by sender -4781374828
+[2025-08-18 21:17:19.311431] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:17:19.312454] Next reminder scheduled at 2025-08-18T15:57:29.311431+00:00 UTC / 2025-08-18 21:27:29 IST IST (name=form_reminder_1755532039)
+[2025-08-18 21:17:23.967534] Triggered by sender -4781374828
+[2025-08-18 21:17:33.364174] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:17:33.365170] Next reminder scheduled at 2025-08-18T15:57:43.365170+00:00 UTC / 2025-08-18 21:27:43 IST IST (name=form_reminder_1755532053)
+[2025-08-18 21:20:38.885705] Triggered by sender -4781374828
+[2025-08-18 21:20:55.390887] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:20:55.463938] Next reminder scheduled at 2025-08-18T16:01:05.463433+00:00 UTC / 2025-08-18 21:31:05 IST IST (name=form_reminder_1755532255)
+[2025-08-18 21:21:50.480771] Triggered by sender -4781374828
+[2025-08-18 21:22:04.365229] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:22:04.366227] Next reminder scheduled at 2025-08-18T16:02:14.365229+00:00 UTC / 2025-08-18 21:32:14 IST IST (name=form_reminder_1755532324)
+[2025-08-18 21:25:33.039970] Triggered by sender 1301082863
+[2025-08-18 21:25:43.634559] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:25:43.635559] Next reminder scheduled at 2025-08-18T16:05:53.635559+00:00 UTC / 2025-08-18 21:35:53 IST IST (name=form_reminder_1755532543)
+[2025-08-18 21:31:09.699980] Triggered by sender -4781374828
+[2025-08-18 21:31:18.969512] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:31:18.970421] Next reminder scheduled at 2025-08-18T16:11:28.969512+00:00 UTC / 2025-08-18 21:41:28 IST IST (name=form_reminder_1755532878)
+[2025-08-18 21:32:18.629475] Triggered by sender -4781374828
+[2025-08-18 21:32:28.699908] Reminder sent: Reminder sent with missing students list.
+[2025-08-18 21:32:28.699908] Next reminder scheduled at 2025-08-18T16:12:38.699908+00:00 UTC / 2025-08-18 21:42:38 IST IST (name=form_reminder_1755532948)
+[2025-08-19 13:51:42.356740] Triggered by sender 1301082863
+[2025-08-19 13:51:47.831956] Reminder sent: Reminder sent with missing students list.
+[2025-08-19 13:51:47.865002] Next reminder scheduled at 2025-08-19T08:31:57.865002+00:00 UTC / 2025-08-19 14:01:57 IST IST (name=form_reminder_1755591707)
+[2025-08-19 15:10:11.779264] Triggered by sender 1301082863
+[2025-08-19 15:10:17.344637] Reminder sent: Reminder sent with missing students list.
+[2025-08-19 15:10:17.436845] Next reminder scheduled at 2025-08-19T09:50:27.436845+00:00 UTC / 2025-08-19 15:20:27 IST IST (name=form_reminder_1755596417)
+[2025-08-19 15:12:04.752697] Triggered by sender 1301082863
+[2025-08-19 15:12:09.991208] Reminder sent: Reminder sent with missing students list.
+[2025-08-19 15:12:09.993210] Next reminder scheduled at 2025-08-19T09:52:19.992289+00:00 UTC / 2025-08-19 15:22:19 IST IST (name=form_reminder_1755596529)
+[2025-08-19 15:20:31.700312] Triggered by sender 1301082863
+[2025-08-19 15:20:42.369986] Reminder sent: Reminder sent with missing students list.
+[2025-08-19 15:20:42.370985] Next reminder scheduled at 2025-08-19T10:00:52.369986+00:00 UTC / 2025-08-19 15:30:52 IST IST (name=form_reminder_1755597042)
+[2025-08-19 15:22:24.251627] Triggered by sender 1301082863
+[2025-08-19 15:22:29.635432] Reminder sent: Reminder sent with missing students list.
+[2025-08-19 15:22:29.635432] Next reminder scheduled at 2025-08-19T10:02:39.635432+00:00 UTC / 2025-08-19 15:32:39 IST IST (name=form_reminder_1755597149)
+[2025-08-20 09:49:40.480404] Triggered by sender 1301082863
+[2025-08-20 09:49:49.581545] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 09:49:49.647704] Next reminder scheduled at 2025-08-20T04:29:59.647704+00:00 UTC / 2025-08-20 09:59:59 IST IST (name=form_reminder_1755663589)
+[2025-08-20 10:00:03.993605] Triggered by sender 1301082863
+[2025-08-20 10:00:09.005831] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 10:00:09.007760] Next reminder scheduled at 2025-08-20T04:40:19.006837+00:00 UTC / 2025-08-20 10:10:19 IST IST (name=form_reminder_1755664209)
+[2025-08-20 10:40:58.485059] Triggered by sender 1301082863
+[2025-08-20 10:41:12.306944] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 10:41:12.403807] Next reminder scheduled at 2025-08-20T05:21:42.402731+00:00 UTC / 2025-08-20 10:51:42 IST IST (name=form_reminder_1755666672)
+[2025-08-20 11:10:55.148649] Triggered by sender 1301082863
+[2025-08-20 11:11:02.323419] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 11:11:02.381562] Next reminder scheduled at 2025-08-20T05:51:32.380555+00:00 UTC / 2025-08-20 11:21:32 IST IST (name=form_reminder_1755668462)
+[2025-08-20 11:11:02.384643] Triggered by sender 1301082863
+[2025-08-20 11:11:08.792938] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 11:11:08.793933] Next reminder scheduled at 2025-08-20T05:51:38.792938+00:00 UTC / 2025-08-20 11:21:38 IST IST (name=form_reminder_1755668468)
+[2025-08-20 11:11:08.801453] Triggered by sender 1301082863
+[2025-08-20 11:11:14.396655] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 11:11:14.397673] Next reminder scheduled at 2025-08-20T05:51:44.397673+00:00 UTC / 2025-08-20 11:21:44 IST IST (name=form_reminder_1755668474)
+[2025-08-20 11:11:14.403671] Triggered by sender 1301082863
+[2025-08-20 11:11:18.606384] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 11:11:18.607381] Next reminder scheduled at 2025-08-20T05:51:48.606384+00:00 UTC / 2025-08-20 11:21:48 IST IST (name=form_reminder_1755668478)
+[2025-08-20 11:13:28.876698] Triggered by sender 1301082863
+[2025-08-20 11:13:35.027929] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 11:13:35.097848] Next reminder scheduled at 2025-08-20T05:54:05.097848+00:00 UTC / 2025-08-20 11:24:05 IST IST (name=form_reminder_1755668615)
+[2025-08-20 11:24:09.367898] Triggered by sender 1301082863
+[2025-08-20 11:24:15.480233] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 11:24:15.481234] Next reminder scheduled at 2025-08-20T06:04:45.481234+00:00 UTC / 2025-08-20 11:34:45 IST IST (name=form_reminder_1755669255)
+[2025-08-20 11:34:49.800343] Triggered by sender 1301082863
+[2025-08-20 11:34:55.446928] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 11:34:55.447944] Next reminder scheduled at 2025-08-20T06:15:25.446928+00:00 UTC / 2025-08-20 11:45:25 IST IST (name=form_reminder_1755669895)
+[2025-08-20 14:16:39.818874] Triggered by sender 1301082863
+[2025-08-20 14:16:49.805624] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 14:16:49.843283] Next reminder scheduled at 2025-08-20T08:57:19.843283+00:00 UTC / 2025-08-20 14:27:19 IST IST (name=form_reminder_1755679609)
+[2025-08-20 14:27:24.150344] Triggered by sender 1301082863
+[2025-08-20 14:27:35.288609] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 14:27:35.289596] Next reminder scheduled at 2025-08-20T09:08:05.289596+00:00 UTC / 2025-08-20 14:38:05 IST IST (name=form_reminder_1755680255)
+[2025-08-20 14:38:09.603032] Triggered by sender 1301082863
+[2025-08-20 14:38:16.101808] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 14:38:16.103166] Next reminder scheduled at 2025-08-20T09:18:46.101808+00:00 UTC / 2025-08-20 14:48:46 IST IST (name=form_reminder_1755680896)
+[2025-08-20 14:48:50.315695] Triggered by sender 1301082863
+[2025-08-20 14:48:55.448199] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 14:48:55.450122] Next reminder scheduled at 2025-08-20T09:29:25.449200+00:00 UTC / 2025-08-20 14:59:25 IST IST (name=form_reminder_1755681535)
+[2025-08-20 14:59:29.835969] Triggered by sender 1301082863
+[2025-08-20 14:59:35.163148] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 14:59:35.164155] Next reminder scheduled at 2025-08-20T09:40:05.163148+00:00 UTC / 2025-08-20 15:10:05 IST IST (name=form_reminder_1755682175)
+[2025-08-20 15:10:09.480779] Triggered by sender 1301082863
+[2025-08-20 15:10:14.110142] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 15:10:14.111148] Next reminder scheduled at 2025-08-20T09:50:44.111148+00:00 UTC / 2025-08-20 15:20:44 IST IST (name=form_reminder_1755682814)
+[2025-08-20 15:20:48.392971] Triggered by sender 1301082863
+[2025-08-20 15:20:55.615137] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 15:20:55.616130] Next reminder scheduled at 2025-08-20T10:01:25.615137+00:00 UTC / 2025-08-20 15:31:25 IST IST (name=form_reminder_1755683455)
+[2025-08-20 15:31:29.876922] Triggered by sender 1301082863
+[2025-08-20 15:31:34.312207] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 15:31:34.312207] Next reminder scheduled at 2025-08-20T10:12:04.312207+00:00 UTC / 2025-08-20 15:42:04 IST IST (name=form_reminder_1755684094)
+[2025-08-20 15:42:08.700681] Triggered by sender 1301082863
+[2025-08-20 15:42:17.854472] Reminder sent: Reminder sent with missing students list.
+[2025-08-20 15:42:17.855475] Next reminder scheduled at 2025-08-20T10:22:47.855475+00:00 UTC / 2025-08-20 15:52:47 IST IST (name=form_reminder_1755684737)
+[2025-08-21 10:57:53.574380] Triggered by sender 1301082863
+[2025-08-21 10:58:00.696279] Reminder sent: Reminder sent with missing students list.
+[2025-08-21 10:58:00.744044] Next reminder scheduled at 2025-08-21T05:38:30.744044+00:00 UTC / 2025-08-21 11:08:30 IST IST (name=form_reminder_1755754080)
+[2025-08-21 11:00:53.614489] Triggered by sender 1301082863
+[2025-08-21 11:00:58.775089] Reminder sent: Reminder sent with missing students list.
+[2025-08-21 11:00:58.776108] Next reminder scheduled at 2025-08-21T05:41:28.775089+00:00 UTC / 2025-08-21 11:11:28 IST IST (name=form_reminder_1755754258)
