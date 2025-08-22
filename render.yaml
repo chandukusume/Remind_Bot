@@ -1,20 +1,16 @@
 services:
-  # --- The main Rasa Server (Corrected) ---
+  # --- The main Rasa Server ---
   - name: rasa-server
     type: web
-    env: docker  # Use 'docker' to build from a Dockerfile
+    env: docker
     plan: free
-    healthCheckPath: /
-    # Tell Render where to find your Dockerfile
-    dockerfilePath: ./Dockerfile
-    # You no longer need the 'image' or 'startCommand' sections here,
-    # as they are defined in the Dockerfile.
+    # Tell Render where to find your first Dockerfile
+    dockerfilePath: ./rasa-server.Dockerfile
 
-  # --- The Rasa Action Server (still has the same issue) ---
+  # --- The Rasa Action Server (Corrected) ---
   - name: action-server
     type: web
-    env: image
+    env: docker          # Corrected from 'image'
     plan: free
-    image:
-      url: rasa/rasa-sdk:latest
-    startCommand: rasa run actions --port 8080
+    # Tell Render where to find your second Dockerfile
+    dockerfilePath: ./action-server.Dockerfile
