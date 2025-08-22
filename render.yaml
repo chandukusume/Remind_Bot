@@ -4,13 +4,11 @@ services:
     type: web
     env: docker
     plan: free
-    # Tell Render where to find your first Dockerfile
     dockerfilePath: ./rasa-server.Dockerfile
 
-  # --- The Rasa Action Server (Corrected) ---
+  # --- The Rasa Action Server ---
   - name: action-server
     type: web
-    env: docker          # Corrected from 'image'
+    env: docker
     plan: free
-    # Tell Render where to find your second Dockerfile
     dockerfilePath: ./action-server.Dockerfile
