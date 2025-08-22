@@ -1,25 +1,20 @@
-# This is the corrected blueprint for deploying a pre-built Rasa Docker image.
-
 services:
-  # --- The main Rasa Server ---
+  # --- The main Rasa Server (Corrected) ---
   - name: rasa-server
     type: web
-    env: image      # Corrected from 'docker' to 'image'
+    env: docker  # Use 'docker' to build from a Dockerfile
     plan: free
     healthCheckPath: /
-    # The image to pull from Docker Hub
-    image:
-      url: rasa/rasa:latest-full
-    # The command to run after pulling the image
-    startCommand: rasa run -m models --enable-api --cors "*" --port 8080
+    # Tell Render where to find your Dockerfile
+    dockerfilePath: ./Dockerfile
+    # You no longer need the 'image' or 'startCommand' sections here,
+    # as they are defined in the Dockerfile.
 
-  # --- The Rasa Action Server ---
+  # --- The Rasa Action Server (still has the same issue) ---
   - name: action-server
     type: web
-    env: image      # Corrected from 'docker' to 'image'
+    env: image
     plan: free
-    # The image to pull from Docker Hub
     image:
       url: rasa/rasa-sdk:latest
-    # The command to run after pulling the image
     startCommand: rasa run actions --port 8080
