@@ -1,8 +1,6 @@
 version: "3.1"
 
 stories:
-# In data/stories.yml
-
 - story: Full form tracking flow (happy path)
   steps:
   - intent: greet
@@ -12,11 +10,11 @@ stories:
     - sheet_id: "1abcxyz1234567890"
   - slot_was_set:
     - sheet_id: "1abcxyz1234567890"
-  - action: action_track_form  # Corrected this to be the custom action
+  - action: action_track_form      # This is a custom action
   - intent: get_count
-  - action: action_get_count   # This now directly follows the intent
+  - action: action_get_count      # This is a custom action
   - intent: send_reminder
-  - action: action_send_reminder # Corrected this to be the custom action
+  - action: action_send_reminder    # This is a custom action
   - intent: goodbye
   - action: utter_goodbye
 
@@ -25,15 +23,15 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: get_count
-  - action: action_get_count   # The action itself will handle the 'not set' case
+  - action: action_get_count      # This custom action handles the 'not set' case
   - intent: track_form
     entities:
     - sheet_id: "xyz987abc"
   - slot_was_set:
     - sheet_id: "xyz987abc"
-  - action: action_track_form # Corrected this to be the custom action
+  - action: action_track_form      # This is a custom action
   - intent: get_count
-  - action: action_get_count   # This now directly follows the intent
+  - action: action_get_count      # This is a custom action
   - intent: goodbye
   - action: utter_goodbye
 
@@ -46,9 +44,9 @@ stories:
     - sheet_id: "form-to-check-123"
   - slot_was_set:
     - sheet_id: "form-to-check-123"
-  - action: utter_track_form
+  - action: action_track_form      # <-- CORRECTED
   - intent: check_current_form
-  - action: utter_check_current_form
+  - action: action_check_current_form # <-- CORRECTED
 
 - story: Mixed university and form questions
   steps:
@@ -61,11 +59,11 @@ stories:
     - sheet_id: "some_other_form_id"
   - slot_was_set:
     - sheet_id: "some_other_form_id"
-  - action: utter_track_form
+  - action: action_track_form      # <-- CORRECTED
   - intent: get_academic_calendar
   - action: utter_get_academic_calendar
   - intent: check_current_form
-  - action: utter_check_current_form
+  - action: action_check_current_form # <-- CORRECTED
   - intent: goodbye
   - action: utter_goodbye
 
