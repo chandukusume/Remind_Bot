@@ -1,28 +1,84 @@
 version: "3.1"
-nlu:
-  - intent: view_timetable
-    examples: |
-      - Show me the timetable for [CS101](course_code)
-      - What is the schedule for [Math202](course_code)?
-  - intent: get_syllabus
-    examples: |
-      - Can I get the syllabus for [Physics101](course_code)?
-      - Syllabus for [Chemistry](course_code), please.
-  - intent: ask_faq
-    examples: |
-      - When is the exam for [Math](subject)?
-      - Who is the faculty for [Computer Science](subject)?
-  - intent: submit_feedback
-    examples: |
-      - I want to give feedback about [faculty](feedback_topic)
-      - Submit feedback on [course material](feedback_topic)
-  - intent: admin_view_feedback
-    examples: |
-      - Show me all feedback
-  - intent: admin_broadcast
-    examples: |
-      - Broadcast a message to all students
+
+stories:
+- story: Full form tracking flow (happy path)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: track_form
+    entities:
+    - sheet_id: "1abcxyz1234567890"
+  - slot_was_set:
+    - sheet_id: "1abcxyz1234567890"
+  - action: utter_track_form
+  - intent: get_count
+  - action: utter_ask_for_count
+  - action: action_get_form_count
   - intent: send_reminder
-    examples: |
-      - Remind me about [assignment](reminder_event) on [2025-08-15](reminder_date)
-      - Set a reminder for [event](reminder_event) on [2025-08-20](reminder_date)
+  - action: utter_confirm_reminder
+  - action: action_send_form_reminder
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: User asks for count before a form is set
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_count
+  - action: utter_form_not_set  # Bot correctly states that no form is being tracked
+  - intent: track_form
+    entities:
+    - sheet_id: "xyz987abc"
+  - slot_was_set:
+    - sheet_id: "xyz987abc"
+  - action: utter_track_form
+  - intent: get_count # User asks again, and now it should work
+  - action: utter_ask_for_count
+  - action: action_get_form_count
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: User sets form and then checks it
+  steps:
+  - intent: start
+  - action: utter_start
+  - intent: track_form
+    entities:
+    - sheet_id: "form-to-check-123"
+  - slot_was_set:
+    - sheet_id: "form-to-check-123"
+  - action: utter_track_form
+  - intent: check_current_form
+  - action: utter_check_current_form
+
+- story: Mixed university and form questions
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire_admission_requirements
+  - action: utter_inquire_admission_requirements
+  - intent: track_form
+    entities:
+    - sheet_id: "some_other_form_id"
+  - slot_was_set:
+    - sheet_id: "some_other_form_id"
+  - action: utter_track_form
+  - intent: get_academic_calendar
+  - action: utter_get_academic_calendar
+  - intent: check_current_form
+  - action: utter_check_current_form
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Interactive university questions
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_about_clubs
+  - action: utter_ask_about_clubs
+  - intent: find_location
+    entities:
+    - building_name: "student union"
+  - action: utter_find_location
+  - intent: ask_about_scholarships
+  - action: utter_ask_about_scholarships

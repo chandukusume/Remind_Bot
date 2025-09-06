@@ -1,49 +1,96 @@
-# rules.yml
+version: "3.1"
+
 rules:
-- rule: Greet on start
+- rule: Greet user
   steps:
-    - intent: start
-    - action: utter_greet
+  - intent: greet
+  - action: utter_greet
 
-- rule: Respond to greet
+- rule: Handle start command
   steps:
-    - intent: greet
-    - action: utter_greet
+  - intent: start
+  - action: utter_start
 
-- rule: Respond to goodbye
+- rule: Say goodbye
   steps:
-    - intent: goodbye
-    - action: utter_goodbye
+  - intent: goodbye
+  - action: utter_goodbye
 
-- rule: Track form
+- rule: Set the form to track
   steps:
-    - intent: track_form
-    - action: action_track_form
+  - intent: track_form
+  - action: utter_track_form
 
-- rule: Get count
+- rule: Check form when it is set
+  condition:
+  - slot_was_set:
+    - sheet_id: true
   steps:
-    - intent: get_count
-    - action: action_get_count
+  - intent: check_current_form
+  - action: utter_check_current_form
 
-- rule: Check current form
+- rule: Check form when it is not set
+  condition:
+  - slot_was_set:
+    - sheet_id: false
   steps:
-    - intent: check_current_form
-    - action: action_check_current_form
+  - intent: check_current_form
+  - action: utter_form_not_set
 
-- rule: Send reminder from user command
+- rule: Get form submission count
   steps:
-    - intent: send_reminder
-    - action: action_send_reminder
+  - intent: get_count
+  - action: utter_ask_for_count # First acknowledge
+  - action: action_get_form_count # Then run the action
 
-# This rule triggers the reminder process when the scheduled event is received.
-- rule: Handle the external reminder event
+- rule: Send reminder to users
   steps:
-    - intent: EXTERNAL_form_reminder
-    - action: action_form_reminder
+  - intent: send_reminder
+  - action: utter_confirm_reminder # First acknowledge
+  - action: action_send_form_reminder # Then run the action
 
-# CORRECTED RULE: This rule ensures the bot always listens after sending a reminder,
-# which fixes the loop and prepares it for the next user message or event.
-- rule: After sending a reminder, listen for the next message
+# Rules for University Intents
+- rule: Answer about admission requirements
   steps:
-    - action: action_send_reminder
-    - action: action_listen
+  - intent: inquire_admission_requirements
+  - action: utter_inquire_admission_requirements
+
+- rule: Answer about application deadlines
+  steps:
+  - intent: inquire_application_deadline
+  - action: utter_inquire_application_deadline
+
+- rule: Answer about course info
+  steps:
+  - intent: find_course_info
+  - action: utter_find_course_info
+
+- rule: Answer about professor info
+  steps:
+  - intent: inquire_professor_info
+  - action: utter_inquire_professor_info
+
+- rule: Provide academic calendar
+  steps:
+  - intent: get_academic_calendar
+  - action: utter_get_academic_calendar
+
+- rule: Help find a location
+  steps:
+  - intent: find_location
+  - action: utter_find_location
+
+- rule: Answer about facility hours
+  steps:
+  - intent: inquire_facility_hours
+  - action: utter_inquire_facility_hours
+
+- rule: Answer about clubs
+  steps:
+  - intent: ask_about_clubs
+  - action: utter_ask_about_clubs
+
+- rule: Answer about scholarships
+  steps:
+  - intent: ask_about_scholarships
+  - action: utter_ask_about_scholarships
