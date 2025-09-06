@@ -1,6 +1,8 @@
 version: "3.1"
 
 stories:
+# In data/stories.yml
+
 - story: Full form tracking flow (happy path)
   steps:
   - intent: greet
@@ -10,13 +12,11 @@ stories:
     - sheet_id: "1abcxyz1234567890"
   - slot_was_set:
     - sheet_id: "1abcxyz1234567890"
-  - action: utter_track_form
+  - action: action_track_form  # Corrected this to be the custom action
   - intent: get_count
-  - action: utter_ask_for_count
-  - action: action_get_form_count
+  - action: action_get_count   # This now directly follows the intent
   - intent: send_reminder
-  - action: utter_confirm_reminder
-  - action: action_send_form_reminder
+  - action: action_send_reminder # Corrected this to be the custom action
   - intent: goodbye
   - action: utter_goodbye
 
@@ -25,16 +25,15 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: get_count
-  - action: utter_form_not_set  # Bot correctly states that no form is being tracked
+  - action: action_get_count   # The action itself will handle the 'not set' case
   - intent: track_form
     entities:
     - sheet_id: "xyz987abc"
   - slot_was_set:
     - sheet_id: "xyz987abc"
-  - action: utter_track_form
-  - intent: get_count # User asks again, and now it should work
-  - action: utter_ask_for_count
-  - action: action_get_form_count
+  - action: action_track_form # Corrected this to be the custom action
+  - intent: get_count
+  - action: action_get_count   # This now directly follows the intent
   - intent: goodbye
   - action: utter_goodbye
 

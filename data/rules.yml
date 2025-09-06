@@ -16,16 +16,6 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Set the form to track
-  steps:
-  - intent: track_form
-  - action: utter_track_form
-
-- rule: Send reminder to users
-  steps:
-  - intent: send_reminder
-  - action: utter_confirm_reminder # First acknowledge
-  - action: action_send_form_reminder # Then run the action
 
 # Rules for University Intents
 - rule: Answer about admission requirements

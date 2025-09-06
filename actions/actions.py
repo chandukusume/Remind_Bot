@@ -7,7 +7,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import ReminderScheduled, FollowupAction, SlotSet
 
-# This is the only import you need for your utility functions
+# THIS IS THE CORRECT, RELATIVE IMPORT
 from . import utils
 
 # A list of authorized user IDs (e.g., from Telegram, Slack, etc.)
@@ -18,20 +18,17 @@ class ActionTrackForm(Action):
         return "action_track_form"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # 1. Authorization Check
         sender_id = tracker.sender_id
         if sender_id not in ALLOWED_USERS:
             dispatcher.utter_message(text="You are not authorized to perform this action.")
             return []
 
-        # 2. Get sheet_id from the user message
         sheet_id = next(tracker.get_latest_entity_values("sheet_id"), None)
         
         if not sheet_id:
             dispatcher.utter_message(text="Please provide a valid Google Sheet ID to track.")
             return []
 
-        # 3. Save the sheet_id to a slot. This is the correct way to store conversation memory.
         dispatcher.utter_message(text=f"Okay, I am now tracking the form with sheet ID: {sheet_id}")
         return [SlotSet("sheet_id", sheet_id)]
 
@@ -47,7 +44,8 @@ class ActionGetCount(Action):
             return []
 
         try:
-            stats = utils.get_submission_stats(sheet_id)
+            # You must now call the function with `utils.`
+            stats = utils.get_submission_stats(sheet_id) 
             dispatcher.utter_message(
                 text=f"📊 Currently, {stats['filled_count']} out of {stats['total_count']} have filled the form."
             )
@@ -68,13 +66,12 @@ class ActionSendReminder(Action):
             return []
 
         try:
-            # Step 1: Send the reminder NOW
+            # You must now call the function with `utils.`
             result_message = utils.send_telegram_reminder(sheet_id)
             dispatcher.utter_message(text=result_message)
 
-            # Step 2: Schedule the NEXT reminder
             tz = pytz.timezone("Asia/Kolkata")
-            trigger_time = datetime.now(tz) + timedelta(minutes=10) # Set for 10 mins from now
+            trigger_time = datetime.now(tz) + timedelta(minutes=10)
             
             reminder = ReminderScheduled(
                 "action_form_reminder",
@@ -95,7 +92,6 @@ class ActionFormReminder(Action):
         return "action_form_reminder"
 
     def run(self, dispatcher, tracker, domain):
-        # This action is triggered by the scheduler to run the main reminder action again.
         return [FollowupAction("action_send_reminder")]
 
 
@@ -104,7 +100,6 @@ class ActionCheckCurrentForm(Action):
         return "action_check_current_form"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # This action now correctly reads from the Rasa Slot.
         sheet_id = tracker.get_slot("sheet_id")
         
         if sheet_id:
