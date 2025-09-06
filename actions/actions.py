@@ -7,7 +7,9 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import ReminderScheduled, ReminderCancelled
 from datetime import datetime, timedelta
+from rasa_sdk.events import SlotSet
 from rasa_sdk.events import FollowupAction
+from . import utils
 
 
 # print("Config exists:", os.path.exists(r"C:\Users\chand\rasa\rasa_env\rasa_files\config.json"))
@@ -68,107 +70,46 @@ class ActionTrackForm(Action):
 
 
 class ActionGetCount(Action):
-    def name(self):
+    def name(self) -> str:
         return "action_get_count"
 
-    def run(self, dispatcher, tracker: Tracker, domain):
-        print("ActionGetCount: Starting...")
-        try:
-            if not os.path.exists(CONFIG_PATH):
-                dispatcher.utter_message(text="Configuration file not found. Please contact the administrator.")
-                return []
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+        sheet_id = tracker.get_slot("sheet_id")
+        if not sheet_id:
+            dispatcher.utter_message(text="No form is currently being tracked. Please set one first.")
+            return []
 
-            with open(CONFIG_PATH, 'r') as f:
-                config = json.load(f)
-            sheet_id = config.get('current_sheet_id')
-            if sheet_id:
-                count = get_count(sheet_id)
-                if isinstance(count, str):
-                    dispatcher.utter_message(text=count)
-                else:
-                    dispatcher.utter_message(text=f"Currently, {count} out of 26 have filled the form.")
-            else:
-                dispatcher.utter_message(text="No form or sheet is currently being tracked.")
-        except FileNotFoundError:
-            dispatcher.utter_message(text="Configuration file not found. Please contact the administrator.")
-        except json.JSONDecodeError:
-            dispatcher.utter_message(text="Invalid configuration file format. Please contact the administrator.")
-        except PermissionError:
-            dispatcher.utter_message(text="Permission denied accessing configuration file.")
+        try:
+            # Call the new, more detailed utility function
+            stats = utils.get_submission_stats(sheet_id)
+            dispatcher.utter_message(
+                text=f"Currently, {stats['filled_count']} out of {stats['total_count']} have filled the form."
+            )
         except Exception as e:
-            dispatcher.utter_message(text=f"Failed to get the count: {str(e)}. Please try again later.")
+            dispatcher.utter_message(text=f"Failed to get the count: {e}")
+            
         return []
 
 
 class ActionSendReminder(Action):
-    def name(self):
+    def name(self) -> str:
         return "action_send_reminder"
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain):
-        log_path = os.path.join(os.path.dirname(__file__), "reminder.log")
-
-        def log(msg):
-            with open(log_path, "a", encoding="utf-8") as f:
-                f.write(f"[{datetime.now()}] {msg}\n")
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+        sheet_id = tracker.get_slot("sheet_id")
+        if not sheet_id:
+            dispatcher.utter_message(text="I can't send reminders because no form is being tracked.")
+            return []
 
         try:
-            log(f"Triggered by sender {tracker.sender_id}")
-
-            if not os.path.exists(CONFIG_PATH):
-                msg = "Configuration file not found."
-                dispatcher.utter_message(text=msg)
-                log(f"ERROR: {msg}")
-                return []
-
-            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-                config = json.load(f)
-
-            sheet_id = config.get("current_sheet_id")
-            if not sheet_id:
-                msg = "No form or sheet is currently being tracked."
-                dispatcher.utter_message(text=msg)
-                log(f"WARNING: {msg}")
-                return []
-
-            try:
-                count = get_count(sheet_id)
-            except Exception as e:
-                dispatcher.utter_message(text=f"Error getting count: {e}")
-                log(f"EXCEPTION in get_count: {e}")
-                return []
-
-            try:
-                result = send_reminder(sheet_id)
-                dispatcher.utter_message(text=result)
-                log(f"Reminder sent: {result}")
-            except Exception as e:
-                dispatcher.utter_message(text=f"Error sending reminder: {e}")
-                log(f"EXCEPTION in send_reminder: {e}")
-                return []
-
-            tz = pytz.timezone("Asia/Kolkata")
-            reminder_time = (datetime.now(tz) + timedelta(minutes=10, seconds=30)).astimezone(pytz.UTC)
-
-            reminder_name = f"form_reminder_{int(datetime.now().timestamp())}"
-
-            ist_time = reminder_time.astimezone(pytz.timezone("Asia/Kolkata"))  
-            log(f"Next reminder scheduled at {reminder_time.isoformat()} UTC / {ist_time.strftime('%Y-%m-%d %H:%M:%S %Z')} IST (name={reminder_name})")
-
-            events = [
-                ReminderScheduled(
-                    "EXTERNAL_form_reminder",
-                    trigger_date_time=reminder_time,
-                    name=reminder_name,
-                    kill_on_user_message=False
-                ),
-            ]
-            # log(f"Next reminder scheduled at {reminder_time.isoformat()} UTC (name={reminder_name})")
-            return events
-
+            # The new utility function handles everything and returns a simple success message
+            result_message = utils.send_telegram_reminder(sheet_id)
+            dispatcher.utter_message(text=result_message)
         except Exception as e:
-            dispatcher.utter_message(text=f"Unexpected failure: {e}")
-            log(f"UNCAUGHT EXCEPTION: {e}")
-            return []
+            dispatcher.utter_message(text=f"Failed to send reminder: {e}")
+            
+        # You can add back the scheduling logic here if you want a recurring reminder
+        return []
         
 class ActionFormReminder(Action):
     def name(self):
