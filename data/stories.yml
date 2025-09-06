@@ -79,3 +79,15 @@ stories:
   - action: utter_find_location
   - intent: ask_about_scholarships
   - action: utter_ask_about_scholarships
+- story: User tracks form and then sends reminder
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: track_form
+    entities:
+    - sheet_id: "some_id"
+  - slot_was_set:
+    - sheet_id: "some_id"
+  - action: action_track_form
+  - intent: send_reminder
+  - action: action_send_reminder

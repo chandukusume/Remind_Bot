@@ -10,6 +10,13 @@ from rasa_sdk.events import ReminderScheduled, FollowupAction, SlotSet
 # THIS IS THE CORRECT, RELATIVE IMPORT
 from . import utils
 
+LOG_FILE = os.path.join(os.path.dirname(__file__), "reminder.log")
+
+def log_message(message: str):
+    """Helper function to write a timestamped message to the log file."""
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {message}\n")
+
 # A list of authorized user IDs (e.g., from Telegram, Slack, etc.)
 ALLOWED_USERS = ['1301082863'] 
 
