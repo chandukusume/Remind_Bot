@@ -21,28 +21,6 @@ rules:
   - intent: track_form
   - action: utter_track_form
 
-- rule: Check form when it is set
-  condition:
-  - slot_was_set:
-    - sheet_id: true
-  steps:
-  - intent: check_current_form
-  - action: utter_check_current_form
-
-- rule: Check form when it is not set
-  condition:
-  - slot_was_set:
-    - sheet_id: false
-  steps:
-  - intent: check_current_form
-  - action: utter_form_not_set
-
-- rule: Get form submission count
-  steps:
-  - intent: get_count
-  - action: utter_ask_for_count # First acknowledge
-  - action: action_get_form_count # Then run the action
-
 - rule: Send reminder to users
   steps:
   - intent: send_reminder
