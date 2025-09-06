@@ -1,34 +1,175 @@
+version: "3.1"
+
 nlu:
-  - intent: greet
-    examples: |
-      - hey
-      - hello
-      - hi
-  - intent: goodbye
-    examples: |
-      - bye
-      - goodbye
-  - intent: track_form
-    examples: |
-      - track form [1abcxyz1234567890](sheet_id)
-      - set form to [1abcxyz1234567890](sheet_id)
-  - intent: get_count
-    examples: |
-      - how many have filled
-      - what's the current count
-  - intent: send_reminder
-    examples: |
-      - send reminder
-      - remind everyone
-  - intent: check_current_form
-    examples: |
-      - what form is being tracked
-      - current forms
-  - intent: start
-    examples: |
-      - /start
-  - intent: track_form
-    examples: |
-      - track this form [1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE](sheet_id)
-      - start tracking form [xyz123](sheet_id)
-      - use form [abcd](sheet_id)
+# University Intents
+- intent: inquire_admission_requirements
+  examples: |
+    - What are the admission requirements?
+    - How can I apply to this university?
+    - What do I need to get into the [computer science](department) department?
+    - Tell me about the application process.
+    - What are the prerequisites for the [engineering](department) program?
+    - What is the required SAT score?
+    - Is there a minimum GPA to apply?
+    - What documents do I need to submit?
+    - Tell me the requirements for a graduate student.
+    - Can you explain the admission criteria for [business](department) school?
+    - Do I need letters of recommendation?
+    - How do I start my application?
+
+- intent: inquire_application_deadline
+  examples: |
+    - When is the application deadline?
+    - What's the last day to apply for the [fall](semester) semester?
+    - Have I missed the deadline for the [spring](semester) intake?
+    - When do applications close?
+    - By when do I need to submit my application?
+    - Tell me the application dates.
+    - What is the deadline for early admission?
+    - Is the application window for the [winter](semester) semester still open?
+
+- intent: find_course_info
+  examples: |
+    - Tell me about the [Artificial Intelligence](course_name) course.
+    - What is [CS101](course_code)?
+    - Who teaches [Calculus II](course_name)?
+    - Where can I find the syllabus for [History of Art](course_name)?
+    - What are the timings for the [physics](department) lab?
+    - Can you give me the course description for [ECON202](course_code)?
+    - How many credits is [Data Structures](course_name)?
+    - What are the prerequisites for the [machine learning](course_name) course?
+    - Is there a course on [digital marketing](course_name)?
+
+- intent: inquire_professor_info
+  examples: |
+    - What are Professor [Anand's](professor_name) office hours?
+    - How can I contact Dr. [Priya Sharma](professor_name)?
+    - Which department is Professor [Patel](professor_name) in?
+    - Can I get the email for Professor [Chen](professor_name)?
+    - Where is Dr. [Singh's](professor_name) office located?
+    - Tell me more about Professor [Gupta](professor_name).
+    - Who is the head of the [chemistry](department) department?
+
+- intent: get_academic_calendar
+  examples: |
+    - When does the semester start?
+    - Show me the academic calendar.
+    - What are the dates for the final exams?
+    - When is the last day to drop a class?
+    - What are the important dates for this semester?
+    - When is the mid-term break?
+    - Are there any holidays in [October](month)?
+    - When does course registration begin for the [spring](semester) semester?
+
+- intent: find_location
+  examples: |
+    - Where is the [library](building_name)?
+    - How do I get to the [admissions office](office_name)?
+    - Directions to the [engineering building](building_name).
+    - Map of the campus.
+    - I am looking for the [student health center](building_name).
+    - Can you point me to the [bookstore](facility_name)?
+    - Where can I find [lecture hall 5](building_name)?
+    - What is the location of the [cafeteria](facility_name)?
+
+- intent: inquire_facility_hours
+  examples: |
+    - What time does the [gym](facility_name) close today?
+    - Are you open on weekends?
+    - When is the [library](facility_name) open?
+    - What are the operating hours for the [computer lab](facility_name)?
+    - Is the [bookstore](facility_name) open now?
+    - Tell me the hours for the [career services office](office_name).
+    - How late is the [student union](building_name) open on Fridays?
+
+- intent: ask_about_clubs
+  examples: |
+    - What student clubs can I join?
+    - Tell me about the [robotics club](club_name).
+    - How do I join the [drama society](club_name)?
+    - Is there a list of all student organizations?
+    - How can I start a new club on campus?
+    - Who is the contact person for the [coding club](club_name)?
+    - What sports clubs are there?
+
+- intent: ask_about_scholarships
+  examples: |
+    - Are there any scholarships available for [international](student_type) students?
+    - How can I apply for financial aid?
+    - What scholarships does the university offer?
+    - Can you tell me about merit-based scholarships?
+    - What is the deadline to apply for a scholarship?
+    - Am I eligible for the [engineering](department) scholarship?
+    - Where can I find information on financial grants?
+    - Are there scholarships for [graduate](student_type) students?
+
+# Form Tracking & General Intents
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey bot
+    - yo
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - see you
+    - bye bye
+    - cya
+    - talk to you later
+
+- intent: track_form
+  examples: |
+    - track form [1abcxyz1234567890](sheet_id)
+    - set form to [1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE](sheet_id)
+    - start tracking form [xyz123](sheet_id)
+    - use form [abcd-1234](sheet_id)
+    - please monitor sheet [1234567890](sheet_id)
+    - I want to track a new form, the id is [1A2B3C4D5E](sheet_id)
+    - Set the active form to [zyxw9876](sheet_id)
+    - The sheet ID is [abcdef12345](sheet_id), please track it
+
+- intent: get_count
+  examples: |
+    - how many have filled
+    - what's the current count
+    - how many responses so far?
+    - give me the submission count
+    - what's the count?
+    - number of entries
+    - total submissions
+    - can you tell me the count
+
+- intent: send_reminder
+  examples: |
+    - send reminder
+    - remind everyone
+    - send a reminder to everyone who hasn't filled it
+    - please send out a reminder
+    - remind the remaining people
+    - nudge everyone who hasn't responded
+
+- intent: check_current_form
+  examples: |
+    - what form is being tracked
+    - current form
+    - which form are we tracking right now?
+    - show me the current form ID
+    - what is the active sheet?
+    - can you confirm the form being tracked?
+    - which sheet are you monitoring?
+
+- intent: start
+  examples: |
+    - /start
+    - start
+    - let's get started
+    - begin
+```
