@@ -1,72 +1,39 @@
-import asyncio
-import os
+# actions/actions.py
+
 import pytz
-import sys
-import json
+from typing import Any, Text, Dict, List
+from datetime import datetime, timedelta
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import ReminderScheduled, ReminderCancelled
-from datetime import datetime, timedelta
-from rasa_sdk.events import SlotSet
-from rasa_sdk.events import FollowupAction
+from rasa_sdk.events import ReminderScheduled, FollowupAction, SlotSet
+
+# This is the only import you need for your utility functions
 from . import utils
 
-
-# print("Config exists:", os.path.exists(r"C:\Users\chand\rasa\rasa_env\rasa_files\config.json"))
-
-
-
-# Add actions directory to Python path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-from utils import get_count, send_reminder
-
-# Define the path to config.json
-CONFIG_PATH = r'C:\Users\chand\rasa\rasa_env\rasa_files\config.json'
-
+# A list of authorized user IDs (e.g., from Telegram, Slack, etc.)
+ALLOWED_USERS = ['1301082863'] 
 
 class ActionTrackForm(Action):
-    def name(self):
+    def name(self) -> Text:
         return "action_track_form"
 
-    def run(self, dispatcher, tracker: Tracker, domain):
-        print("ActionTrackForm: Starting...")
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # 1. Authorization Check
         sender_id = tracker.sender_id
-        allowed_users = ['1301082863']  # Replace with faculty Telegram user IDs
-        if sender_id not in allowed_users:
+        if sender_id not in ALLOWED_USERS:
             dispatcher.utter_message(text="You are not authorized to perform this action.")
             return []
 
-        entities = tracker.latest_message.get('entities', [])
-        sheet_id_entity = next((e for e in entities if e['entity'] == 'sheet_id'), None)
-        if sheet_id_entity:
-            sheet_id = sheet_id_entity['value']
-            try:
-                if not os.path.exists(CONFIG_PATH):
-                    dispatcher.utter_message(text="Configuration file not found. Please contact the administrator.")
-                    return []
+        # 2. Get sheet_id from the user message
+        sheet_id = next(tracker.get_latest_entity_values("sheet_id"), None)
+        
+        if not sheet_id:
+            dispatcher.utter_message(text="Please provide a valid Google Sheet ID to track.")
+            return []
 
-                # load config safely
-                with open(CONFIG_PATH, 'r') as f:
-                    config = json.load(f)
-
-                # update only what we need
-                config['current_sheet_id'] = sheet_id
-                config['current_form_id'] = None  
-
-                # 🔑 preserve master_sheet_id if it exists
-                if 'master_sheet_id' not in config or not config['master_sheet_id']:
-                    config['master_sheet_id'] = "1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA"
-
-                with open(CONFIG_PATH, 'w') as f:
-                    json.dump(config, f, indent=2)
-
-                dispatcher.utter_message(text=f"Now tracking the form with sheet ID {sheet_id}.")
-            except Exception as e:
-                dispatcher.utter_message(text=f"Failed to set tracking: {str(e)}. Please try again.")
-        else:
-            dispatcher.utter_message(text="Please provide the sheet ID.")
-        return []
+        # 3. Save the sheet_id to a slot. This is the correct way to store conversation memory.
+        dispatcher.utter_message(text=f"Okay, I am now tracking the form with sheet ID: {sheet_id}")
+        return [SlotSet("sheet_id", sheet_id)]
 
 
 class ActionGetCount(Action):
@@ -74,23 +41,17 @@ class ActionGetCount(Action):
         return "action_get_count"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
-        # 1. Get the sheet_id from the conversation's memory (slot).
         sheet_id = tracker.get_slot("sheet_id")
-        
         if not sheet_id:
             dispatcher.utter_message(text="No form is currently being tracked. Please set one first.")
             return []
 
         try:
-            # 2. Call the utility function to get both counts from Google Sheets.
             stats = utils.get_submission_stats(sheet_id)
-            
-            # 3. Format the numbers into a clear message for the user.
             dispatcher.utter_message(
                 text=f"📊 Currently, {stats['filled_count']} out of {stats['total_count']} have filled the form."
             )
         except Exception as e:
-            # 4. If anything goes wrong, catch the error and inform the user.
             dispatcher.utter_message(text=f"Failed to get the count: {e}")
             
         return []
@@ -107,69 +68,48 @@ class ActionSendReminder(Action):
             return []
 
         try:
-            # --- Step 1: Send the reminder NOW ---
-            # The utility function handles the logic and returns a success message
+            # Step 1: Send the reminder NOW
             result_message = utils.send_telegram_reminder(sheet_id)
             dispatcher.utter_message(text=result_message)
 
-            # --- Step 2: Schedule the NEXT reminder ---
-            # Set the timezone correctly to India Standard Time
+            # Step 2: Schedule the NEXT reminder
             tz = pytz.timezone("Asia/Kolkata")
+            trigger_time = datetime.now(tz) + timedelta(minutes=10) # Set for 10 mins from now
             
-            # Schedule the next reminder for 2 hours from now (you can change this)
-            trigger_time = datetime.now(tz) + timedelta(minutes=10)
-            
-            # Create the reminder event
             reminder = ReminderScheduled(
-                "action_form_reminder",  # This is the action that will be triggered by the schedule
+                "action_form_reminder",
                 trigger_date_time=trigger_time,
-                name="form_reminder_scheduler", # A unique name for this type of reminder
-                kill_on_user_message=False,    # The reminder will not be cancelled if the user sends a message
+                name="form_reminder_scheduler",
+                kill_on_user_message=False,
             )
             
-            # Inform the user that the next reminder has been scheduled
             dispatcher.utter_message(text=f"I will send another automatic reminder at {trigger_time.strftime('%I:%M %p')}.")
-            
-            # Return the reminder event so Rasa's scheduler can handle it
             return [reminder]
 
         except Exception as e:
             dispatcher.utter_message(text=f"Failed to send or schedule reminders: {e}")
             return []
-        
+            
 class ActionFormReminder(Action):
-    def name(self):
+    def name(self) -> str:
         return "action_form_reminder"
 
     def run(self, dispatcher, tracker, domain):
+        # This action is triggered by the scheduler to run the main reminder action again.
         return [FollowupAction("action_send_reminder")]
 
 
 class ActionCheckCurrentForm(Action):
-    def name(self):
+    def name(self) -> str:
         return "action_check_current_form"
 
-    def run(self, dispatcher, tracker: Tracker, domain):
-        print("ActionCheckCurrentForm: Starting...")
-        try:
-            if not os.path.exists(CONFIG_PATH):
-                dispatcher.utter_message(text="Configuration file not found. Please contact the administrator.")
-                return []
-
-            with open(CONFIG_PATH, 'r') as f:
-                config = json.load(f)
-            form_id = config.get('current_form_id')
-            sheet_id = config.get('current_sheet_id')
-            if form_id or sheet_id:
-                dispatcher.utter_message(text=f"Currently tracking form ID: {form_id or 'Not set'}, sheet ID: {sheet_id or 'Not set'}.")
-            else:
-                dispatcher.utter_message(text="No form or sheet is currently being tracked.")
-        except FileNotFoundError:
-            dispatcher.utter_message(text="Configuration file not found. Please contact the administrator.")
-        except json.JSONDecodeError:
-            dispatcher.utter_message(text="Invalid configuration file format. Please contact the administrator.")
-        except PermissionError:
-            dispatcher.utter_message(text="Permission denied accessing configuration file.")
-        except Exception as e:
-            dispatcher.utter_message(text=f"Failed to check current form: {str(e)}.")
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # This action now correctly reads from the Rasa Slot.
+        sheet_id = tracker.get_slot("sheet_id")
+        
+        if sheet_id:
+            dispatcher.utter_message(text=f"Currently tracking sheet ID: {sheet_id}.")
+        else:
+            dispatcher.utter_message(text="No form or sheet is currently being tracked.")
+            
         return []
