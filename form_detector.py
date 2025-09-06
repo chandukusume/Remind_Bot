@@ -1,4 +1,5 @@
-from utils import send_reminder
+# CORRECT
+from actions.utils import send_reminder
 import json
 import time
 from apscheduler.schedulers.blocking import BlockingScheduler

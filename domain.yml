@@ -100,5 +100,6 @@ responses:
 
 
 actions:
-  - action_get_form_count
-  - action_send_form_reminder
+  - action_get_count
+  - action_send_reminder
+  - action_track_form 
