@@ -74,18 +74,23 @@ class ActionGetCount(Action):
         return "action_get_count"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+        # 1. Get the sheet_id from the conversation's memory (slot).
         sheet_id = tracker.get_slot("sheet_id")
+        
         if not sheet_id:
             dispatcher.utter_message(text="No form is currently being tracked. Please set one first.")
             return []
 
         try:
-            # Call the new, more detailed utility function
+            # 2. Call the utility function to get both counts from Google Sheets.
             stats = utils.get_submission_stats(sheet_id)
+            
+            # 3. Format the numbers into a clear message for the user.
             dispatcher.utter_message(
-                text=f"Currently, {stats['filled_count']} out of {stats['total_count']} have filled the form."
+                text=f"📊 Currently, {stats['filled_count']} out of {stats['total_count']} have filled the form."
             )
         except Exception as e:
+            # 4. If anything goes wrong, catch the error and inform the user.
             dispatcher.utter_message(text=f"Failed to get the count: {e}")
             
         return []
@@ -102,14 +107,35 @@ class ActionSendReminder(Action):
             return []
 
         try:
-            # The new utility function handles everything and returns a simple success message
+            # --- Step 1: Send the reminder NOW ---
+            # The utility function handles the logic and returns a success message
             result_message = utils.send_telegram_reminder(sheet_id)
             dispatcher.utter_message(text=result_message)
-        except Exception as e:
-            dispatcher.utter_message(text=f"Failed to send reminder: {e}")
+
+            # --- Step 2: Schedule the NEXT reminder ---
+            # Set the timezone correctly to India Standard Time
+            tz = pytz.timezone("Asia/Kolkata")
             
-        # You can add back the scheduling logic here if you want a recurring reminder
-        return []
+            # Schedule the next reminder for 2 hours from now (you can change this)
+            trigger_time = datetime.now(tz) + timedelta(minutes=10)
+            
+            # Create the reminder event
+            reminder = ReminderScheduled(
+                "action_form_reminder",  # This is the action that will be triggered by the schedule
+                trigger_date_time=trigger_time,
+                name="form_reminder_scheduler", # A unique name for this type of reminder
+                kill_on_user_message=False,    # The reminder will not be cancelled if the user sends a message
+            )
+            
+            # Inform the user that the next reminder has been scheduled
+            dispatcher.utter_message(text=f"I will send another automatic reminder at {trigger_time.strftime('%I:%M %p')}.")
+            
+            # Return the reminder event so Rasa's scheduler can handle it
+            return [reminder]
+
+        except Exception as e:
+            dispatcher.utter_message(text=f"Failed to send or schedule reminders: {e}")
+            return []
         
 class ActionFormReminder(Action):
     def name(self):
