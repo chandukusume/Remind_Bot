@@ -3,7 +3,7 @@
 Your automated assistant for tracking student submissions, so you don't have to.
 * Remind Bot is a rule-based chatbot for faculty that automates the tedious process of tracking student form submissions. Integrated with platforms like Telegram, it sends scheduled reminders to students who haven't submitted, provides real-time completion statistics, and generates lists of non-submitters on command.
 
-![Demo GIF of Remind Bot in action](Suggestion: Add a GIF here showing the bot's commands and responses)
+
 
 ### The Problem: 
 * Faculty members spend countless hours manually cross-referencing student lists with form responses, sending follow-up emails, and compiling lists of students who are late. This manual work is repetitive, time-consuming, and prone to errors.
