@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+import os
 from flask import Flask, request, jsonify
 import requests
 
 app = Flask(__name__)
 
-RASA_URL = "http://localhost:5005/webhooks/rest/webhook"
+RASA_URL = os.getenv("RASA_URL", "http://localhost:5005/webhooks/rest/webhook")
 BOT_TOKEN = "8205206073:AAHV-d3ikOEm6Wy6K7zHXGw3ysbtU6skuog"
 
 @app.route('/webhooks/telegram/webhook', methods=['POST'])
@@ -37,4 +38,4 @@ def send_telegram_message(chat_id, text):
     requests.post(url, json={"chat_id": chat_id, "text": text})
 
 if __name__ == '__main__':
-    app.run(port=5006)
+    app.run(host='0.0.0.0', port=5006, debug=False)

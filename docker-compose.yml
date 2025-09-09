@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  rasa-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.rasa
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./models:/app/models
+    depends_on:
+      - action-server
+    environment:
+      - RASA_TELEMETRY_ENABLED=false
+    networks:
+      - rasa-network
+
+  action-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+      - ./config.json:/app/config.json
+    networks:
+      - rasa-network
+
+  telegram-bridge:
+    build:
+      context: .
+      dockerfile: Dockerfile.telegram
+    ports:
+      - "5006:5006"
+    depends_on:
+      - rasa-server
+    environment:
+      - RASA_URL=http://rasa-server:5005/webhooks/rest/webhook
+    networks:
+      - rasa-network
+
+networks:
+  rasa-network:
+    driver: bridge

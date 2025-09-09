@@ -1,0 +1,13 @@
+FROM rasa/rasa:3.6.21
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+COPY endpoints.docker.yml endpoints.yml
+
+EXPOSE 5005
+
+CMD ["run", "--enable-api", "--cors", "*", "--debug"]

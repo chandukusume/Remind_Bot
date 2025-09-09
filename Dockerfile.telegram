@@ -1,0 +1,11 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+RUN pip install flask requests
+
+COPY telegram_bridge.py .
+
+EXPOSE 5006
+
+CMD ["python", "-c", "import telegram_bridge; telegram_bridge.app.run(host='0.0.0.0', port=5006, debug=False)"]
