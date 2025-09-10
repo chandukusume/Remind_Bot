@@ -1,13 +1,27 @@
-FROM rasa/rasa:3.6.21
+FROM rasa/rasa:3.6.21-full
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Install project dependencies
+COPY requirements-test.txt requirements.txt
 
+# --- FIX STARTS HERE ---
+# 1. Temporarily switch to the 'root' user to get permissions to install software.
+USER root
+
+# 2. Now, this command will run as root and succeed.
+RUN pip install --timeout=1000 --retries=5 --no-cache-dir -r requirements.txt
+
+# 3. Switch back to the default, non-privileged user for better security.
+USER 1001
+# --- FIX ENDS HERE ---
+
+
+# Copy project files
 COPY . .
 COPY endpoints.docker.yml endpoints.yml
 
 EXPOSE 5005
 
-CMD ["run", "--enable-api", "--cors", "*", "--debug"]
+# Run Rasa server (this will now run as the safe '1001' user)
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--host", "0.0.0.0", "--port", "5005"]
