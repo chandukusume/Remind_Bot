@@ -1,0 +1,6 @@
+# Only essential packages for basic functionality
+gspread
+google-api-python-client
+python-telegram-bot==13.15
+requests
+pandas
