@@ -10,4 +10,4 @@ COPY config.json .
 
 EXPOSE 5055
 
-CMD ["rasa", "run", "actions", "--host", "0.0.0.0", "--port", "5055", "--debug"]
+CMD ["run", "actions", "--host", "0.0.0.0", "--port", "5055", "--debug"]

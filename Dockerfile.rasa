@@ -1,9 +1,9 @@
-FROM rasa/rasa:3.6.21-full
+FROM rasa/rasa:3.6.21
 
 WORKDIR /app
 
 # Install project dependencies
-COPY requirements-test.txt requirements.txt
+COPY requirements.txt .
 
 # --- FIX STARTS HERE ---
 # 1. Temporarily switch to the 'root' user to get permissions to install software.
@@ -24,4 +24,4 @@ COPY endpoints.docker.yml endpoints.yml
 EXPOSE 5005
 
 # Run Rasa server (this will now run as the safe '1001' user)
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--host", "0.0.0.0", "--port", "5005"]
+CMD ["run", "--enable-api", "--cors", "*", "--host", "0.0.0.0", "--port", "5005"]
