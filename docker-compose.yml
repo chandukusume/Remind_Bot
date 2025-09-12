@@ -9,12 +9,23 @@ services:
       - "5005:5005"
     volumes:
       - ./models:/app/models
+      - ./credentials.json:/app/credentials.json # <-- Restored this line
     depends_on:
       - action-server
     environment:
       - RASA_TELEMETRY_ENABLED=false
+    command: # <-- ADDED THIS SECTION TO FIX CRASHING
+      - "run"
+      - "--enable-api"
+      - "--cors"
+      - "*"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "5005"
     networks:
       - rasa-network
+    restart: unless-stopped # <-- Added for stability
 
   action-server:
     build:
@@ -25,8 +36,22 @@ services:
     volumes:
       - ./actions:/app/actions
       - ./config.json:/app/config.json
+      - ./credentials.json:/app/credentials.json
+    environment: # <-- RESTORED THIS ENTIRE SECTION
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      - MASTER_SHEET_ID=${MASTER_SHEET_ID}
+      - SERVICE_ACCOUNT_FILE=/app/credentials.json
+    command: # <-- ADDED THIS SECTION TO FIX CRASHING
+      - "run"
+      - "actions"
+      - "--port"
+      - "5055"
+      - "--host"
+      - "0.0.0.0"
     networks:
       - rasa-network
+    restart: unless-stopped # <-- Added for stability
 
   telegram-bridge:
     build:
@@ -40,6 +65,7 @@ services:
       - RASA_URL=http://rasa-server:5005/webhooks/rest/webhook
     networks:
       - rasa-network
+    restart: unless-stopped # <-- Added for stability
 
 networks:
   rasa-network:
