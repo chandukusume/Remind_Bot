@@ -17,4 +17,5 @@ __pycache__/
 # IDE and OS files
 .idea/
 .vscode/
-*.DS_Store
+*.DS_Store.config/
+.keras/
