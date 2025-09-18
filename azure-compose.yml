@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile.rasa
     ports:
-      - "80:5005"
+      - "5005:5005"
     volumes:
       - ./models:/app/models
       - ./credentials.json:/app/credentials.json
@@ -14,7 +14,12 @@ services:
       - action-server
     environment:
       - RASA_TELEMETRY_ENABLED=false
+<<<<<<< HEAD
     command: # <-- ADD THIS SECTION
+=======
+    command:
+      - "rasa"
+>>>>>>> b4f5e8d (update)
       - "run"
       - "--enable-api"
       - "--cors"
@@ -42,7 +47,12 @@ services:
       - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
       - MASTER_SHEET_ID=${MASTER_SHEET_ID}
       - SERVICE_ACCOUNT_FILE=/app/credentials.json
+<<<<<<< HEAD
     command: # <-- ADD THIS SECTION
+=======
+    command:
+      - "rasa"
+>>>>>>> b4f5e8d (update)
       - "run"
       - "actions"
       - "--port"
