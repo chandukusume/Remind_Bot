@@ -21,7 +21,16 @@ USER 1001
 COPY . .
 COPY endpoints.docker.yml endpoints.yml
 
+# Create models directory with proper permissions
+RUN mkdir -p models
+
 EXPOSE 5005
 
 # Run Rasa server (this will now run as the safe '1001' user)
+<<<<<<< HEAD
 CMD ["run", "--enable-api", "--cors", "*", "--host", "0.0.0.0", "--port", "5005"]
+=======
+ENTRYPOINT []
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "-i", "0.0.0.0","-p", "5005"]
+
+>>>>>>> b4f5e8d (update)

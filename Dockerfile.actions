@@ -10,4 +10,8 @@ COPY config.json .
 
 EXPOSE 5055
 
+<<<<<<< HEAD
 CMD ["run", "actions", "--host", "0.0.0.0", "--port", "5055", "--debug"]
+=======
+CMD ["python", "-m", "rasa", "run", "actions", "--actions", "actions", "--debug"]
+>>>>>>> b4f5e8d (update)

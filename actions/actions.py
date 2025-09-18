@@ -1,4 +1,5 @@
 # actions/actions.py
+
 import os
 import pytz
 from typing import Any, Text, Dict, List
@@ -97,7 +98,6 @@ class ActionSendReminder(Action):
 class ActionFormReminder(Action):
     def name(self) -> str:
         return "action_form_reminder"
-
     def run(self, dispatcher, tracker, domain):
         return [FollowupAction("action_send_reminder")]
 
