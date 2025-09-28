@@ -390,3 +390,13 @@
 [2025-09-01 21:26:58.290191] Triggered by sender 1301082863
 [2025-09-01 21:27:05.852206] Reminder sent: Reminder sent with missing students list.
 [2025-09-01 21:27:05.853206] Next reminder scheduled at 2025-09-01T16:07:35.852206+00:00 UTC / 2025-09-01 21:37:35 IST IST (name=form_reminder_1756742225)
+[2025-09-28 04:05:16] Triggered by sender 1301082863
+[2025-09-28 04:05:20] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-28 04:05:20] Next reminder scheduled at 2025-09-28T09:45:20+0530 (name=form_reminder_scheduler)
+[2025-09-28 04:13:04.923] Triggered by sender 1301082863
+[2025-09-28 04:13:08.767] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-28 04:13:08.807] Next reminder scheduled at 2025-09-28T09:53:08+0530 (name=form_reminder_scheduler)
+[2025-09-28 04:15:18.524819] TEST LOG ENTRY
+[2025-09-28 04:41:11.261] Triggered by sender 1301082863
+[2025-09-28 04:41:14.740] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-28 04:41:14.781] Next reminder scheduled at 2025-09-28T10:21:14+0530 (name=form_reminder_scheduler)
