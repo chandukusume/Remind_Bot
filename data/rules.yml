@@ -62,3 +62,28 @@ rules:
   steps:
   - intent: ask_about_scholarships
   - action: utter_ask_about_scholarships
+# Rules for Custom Actions
+- rule: Get submission count
+  steps:
+  - intent: get_count
+  - action: action_get_count
+
+- rule: Send reminder
+  steps:
+  - intent: send_reminder
+  - action: action_send_reminder
+
+- rule: Check current form
+  steps:
+  - intent: check_current_form
+  - action: action_check_current_form
+
+- rule: Automatic reminder
+  steps:
+  - intent: form_reminder
+  - action: action_form_reminder
+
+- rule: Track form
+  steps:
+  - intent: track_form
+  - action: action_track_form

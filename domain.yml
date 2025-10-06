@@ -18,6 +18,7 @@ intents:
   - get_count
   - send_reminder
   - check_current_form
+  - form_reminder
   - start
 
 entities:
@@ -50,6 +51,9 @@ responses:
   utter_goodbye:
   - text: "Goodbye!"
   - text: "Bye! Have a great day."
+
+  utter_reminder_scheduled:
+  - text: "I will remind you at {time}."
 
   utter_start:
   - text: "Welcome! I can help with university information or track responses for a Google Form. What would you like to do?"
@@ -103,5 +107,5 @@ actions:
   - action_track_form
   - action_get_count
   - action_send_reminder
+  - action_check_current_form
   - action_form_reminder
-  - action_check_current_form 

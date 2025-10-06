@@ -172,3 +172,9 @@ nlu:
     - start
     - let's get started
     - begin
+
+- intent: form_reminder
+  examples: |
+    - reminder time
+    - remind me later
+    - send me the reminder

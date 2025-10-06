@@ -14,20 +14,20 @@ services:
       - action-server
     environment:
       - RASA_TELEMETRY_ENABLED=false
-<<<<<<< HEAD
-    command: # <-- ADD THIS SECTION
-=======
+      - LOG_LEVEL=DEBUG
+      - TZ=Asia/Kolkata
     command:
       - "rasa"
->>>>>>> b4f5e8d (update)
       - "run"
       - "--enable-api"
       - "--cors"
       - "*"
-      - "--host"
+      - "-i"
       - "0.0.0.0"
-      - "--port"
+      - "-p"
       - "5005"
+      - "--debug"
+
     networks:
       - rasa-network
     restart: unless-stopped
@@ -47,18 +47,17 @@ services:
       - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
       - MASTER_SHEET_ID=${MASTER_SHEET_ID}
       - SERVICE_ACCOUNT_FILE=/app/credentials.json
-<<<<<<< HEAD
-    command: # <-- ADD THIS SECTION
-=======
+      - TZ=Asia/Kolkata
+      - LOG_LEVEL=DEBUG
+
     command:
       - "rasa"
->>>>>>> b4f5e8d (update)
       - "run"
       - "actions"
       - "--port"
       - "5055"
-      - "--host"
-      - "0.0.0.0"
+      - "--debug"
+      - "-vv"
     networks:
       - rasa-network
     restart: unless-stopped

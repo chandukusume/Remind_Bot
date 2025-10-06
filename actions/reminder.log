@@ -400,3 +400,175 @@
 [2025-09-28 04:41:11.261] Triggered by sender 1301082863
 [2025-09-28 04:41:14.740] Reminder sent: Reminder sent successfully to the Telegram group.
 [2025-09-28 04:41:14.781] Next reminder scheduled at 2025-09-28T10:21:14+0530 (name=form_reminder_scheduler)
+[2025-09-28 16:08:05.341] Triggered by sender 1301082863
+[2025-09-28 16:08:08.813] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-28 16:08:08.883] Next reminder scheduled at 2025-09-28T21:48:08+0530 (name=form_reminder_1759076288)
+[2025-09-28 16:25:12.393] Triggered by sender 1301082863
+[2025-09-28 16:25:16.008] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-28 16:25:16.039] Next reminder scheduled at 2025-09-28T16:35:16+0530 (name=form_reminder_1759057516)
+[2025-09-28 16:34:12.797] Triggered by sender 1301082863
+[2025-09-28 16:34:15.747] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-28 16:34:15.748] Next reminder scheduled at 2025-09-28T16:44:15+0530 (name=form_reminder_1759058055)
+[2025-09-28 16:35:40.212] Triggered by sender 1301082863
+[2025-09-28 16:35:43.204] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-28 16:35:43.235] Next reminder scheduled at 2025-09-28T16:45:43+0530 UTC / 2025-09-28 16:45:43 IST (name=form_reminder_1759058143)
+[2025-09-28 17:47:44.453] Triggered by sender 1301082863
+[2025-09-28 17:47:44.479] Reminder sent: No form being tracked
+[2025-09-28 17:48:22.694] Triggered by sender 1301082863
+[2025-09-28 17:48:28.921] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-28 17:48:29.074] Next reminder scheduled at 2025-09-28T17:58:29+0530 UTC / 2025-09-28 17:58:29 IST (name=form_reminder_1759062509)
+[2025-09-30 02:22:44.078] Triggered by sender 1301082863
+[2025-09-30 02:22:46.692] Count returned message: 5 out of 26 have filled
+[2025-09-30 02:22:52.825] Triggered by sender 1301082863
+[2025-09-30 02:22:55.122] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 02:22:55.123] Next reminder scheduled at 2025-09-30T02:32:55+0530 UTC / 2025-09-30 02:32:55 IST (name=form_reminder_1759179775)
+[2025-09-30 03:46:58.841] Triggered by sender 1301082863
+[2025-09-30 03:47:01.900] Count returned message: 5 out of 26 have filled
+[2025-09-30 03:47:06.699] Triggered by sender 1301082863
+[2025-09-30 03:47:08.951] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 03:47:08.984] Next reminder scheduled at 2025-09-30T09:27:08+0530 / 2025-09-30 09:27:08 IST (name=form_reminder_1759204628)
+[2025-09-30 09:41:15.329] Triggered by sender 1301082863
+[2025-09-30 09:41:18.483] Count returned message: 5 out of 26 have filled
+[2025-09-30 09:41:29.287] Triggered by sender 1301082863
+[2025-09-30 09:41:31.979] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 09:41:31.981] Next reminder scheduled at 2025-09-30T04:21:31 UTC / 2025-09-30 09:51:31 IST (name=form_reminder_1759206091)
+[2025-09-30 04:21:59.704] Triggered by sender 1301082863
+[2025-09-30 04:22:03.928] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 04:22:03.929] Reminder sent: Error sending reminder: name 'trigger_time_utc' is not defined
+[2025-09-30 04:38:14.594] Triggered by sender 1301082863
+[2025-09-30 04:38:17.507] Count returned message: 5 out of 26 have filled
+[2025-09-30 04:38:24.414] Triggered by sender 1301082863
+[2025-09-30 04:38:26.872] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 04:38:26.873] Reminder sent: Error sending reminder: name 'trigger_time_utc' is not defined
+[2025-09-30 04:53:17.361] Triggered by sender 1301082863
+[2025-09-30 04:53:21.572] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 04:53:21.572] Reminder sent: Error sending reminder: name 'trigger_time_utc' is not defined
+[2025-09-30 05:07:03.235] Triggered by sender 1301082863
+[2025-09-30 05:07:07.458] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 05:07:07.459] Reminder sent: Error sending reminder: name 'trigger_time_ist' is not defined
+[2025-09-30 05:11:39.170] ✅ ACTION SERVER: Fresh code loaded
+[2025-09-30 05:12:01.741] Triggered by sender 1301082863
+[2025-09-30 05:12:04.618] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 05:12:04.620] Reminder sent: Error sending reminder: name 'trigger_time_ist' is not defined
+[2025-09-30 05:22:43.093] ✅ ACTION SERVER: Fresh code loaded
+[2025-09-30 05:23:03.363] Triggered by sender 1301082863
+[2025-09-30 05:23:06.996] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 05:23:06.998] Next reminder scheduled at 2025-09-30 05:33:06 IST (name=form_reminder_1759190586)
+[2025-09-30 11:04:46.219] ✅ ACTION SERVER: Fresh code loaded
+[2025-09-30 11:14:54.357] Triggered by sender 1301082863
+[2025-09-30 11:14:54.543] Reminder sent: No form being tracked
+[2025-09-30 11:15:20.090] Triggered by sender 1301082863
+[2025-09-30 11:15:27.315] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 11:15:27.363] Next reminder scheduled at 2025-09-30 11:25:27 IST (name=form_reminder_1759211727)
+[2025-09-30 11:33:40.377] ✅ ACTION SERVER: Fresh code loaded
+[2025-09-30 12:07:25.157] Triggered by sender 1301082863
+[2025-09-30 12:07:25.274] Reminder sent: No form being tracked
+[2025-09-30 12:07:42.058] Triggered by sender 1301082863
+[2025-09-30 12:07:48.505] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 12:07:48.559] Next reminder scheduled at 2025-09-30 12:17:48 IST (name=form_reminder_1759214868)
+[2025-09-30 13:26:42.059] Triggered by sender 1301082863
+[2025-09-30 13:26:44.690] Count returned message: 5 out of 26 have filled
+[2025-09-30 13:26:56.060] Triggered by sender 1301082863
+[2025-09-30 13:26:58.343] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 13:26:58.344] Next reminder scheduled at 2025-09-30 13:36:58 IST (name=form_reminder_1759219618)
+[2025-09-30 21:13:06.035] Triggered by sender 1301082863
+[2025-09-30 21:13:10.292] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-09-30 21:13:10.293] Next reminder scheduled at 2025-09-30 21:23:10 IST (name=form_reminder_1759247590)
+[2025-10-01 11:37:23.370] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-01 11:37:58.166] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-01 15:53:17.102] Triggered by sender 1301082863
+[2025-10-01 15:53:23.137] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-01 15:53:23.196] Next reminder scheduled at 2025-10-01 16:03:23 IST (name=form_reminder_1759314803)
+[2025-10-03 15:01:24.783] Triggered by sender 1301082863
+[2025-10-03 15:01:29.216] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-03 15:01:29.224] Next reminder scheduled at 2025-10-03 15:11:29 IST (name=form_reminder_1759484489)
+[2025-10-03 15:30:27.932] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-03 15:40:22.366] Triggered by sender 1301082863
+[2025-10-03 15:40:22.480] Reminder sent: No form being tracked
+[2025-10-03 15:40:38.202] Triggered by sender 1301082863
+[2025-10-03 15:40:43.884] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-03 15:40:43.954] Next reminder scheduled at 2025-10-03 15:50:43 IST (name=form_reminder_1759486843)
+[2025-10-03 16:01:38.184] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-03 16:13:57.728] Triggered by sender 1301082863
+[2025-10-03 16:14:05.327] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-03 16:14:05.328] Next reminder scheduled at 2025-10-03 16:24:05 IST (name=form_reminder_1759488845)
+[2025-10-03 16:30:59.601] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-03 16:31:40.800] Triggered by sender 1301082863
+[2025-10-03 16:31:44.431] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-03 16:31:44.432] Reminder sent: Error sending reminder: name 'trigger_time' is not defined
+[2025-10-03 16:41:08.770] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-03 16:41:34.044] Triggered by sender 1301082863
+[2025-10-03 16:41:37.657] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-03 16:41:37.658] Next reminder scheduled at 2025-10-03 16:51:37 IST (name=form_reminder_1759490497)
+[2025-10-03 16:57:55.456] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-03 17:13:58.084] Triggered by sender 1301082863
+[2025-10-03 17:13:58.207] Reminder sent: No form being tracked
+[2025-10-03 17:15:34.194] Triggered by sender 1301082863
+[2025-10-03 17:15:34.194] Reminder sent: No form being tracked
+[2025-10-05 12:02:59.806] Triggered by sender 1301082863
+[2025-10-05 12:02:59.891] Reminder sent: No form being tracked
+[2025-10-05 12:14:47.383] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-05 12:29:59.648] Triggered by sender 1301082863
+[2025-10-05 12:30:07.342] Count returned message: 5 out of 26 have filled
+[2025-10-05 12:30:45.391] Triggered by sender 1301082863
+[2025-10-05 12:30:47.718] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 12:30:47.720] Next reminder scheduled at 2025-10-05 12:40:47 IST (name=form_reminder_1759648247)
+[2025-10-05 13:24:07.945] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-05 13:36:58.192] Triggered by sender 1301082863
+[2025-10-05 13:37:07.171] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 13:37:07.173] Next reminder scheduled at 2025-10-05 13:47:07 IST (name=form_reminder_1759652227)
+[2025-10-05 14:04:05.215] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-05 14:18:36.449] Triggered by sender 1301082863
+[2025-10-05 14:18:44.226] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 14:18:44.231] Next reminder scheduled at 2025-10-05 14:28:44 IST (name=form_reminder_1759654724)
+[2025-10-05 17:34:08.945] Triggered by sender 1301082863
+[2025-10-05 17:34:14.054] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 17:34:14.055] Next reminder scheduled at 2025-10-05 17:44:14 IST (name=form_reminder_1759666454)
+[2025-10-05 17:56:00.673] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-05 18:08:15.226] Triggered by sender 1301082863
+[2025-10-05 18:08:15.314] Count returned message: No form being tracked
+[2025-10-05 18:08:31.513] ActionTrackForm triggered by sender 1301082863
+[2025-10-05 18:08:31.516] Extracted sheet_id: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-10-05 18:08:31.516] Setting sheet_id slot to: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-10-05 18:08:43.116] Triggered by sender 1301082863
+[2025-10-05 18:08:49.266] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 18:08:49.316] Next reminder scheduled at 2025-10-05 18:18:49 IST (name=form_reminder_1759668529)
+[2025-10-05 18:53:57.084] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-05 19:06:41.653] ActionTrackForm triggered by sender 1301082863
+[2025-10-05 19:06:41.761] Extracted sheet_id: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-10-05 19:06:41.762] Setting sheet_id slot to: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-10-05 19:07:38.031] Triggered by sender 1301082863
+[2025-10-05 19:07:44.514] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 19:07:44.516] Next reminder scheduled at 2025-10-05 19:17:44 IST (name=form_reminder_1759672064)
+[2025-10-05 19:17:44.695] Automatic reminder triggered for sender 1301082863
+[2025-10-05 19:17:44.788] Triggered by sender 1301082863
+[2025-10-05 19:17:48.592] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 19:17:48.592] Next reminder scheduled at 2025-10-05 19:27:48 IST (name=form_reminder_1759672668)
+[2025-10-05 20:02:14.782] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-05 20:17:07.959] Triggered by sender 1301082863
+[2025-10-05 20:17:07.959] Reminder sent: No form being tracked
+[2025-10-05 20:17:16.961] ActionTrackForm triggered by sender 1301082863
+[2025-10-05 20:17:16.961] Extracted sheet_id: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-10-05 20:17:16.961] Setting sheet_id slot to: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-10-05 20:17:22.728] Triggered by sender 1301082863
+[2025-10-05 20:17:26.339] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 20:17:26.339] Next reminder scheduled at 2025-10-05 20:27:26 IST (name=form_reminder_1759676246)
+[2025-10-05 20:27:26.423] Automatic reminder triggered for sender 1301082863
+[2025-10-05 20:27:26.471] Triggered by sender 1301082863
+[2025-10-05 20:27:29.994] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 20:27:29.994] Next reminder scheduled at 2025-10-05 20:37:29 IST (name=form_reminder_1759676849)
+[2025-10-05 20:47:07.203] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-05 20:47:20.972] Triggered by sender 1301082863
+[2025-10-05 20:47:24.140] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 20:47:24.141] Next reminder scheduled at 2025-10-05 20:57:54 IST (name=form_reminder_1759678074)
+[2025-10-05 20:57:54.189] Automatic reminder triggered for sender 1301082863
+[2025-10-05 20:57:54.235] Triggered by sender 1301082863
+[2025-10-05 20:57:57.265] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-05 20:57:57.265] Next reminder scheduled at 2025-10-05 21:08:27 IST (name=form_reminder_1759678707)
+[2025-10-06 07:49:13.863] Triggered by sender 1301082863
+[2025-10-06 07:49:17.663] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-06 07:49:17.663] Next reminder scheduled at 2025-10-06 07:59:47 IST (name=form_reminder_1759717787)
+[2025-10-06 07:59:47.778] Automatic reminder triggered for sender 1301082863
+[2025-10-06 07:59:47.819] Triggered by sender 1301082863
+[2025-10-06 07:59:51.686] Reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-06 07:59:51.687] Next reminder scheduled at 2025-10-06 08:10:21 IST (name=form_reminder_1759718421)
