@@ -8,6 +8,11 @@ app = Flask(__name__)
 RASA_URL = os.getenv("RASA_URL", "http://localhost:5005/webhooks/rest/webhook")
 BOT_TOKEN = "8205206073:AAHV-d3ikOEm6Wy6K7zHXGw3ysbtU6skuog"
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy", "service": "telegram-bridge"})
+
+
 @app.route('/webhooks/telegram/webhook', methods=['POST'])
 def telegram_webhook():
     print(f"Received webhook: {request.json}")

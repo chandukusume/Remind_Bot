@@ -2,6 +2,9 @@
 rasa==3.6.21
 rasa-sdk==3.6.2
 
+# This specific version is required to avoid the 'pytz' vs 'zoneinfo' error.
+# APScheduler==3.10.4
+
 # Google Sheets and API access
 gspread==6.2.1
 google-api-python-client==2.178.0
@@ -13,6 +16,11 @@ python-telegram-bot==13.15
 # Data handling and utilities
 pandas==2.3.1
 requests==2.32.4
+pytz
+
+# FIX for Timezone issue on Python 3.9+
+# Forces the use of an older tzlocal that uses pytz instead of zoneinfo.
+tzlocal==2.1
 
 # Database connector (optional, if you use PostgreSQL)
 psycopg2-binary==2.9.10

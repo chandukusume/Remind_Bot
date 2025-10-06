@@ -14,15 +14,14 @@ services:
       - action-server
     environment:
       - RASA_TELEMETRY_ENABLED=false
-    command: # <-- ADDED THIS SECTION TO FIX CRASHING
-      - "run"
-      - "--enable-api"
-      - "--cors"
-      - "*"
-      - "--host"
-      - "0.0.0.0"
-      - "--port"
-      - "5005"
+      - LOG_LEVEL=DEBUG
+    command: [
+      "run",
+      "--enable-api",
+      "--cors", "*",
+      "-i", "0.0.0.0",
+      "-p", "5005"
+    ]
     networks:
       - rasa-network
     restart: unless-stopped # <-- Added for stability
@@ -42,16 +41,11 @@ services:
       - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
       - MASTER_SHEET_ID=${MASTER_SHEET_ID}
       - SERVICE_ACCOUNT_FILE=/app/credentials.json
-<<<<<<< HEAD
-    command: # <-- ADDED THIS SECTION TO FIX CRASHING
-      - "run"
-      - "actions"
-      - "--port"
-      - "5055"
-      - "--host"
-      - "0.0.0.0"
-=======
->>>>>>> b4f5e8d (update)
+      - LOG_LEVEL=DEBUG
+    command: [
+      "run", "actions",
+      "--port", "5055"
+    ]
     networks:
       - rasa-network
     restart: unless-stopped # <-- Added for stability
@@ -73,3 +67,4 @@ services:
 networks:
   rasa-network:
     driver: bridge
+
