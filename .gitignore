@@ -19,3 +19,7 @@ __pycache__/
 .vscode/
 *.DS_Store.config/
 .keras/
+
+# Add the file path to your .gitignore file
+# This command appends the line to the file, creating it if it doesn't exist.
+echo "actions/reminder.log" >> .gitignore
