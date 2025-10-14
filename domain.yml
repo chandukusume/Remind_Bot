@@ -1,111 +1,156 @@
 version: "3.1"
 
 intents:
-  # University Intents
-  - inquire_admission_requirements
-  - inquire_application_deadline
-  - find_course_info
-  - inquire_professor_info
-  - get_academic_calendar
-  - find_location
-  - inquire_facility_hours
-  - ask_about_clubs
-  - ask_about_scholarships
-  # Form Tracking & General Intents
   - greet
   - goodbye
-  - track_form
   - get_count
   - send_reminder
-  - check_current_form
-  - form_reminder
+  - check_active_sheet
+  - schedule_reminder
+  - stop_reminder
   - start
+  - restart_reminders
+  - show_commands
+  - set_master_sheet
+  - set_active_sheet
+  - set_schedule_time
+  - show_info
 
 entities:
-  - department
-  - semester
-  - course_name
-  - course_code
-  - professor_name
-  - month
-  - building_name
-  - office_name
-  - facility_name
-  - club_name
-  - student_type
   - sheet_id
+  - recipient_group
+  - schedule_time
 
 slots:
-  sheet_id:
+  master_sheet_id:
     type: text
     influence_conversation: true
     mappings:
+    - type: from_text
+      conditions:
+      - active_loop: master_sheet_form
+        requested_slot: master_sheet_id
+
+  active_sheet_id:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: active_sheet_form
+        requested_slot: active_sheet_id
+
+  schedule_time:
+    type: text
+    influence_conversation: false
+    mappings:
     - type: from_entity
-      entity: sheet_id
+      entity: schedule_time
+
+  recipient_group:
+    type: categorical
+    values:
+      - students
+      - faculty
+      - all staff
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: recipient_group
+
+  reminders_active:
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: custom
 
 responses:
   utter_greet:
-  - text: "Hello! How can I help you today?"
+  - text: "Hello! I'm your Form Assistant. How can I help?"
   - text: "Hey there! What can I do for you?"
 
   utter_goodbye:
   - text: "Goodbye!"
   - text: "Bye! Have a great day."
 
-  utter_reminder_scheduled:
-  - text: "I will remind you at {time}."
-
   utter_start:
-  - text: "Welcome! I can help with university information or track responses for a Google Form. What would you like to do?"
+  - text: "Welcome! I can help you track responses for a Google Sheet. What would you like to do?"
 
-  utter_track_form:
-  - text: "Okay, I am now tracking the form with ID: {sheet_id}"
+  utter_set_active_sheet:
+  - text: "Okay, I am now focused on the sheet with ID: {active_sheet_id}"
 
-  utter_check_current_form:
-  - text: "The form currently being tracked is: {sheet_id}"
+  utter_check_active_sheet:
+  - text: "The sheet currently being tracked is: {active_sheet_id}"
 
-  utter_form_not_set:
-  - text: "I am not tracking any form right now. Please provide a form ID to begin."
-
-  # Placeholder responses for actions
-  utter_ask_for_count:
-  - text: "Getting the current submission count for you..."
+  utter_no_active_sheet:
+  - text: "I am not tracking any sheet right now. Please provide a sheet ID to begin."
 
   utter_confirm_reminder:
-  - text: "Okay, I will send a reminder to everyone who hasn't filled out the form."
+  - text: "Okay, I will send a reminder to {recipient_group} for the sheet {active_sheet_id}."
 
-  # University responses (placeholders)
-  utter_inquire_admission_requirements:
-  - text: "You can find all admission requirements on our official website's admissions page. This includes details on GPA, required documents, and test scores."
+  utter_ask_master_sheet_id:
+  - text: "Okay, please send me the Google Sheet ID for the master sheet."
 
-  utter_inquire_application_deadline:
-  - text: "All important application deadlines are listed on the academic calendar page of the university website."
+  utter_ask_active_sheet_id:
+  - text: "Please send me the Google Sheet ID for the active sheet."
 
-  utter_find_course_info:
-  - text: "I can look up course details. Which course are you interested in?"
+  utter_ask_schedule_time:
+  - text: "What time interval should I use for reminders? (e.g., 'every 2 hours', 'every 30 minutes', 'every 5 seconds')"
 
-  utter_inquire_professor_info:
-  - text: "Professor contact details and office hours can be found in the faculty directory on the university website."
 
-  utter_get_academic_calendar:
-  - text: "The full academic calendar is available on the university's main website under the 'Academics' section."
 
-  utter_find_location:
-  - text: "You can use the interactive campus map on the university website to find any building or office."
+  utter_show_commands:
+  - text: "Here are the available commands:"
+    buttons:
+    - title: "Set Master Sheet"
+      payload: '/set_master_sheet'
+    - title: "Set Active Sheet"
+      payload: '/set_active_sheet'
+    - title: "Set Schedule Time"
+      payload: '/set_schedule_time'
+    - title: "Get Count"
+      payload: '/get_count'
+    - title: "Send Reminder"
+      payload: '/send_reminder'
+    - title: "Check Active Sheet"
+      payload: '/check_active_sheet'
 
-  utter_inquire_facility_hours:
-  - text: "The operating hours for all campus facilities like the library and gym are posted on their respective pages on the university website."
+  utter_reminders_stopped: # ADDED
+  - text: "Okay, I have stopped the reminders."
 
-  utter_ask_about_clubs:
-  - text: "A complete list of student clubs and organizations, along with how to join, is available on the Student Life section of our website."
+  utter_reminders_restarted: # ADDED
+  - text: "Alright, the reminders have been restarted."
 
-  utter_ask_about_scholarships:
-  - text: "Information about all available scholarships, eligibility, and application processes can be found on our Financial Aid webpage."
+forms:
+  master_sheet_form:
+    required_slots:
+      - master_sheet_id
 
+  active_sheet_form:
+    required_slots:
+      - active_sheet_id
+
+  time_form:
+    required_slots:
+      - schedule_time
 
 actions:
-  - action_track_form
+  # Actions related to the active sheet
   - action_get_count
   - action_send_reminder
-  - action_check_current_form
-  - action_form_reminder
+  - action_check_active_sheet
+  - action_set_active_sheet
+  - action_restart_reminders
+  - action_schedule_reminder
+  - action_handle_scheduled_reminder
+  - action_stop_reminder      # ADDED
+  - action_show_info
+
+  # Actions for configuration
+  - action_set_master_sheet
+  - action_set_schedule_time
+
+  # Validation actions for forms
+  - validate_master_sheet_form
+  - validate_active_sheet_form
+  - validate_time_form

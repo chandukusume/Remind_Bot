@@ -9,9 +9,11 @@ services:
       - "5005:5005"
     volumes:
       - ./models:/app/models
-      - ./credentials.json:/app/credentials.json
+      # The credentials.json is used by the action-server, not the rasa-server
     depends_on:
       - action-server
+    env_file: # <-- ADDED THIS BLOCK
+      - .env
     environment:
       - RASA_TELEMETRY_ENABLED=false
       - LOG_LEVEL=DEBUG
@@ -27,7 +29,6 @@ services:
       - "-p"
       - "5005"
       - "--debug"
-
     networks:
       - rasa-network
     restart: unless-stopped
@@ -40,16 +41,15 @@ services:
       - "5055:5055"
     volumes:
       - ./actions:/app/actions
-      - ./config.json:/app/config.json
-      - ./credentials.json:/app/credentials.json
+      # The credentials.json is used inside the actions folder, so this mount is correct
+    env_file: # <-- ADDED THIS BLOCK
+      - .env
     environment:
-      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
-      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
-      - MASTER_SHEET_ID=${MASTER_SHEET_ID}
-      - SERVICE_ACCOUNT_FILE=/app/credentials.json
+      # The secrets are now loaded from the .env file above.
+      # We only need to keep the non-secret variables here.
+      - SERVICE_ACCOUNT_FILE=/app/actions/credentials.json
       - TZ=Asia/Kolkata
       - LOG_LEVEL=DEBUG
-
     command:
       - "rasa"
       - "run"
@@ -59,6 +59,7 @@ services:
       - "--debug"
       - "-vv"
     networks:
+    
       - rasa-network
     restart: unless-stopped
 
@@ -70,6 +71,8 @@ services:
       - "5006:5006"
     depends_on:
       - rasa-server
+    env_file:
+      - .env
     environment:
       - RASA_URL=http://rasa-server:5005/webhooks/rest/webhook
     networks:

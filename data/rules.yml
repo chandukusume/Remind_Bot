@@ -1,89 +1,188 @@
 version: "3.1"
 
 rules:
-- rule: Greet user
+
+- rule: Say hello anytime the user greets
   steps:
   - intent: greet
   - action: utter_greet
 
-- rule: Handle start command
-  steps:
-  - intent: start
-  - action: utter_start
-
-- rule: Say goodbye
+- rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-
-# Rules for University Intents
-- rule: Answer about admission requirements
+- rule: Show commands when user asks
   steps:
-  - intent: inquire_admission_requirements
-  - action: utter_inquire_admission_requirements
+  - intent: show_commands
+  - action: utter_show_commands
 
-- rule: Answer about application deadlines
+- rule: Handle start intent
   steps:
-  - intent: inquire_application_deadline
-  - action: utter_inquire_application_deadline
+  - intent: start
+  - action: utter_start
 
-- rule: Answer about course info
-  steps:
-  - intent: find_course_info
-  - action: utter_find_course_info
+# ----------------------------------------------------------------------
+# MASTER SHEET FORM RULES
+# ----------------------------------------------------------------------
 
-- rule: Answer about professor info
+- rule: Activate the master sheet form if the ID isn't provided
   steps:
-  - intent: inquire_professor_info
-  - action: utter_inquire_professor_info
+  - intent: set_master_sheet
+  - action: master_sheet_form
+  - active_loop: master_sheet_form
 
-- rule: Provide academic calendar
+- rule: Handle submission of the master sheet form
+  condition:
+  - active_loop: master_sheet_form
   steps:
-  - intent: get_academic_calendar
-  - action: utter_get_academic_calendar
+  - action: master_sheet_form
+  - active_loop: null
+  - action: action_set_master_sheet
 
-- rule: Help find a location
-  steps:
-  - intent: find_location
-  - action: utter_find_location
+# ----------------------------------------------------------------------
+# ACTIVE SHEET FORM RULES
+# ----------------------------------------------------------------------
 
-- rule: Answer about facility hours
+- rule: Activate active sheet form
   steps:
-  - intent: inquire_facility_hours
-  - action: utter_inquire_facility_hours
+  - intent: set_active_sheet
+  - action: active_sheet_form
+  - active_loop: active_sheet_form
 
-- rule: Answer about clubs
+- rule: Handle submission of the active sheet form
+  condition:
+  - active_loop: active_sheet_form
   steps:
-  - intent: ask_about_clubs
-  - action: utter_ask_about_clubs
+  - action: active_sheet_form
+  - active_loop: null
+  - action: action_set_active_sheet
 
-- rule: Answer about scholarships
+# ----------------------------------------------------------------------
+# SCHEDULE TIME FORM RULES
+# ----------------------------------------------------------------------
+
+- rule: Activate the time form (Button Click)
   steps:
-  - intent: ask_about_scholarships
-  - action: utter_ask_about_scholarships
-# Rules for Custom Actions
-- rule: Get submission count
+  - intent: set_schedule_time
+  - action: time_form
+  - active_loop: time_form
+
+- rule: Handle submission of the time form
+  condition:
+  - active_loop: time_form
+  steps:
+  - action: time_form
+  - active_loop: null
+  - action: action_set_schedule_time
+
+# ----------------------------------------------------------------------
+# FORM INTERRUPTION RULES (FIXED YAML VALIDATION ERROR)
+# ----------------------------------------------------------------------
+
+- rule: Allow interrupting master_sheet_form with greet
+  condition:
+  - active_loop: master_sheet_form
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen
+
+- rule: Allow interrupting active_sheet_form with greet
+  condition:
+  - active_loop: active_sheet_form
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen
+
+- rule: Allow interrupting time_form with greet
+  condition:
+  - active_loop: time_form
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen
+
+- rule: Allow interrupting master_sheet_form with show_commands
+  condition:
+  - active_loop: master_sheet_form
+  steps:
+  - intent: show_commands
+  - action: utter_show_commands
+  - action: action_listen
+
+- rule: Allow interrupting active_sheet_form with show_commands
+  condition:
+  - active_loop: active_sheet_form
+  steps:
+  - intent: show_commands
+  - action: utter_show_commands
+  - action: action_listen
+
+- rule: Allow interrupting time_form with show_commands
+  condition:
+  - active_loop: time_form
+  steps:
+  - intent: show_commands
+  - action: utter_show_commands
+  - action: action_listen
+
+- rule: Allow get_count even in master_sheet_form
+  condition:
+  - active_loop: master_sheet_form
+  steps:
+  - intent: get_count
+  - action: action_get_count
+  - action: action_listen
+
+- rule: Allow get_count even in active_sheet_form
+  condition:
+  - active_loop: active_sheet_form
+  steps:
+  - intent: get_count
+  - action: action_get_count
+  - action: action_listen
+
+- rule: Allow get_count even in time_form
+  condition:
+  - active_loop: time_form
+  steps:
+  - intent: get_count
+  - action: action_get_count
+  - action: action_listen
+
+- rule: Handle get_count directly
   steps:
   - intent: get_count
   - action: action_get_count
 
-- rule: Send reminder
+- rule: Handle send_reminder directly
   steps:
   - intent: send_reminder
   - action: action_send_reminder
 
-- rule: Check current form
+- rule: Handle check_active_sheet directly
   steps:
-  - intent: check_current_form
-  - action: action_check_current_form
+  - intent: check_active_sheet
+  - action: action_check_active_sheet
 
-- rule: Automatic reminder
+- rule: Handle stop_reminder directly
   steps:
-  - intent: form_reminder
-  - action: action_form_reminder
+  - intent: stop_reminder
+  - action: action_stop_reminder
 
-- rule: Track form
+- rule: Handle restart_reminders directly
   steps:
-  - intent: track_form
-  - action: action_track_form
+  - intent: restart_reminders
+  - action: action_restart_reminders
+
+- rule: Handle schedule_reminder directly
+  steps:
+  - intent: schedule_reminder
+  - action: action_schedule_reminder
+
+- rule: Handle show_info directly
+  steps:
+  - intent: show_info
+  - action: action_show_info
