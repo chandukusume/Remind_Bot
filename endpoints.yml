@@ -1,3 +1,13 @@
 action_endpoint:
   url: "http://action-server:5055/webhook"
   async_ops_timeout: 300
+tracker_store:
+  type: sql
+  dialect: "postgresql"
+  host: "remindbot-db.postgres.database.azure.com"
+  port: 5432
+  db: "remindbot"
+  username: "remindbotdb"
+  password: "imchandu@3710"
+  query:
+    sslmode: "require"

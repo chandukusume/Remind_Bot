@@ -32,27 +32,33 @@ def _get_forms_service():
 
 # --- Core Logic Functions ---
 
-def get_submission_stats(form_sheet_id: str) -> dict:
+# in actions/utils.py
+
+# CHANGE THIS FUNCTION
+def get_submission_stats(form_sheet_id: str, master_sheet_id: str) -> dict:
     """
     Compares the master sheet with form responses and returns a dictionary of stats.
     Raises exceptions on failure.
     """
+    if not master_sheet_id:
+        raise ValueError("A Master Sheet ID must be provided.")
+
     try:
         sheets_client = _get_sheets_client()
         
-        # Load master sheet (expects 'Roll' and 'Name' columns)
-        master_sheet = sheets_client.open_by_key(config.MASTER_SHEET_ID).sheet1
+        # Load master sheet using the ID that was passed in
+        master_sheet = sheets_client.open_by_key(master_sheet_id).sheet1
         master_records = master_sheet.get_all_records()
+        if not master_records:
+            raise ValueError("Master sheet is empty or has no data.")
 
-        # Load form responses sheet (expects a 'Roll' column)
+        # ... the rest of the function stays the same ...
         form_sheet = sheets_client.open_by_key(form_sheet_id).sheet1
         form_records = form_sheet.get_all_records()
 
-        # Extract roll numbers and names
         master_rolls = {str(row["Roll"]): row["Name"] for row in master_records if "Roll" in row and "Name" in row}
         filled_rolls = {str(row["Roll"]) for row in form_records if "Roll" in row}
 
-        # Find who is missing
         missing_students = {roll: name for roll, name in master_rolls.items() if roll not in filled_rolls}
         
         return {
@@ -65,48 +71,46 @@ def get_submission_stats(form_sheet_id: str) -> dict:
     except KeyError as e:
         raise ValueError(f"A required column is missing in one of the sheets: {e}")
     except Exception as e:
-        # Re-raise other exceptions to be handled by the action
         raise e
 
-def send_telegram_reminder(form_sheet_id: str) -> str:
+# AND CHANGE THIS FUNCTION
+def send_telegram_reminder(form_sheet_id: str, recipient_group: str, master_sheet_id: str) -> str:
     """
     Constructs and sends a detailed reminder message to a Telegram group.
     """
     if not form_sheet_id:
         raise ValueError("No form sheet ID was provided.")
         
-    stats = get_submission_stats(form_sheet_id)
+    # Pass the master_sheet_id to the stats function
+    stats = get_submission_stats(form_sheet_id, master_sheet_id)
     missing = stats["missing"]
     filled_count = stats["filled_count"]
     total_count = stats["total_count"]
-
-    # Construct the message
+    
+    # ... the rest of the function stays the same ...
     if not missing:
         message = f"✅ All {total_count} students have filled the form. Great job!"
     else:
-        message_lines = [f"📊 *Form Submission Status*"]
-        message_lines.append(f"{filled_count} out of {total_count} students have responded.")
+        message_lines = [f"📊 *Form Submission Status for {recipient_group.title()}*"]
+        message_lines.append(f"{filled_count} out of {total_count} have responded.")
         message_lines.append("\n⚠️ *The following students have not yet filled the form:*")
-        for roll, name in sorted(missing.items()): # Sort by roll number
+        for roll, name in sorted(missing.items()):
             message_lines.append(f"`{roll}` - {name}")
         message = "\n".join(message_lines)
 
-    # Send the message to Telegram
     url = f"https://api.telegram.org/bot{config.TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": config.TELEGRAM_CHAT_ID,
         "text": message,
-        "parse_mode": "Markdown" # Use Markdown for bolding and code blocks
+        "parse_mode": "Markdown"
     }
     
     try:
         response = requests.post(url, json=payload, timeout=10)
-        response.raise_for_status()  # Raise an exception for bad status codes (4xx or 5xx)
+        response.raise_for_status()
         return "Reminder sent successfully to the Telegram group."
     except requests.exceptions.RequestException as e:
         raise ConnectionError(f"Failed to send message to Telegram: {e}")
-
-# --- Google Forms Specific Functions (Optional, but good to have) ---
 
 def get_linked_sheet_id(form_id: str) -> str:
     """Retrieves the linked Google Sheet ID for a given Google Form ID."""

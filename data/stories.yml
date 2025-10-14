@@ -1,93 +1,42 @@
 version: "3.1"
 
 stories:
-- story: Full form tracking flow (happy path)
+- story: Set active sheet button click
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: track_form
-    entities:
-    - sheet_id: "1abcxyz1234567890"
+  - intent: set_active_sheet
+  - action: active_sheet_form
+  - active_loop: active_sheet_form
   - slot_was_set:
-    - sheet_id: "1abcxyz1234567890"
-  - action: action_track_form      # This is a custom action
+    - active_sheet_id: "some-sheet-id"
+  - active_loop: null
+  - action: action_set_active_sheet
+
+- story: Get count
+  steps:
   - intent: get_count
-  - action: action_get_count      # This is a custom action
-  - intent: send_reminder
-  - action: action_send_reminder    # This is a custom action
-  - intent: goodbye
-  - action: utter_goodbye
+  - action: action_get_count
 
-- story: User asks for count before a form is set
+- story: Send reminder
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: get_count
-  - action: action_get_count      # This custom action handles the 'not set' case
-  - intent: track_form
-    entities:
-    - sheet_id: "xyz987abc"
-  - slot_was_set:
-    - sheet_id: "xyz987abc"
-  - action: action_track_form      # This is a custom action
-  - intent: get_count
-  - action: action_get_count      # This is a custom action
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: User sets form and then checks it
-  steps:
-  - intent: start
-  - action: utter_start
-  - intent: track_form
-    entities:
-    - sheet_id: "form-to-check-123"
-  - slot_was_set:
-    - sheet_id: "form-to-check-123"
-  - action: action_track_form      # <-- CORRECTED
-  - intent: check_current_form
-  - action: action_check_current_form # <-- CORRECTED
-
-- story: Mixed university and form questions
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: inquire_admission_requirements
-  - action: utter_inquire_admission_requirements
-  - intent: track_form
-    entities:
-    - sheet_id: "some_other_form_id"
-  - slot_was_set:
-    - sheet_id: "some_other_form_id"
-  - action: action_track_form      # <-- CORRECTED
-  - intent: get_academic_calendar
-  - action: utter_get_academic_calendar
-  - intent: check_current_form
-  - action: action_check_current_form # <-- CORRECTED
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: Interactive university questions
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_about_clubs
-  - action: utter_ask_about_clubs
-  - intent: find_location
-    entities:
-    - building_name: "student union"
-  - action: utter_find_location
-  - intent: ask_about_scholarships
-  - action: utter_ask_about_scholarships
-- story: User tracks form and then sends reminder
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: track_form
-    entities:
-    - sheet_id: "some_id"
-  - slot_was_set:
-    - sheet_id: "some_id"
-  - action: action_track_form
   - intent: send_reminder
   - action: action_send_reminder
+
+- story: Check active sheet
+  steps:
+  - intent: check_active_sheet
+  - action: action_check_active_sheet
+
+- story: User stops reminders
+  steps:
+  - intent: stop_reminder
+  - action: action_stop_reminder
+
+- story: User restarts reminders
+  steps:
+  - intent: restart_reminders
+  - action: action_restart_reminders
+
+- story: User schedules reminders
+  steps:
+  - intent: schedule_reminder
+  - action: action_schedule_reminder
