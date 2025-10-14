@@ -94,6 +94,60 @@ class ActionSetScheduleTime(Action):
         dispatcher.utter_message(text=f"Okay, I have set the schedule time to: {schedule_time}")
         return []
 
+class ActionUnsetScheduleTime(Action):
+    def name(self) -> Text:
+        return "action_unset_schedule_time"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        if not is_authorized(tracker):
+            dispatcher.utter_message(text="You are not authorized to perform this action.")
+            return []
+
+        log_message("Schedule time has been cleared")
+        dispatcher.utter_message(text="✅ Schedule time has been cleared. Default interval will be used for reminders.")
+        return [SlotSet("schedule_time", None)]
+
+class ActionUnsetMasterSheet(Action):
+    def name(self) -> Text:
+        return "action_unset_master_sheet"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        if not is_authorized(tracker):
+            dispatcher.utter_message(text="You are not authorized to perform this action.")
+            return []
+
+        database.save_master_sheet_id(None)
+        log_message("Master sheet has been cleared")
+        dispatcher.utter_message(text="✅ Master sheet has been cleared.")
+        return [SlotSet("master_sheet_id", None)]
+
+class ActionUnsetActiveSheet(Action):
+    def name(self) -> Text:
+        return "action_unset_active_sheet"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        if not is_authorized(tracker):
+            dispatcher.utter_message(text="You are not authorized to perform this action.")
+            return []
+
+        database.save_active_sheet_id(None)
+        log_message("Active sheet has been cleared")
+        dispatcher.utter_message(text="✅ Active sheet has been cleared.")
+        return [SlotSet("active_sheet_id", None)]
+
+class ActionCancel(Action):
+    def name(self) -> Text:
+        return "action_cancel"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        if not is_authorized(tracker):
+            dispatcher.utter_message(text="You are not authorized to perform this action.")
+            return []
+
+        log_message("User cancelled current operation")
+        dispatcher.utter_message(text="✅ Operation cancelled. How can I help you?")
+        return []
+
 # --- ACTIONS FOR GETTING INFORMATION ---
 
 class ActionCheckActiveSheet(Action):
@@ -151,10 +205,14 @@ class ActionShowInfo(Action):
         active_sheet_id = tracker.get_slot("active_sheet_id") or database.get_active_sheet_id()
         schedule_time = tracker.get_slot("schedule_time")
         
-        info_message = "📋 **Current Configuration:**\n\n"
-        info_message += f"🗂️ **Master Sheet ID:** {master_sheet_id or 'Not set'}\n"
-        info_message += f"📊 **Active Sheet ID:** {active_sheet_id or 'Not set'}\n"
-        info_message += f"⏰ **Schedule Time:** {schedule_time or 'Not set'}\n"
+        # Get sheet names instead of IDs
+        master_sheet_name = utils.get_sheet_name(master_sheet_id) if master_sheet_id else 'Not set'
+        active_sheet_name = utils.get_sheet_name(active_sheet_id) if active_sheet_id else 'Not set'
+        
+        info_message = "📋 Current Configuration:\n\n"
+        info_message += f"🗂️ Master Sheet: {master_sheet_name}\n"
+        info_message += f"📊 Active Sheet: {active_sheet_name}\n"
+        info_message += f"⏰ Schedule Time: {schedule_time or 'Not set'}\n"
         
         dispatcher.utter_message(text=info_message)
         return []
@@ -183,14 +241,46 @@ class ActionSendReminder(Action):
         recipient_group = tracker.get_slot("recipient_group") or "everyone"
 
         try:
-            log_message(f"Sending reminder for active sheet '{active_sheet_id}' using master sheet '{master_id_from_slot}'")
+            # Send immediate reminder
+            log_message(f"Sending immediate reminder for active sheet '{active_sheet_id}' using master sheet '{master_id_from_slot}'")
             result_message = utils.send_telegram_reminder(active_sheet_id, recipient_group, master_id_from_slot)
             dispatcher.utter_message(text=result_message)
+            
+            # Start recurring reminders
+            schedule_time = tracker.get_slot("schedule_time") or "5 minutes"
+            schedule_lower = schedule_time.lower()
+            numbers = ''.join(filter(str.isdigit, schedule_time))
+            num = int(numbers) if numbers else 5
+            
+            if any(word in schedule_lower for word in ['minute', 'min', 'm']):
+                interval = timedelta(minutes=num)
+            elif any(word in schedule_lower for word in ['hour', 'hr', 'h']):
+                interval = timedelta(hours=num)
+            elif any(word in schedule_lower for word in ['second', 'sec', 's']):
+                interval = timedelta(seconds=num)
+            else:
+                interval = timedelta(minutes=num)
+                
+            trigger_time = datetime.now(pytz.UTC) + interval
+            reminder = ReminderScheduled(
+                "action_handle_scheduled_reminder", 
+                trigger_date_time=trigger_time, 
+                name="recurring_reminder_job", 
+                kill_on_user_message=False
+            )
+            
+            ist_tz = pytz.timezone('Asia/Kolkata')
+            trigger_time_ist = trigger_time.astimezone(ist_tz)
+            dispatcher.utter_message(text=f"✅ Recurring reminders activated! Next reminder at {trigger_time_ist.strftime('%H:%M:%S')} IST")
+            log_message(f"✅ SCHEDULED: Recurring reminder started with interval: {interval}")
+            
+            return [reminder, SlotSet("recipient_group", None)]
+            
         except Exception as e:
             error_msg = f"Failed to send reminders: {e}"
             dispatcher.utter_message(text=error_msg)
             log_message(f"ERROR sending reminder: {e}")
-        return []
+            return []
 
 class ActionScheduleReminder(Action):
     def name(self) -> str:
@@ -259,9 +349,17 @@ class ActionScheduleReminder(Action):
             kill_on_user_message=False
         )
         
-        dispatcher.utter_message(text=f"✅ Reminders started! Sending every {schedule_time}. Next reminder at {trigger_time.strftime('%H:%M:%S')} UTC")
+        # Convert UTC to IST for display
+        ist_tz = pytz.timezone('Asia/Kolkata')
+        trigger_time_ist = trigger_time.astimezone(ist_tz)
+        dispatcher.utter_message(text=f"✅ Reminders started! Sending every {schedule_time}. Next reminder at {trigger_time_ist.strftime('%H:%M:%S')} IST")
         log_message(f"✅ SCHEDULED: Recurring reminder with interval: {interval}, next trigger: {trigger_time.isoformat()}")
-        return [reminder]
+        
+        # Clear slots to prevent conversation pollution
+        return [
+            reminder,
+            SlotSet("recipient_group", None)
+        ]
 
 class ActionHandleScheduledReminder(Action):
     def name(self) -> str:
@@ -306,7 +404,12 @@ class ActionHandleScheduledReminder(Action):
         )
         
         log_message(f"Next reminder scheduled for: {next_trigger.isoformat()}")
-        return [next_reminder]
+        
+        # Clear conversation slots to prevent memory pollution
+        return [
+            next_reminder,
+            SlotSet("recipient_group", None)
+        ]
 
 class ActionStopReminder(Action):
     def name(self) -> str:

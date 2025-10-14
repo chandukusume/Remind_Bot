@@ -1177,3 +1177,43 @@
 [2025-10-12 00:28:12.217] Automatic reminder triggered by scheduler.
 [2025-10-12 00:28:15.551] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
 [2025-10-12 00:28:15.551] Next reminder scheduled for: 2025-10-11T19:03:15.551673+00:00
+[2025-10-14 10:53:14.389] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-14 10:55:13.333] Schedule time has been cleared
+[2025-10-14 10:55:44.811] Validating schedule_time: '5 minutes'
+[2025-10-14 10:55:44.868] Successfully set schedule_time slot to: 5 minutes
+[2025-10-14 10:59:29.366] ActionScheduleReminder triggered
+[2025-10-14 10:59:29.367] Slots - Active: None, Master: None
+[2025-10-14 10:59:29.536] Database - Active: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE, Master: 1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA
+[2025-10-14 10:59:29.536] Final values - Active: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE, Master: 1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA
+[2025-10-14 10:59:29.536] Using schedule time: 5 minutes
+[2025-10-14 10:59:29.537] ✅ SCHEDULED: Recurring reminder with interval: 0:05:00, next trigger: 2025-10-14T05:34:29.536764+00:00
+[2025-10-14 11:12:05.692] Sending reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 11:26:19.338] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-14 11:32:01.037] Validating master_sheet_id: '/set_schedule_time'
+[2025-10-14 11:32:01.037] Validation failed: ID is not valid.
+[2025-10-14 11:32:10.231] Validating master_sheet_id: '5 minutes'
+[2025-10-14 11:32:10.231] Validation failed: ID is not valid.
+[2025-10-14 11:34:22.658] Validating master_sheet_id: '/unset_master_sheet'
+[2025-10-14 11:34:22.658] Validation failed: ID is not valid.
+[2025-10-14 11:36:32.955] Validating master_sheet_id: 'Stop'
+[2025-10-14 11:36:32.955] Validation failed: ID is not valid.
+[2025-10-14 11:36:40.575] Validating master_sheet_id: '/stop'
+[2025-10-14 11:36:40.575] Validation failed: ID is not valid.
+[2025-10-14 11:36:51.005] Validating master_sheet_id: '/cancel'
+[2025-10-14 11:36:51.005] Validation failed: ID is not valid.
+[2025-10-14 11:39:56.375] Validating schedule_time: '5 minutes'
+[2025-10-14 11:39:56.435] Successfully set schedule_time slot to: 5 minutes
+[2025-10-14 11:40:06.247] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 11:40:09.790] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-14 12:03:16.372] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-14 12:05:26.081] Validating schedule_time: '5 minutes'
+[2025-10-14 12:05:26.137] Successfully set schedule_time slot to: 5 minutes
+[2025-10-14 12:06:42.229] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 12:06:44.830] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-14 12:16:04.225] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 12:16:07.616] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-14 12:26:43.173] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-14 12:28:22.466] Validating schedule_time: '5 minutes'
+[2025-10-14 12:28:22.522] Successfully set schedule_time slot to: 5 minutes
+[2025-10-14 12:28:28.347] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 12:28:31.205] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00

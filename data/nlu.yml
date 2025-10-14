@@ -144,4 +144,41 @@ nlu:
     - display current settings
     - show me the current config
     - current configuration
-    - settingscd 
+    - settings
+
+- intent: unset_schedule_time
+  examples: |
+    - unset schedule time
+    - clear schedule time
+    - remove schedule time
+    - reset schedule time
+    - delete schedule time
+    - /unset_schedule_time
+
+- intent: unset_master_sheet
+  examples: |
+    - unset master sheet
+    - clear master sheet
+    - remove master sheet
+    - reset master sheet
+    - delete master sheet
+    - /unset_master_sheet
+
+- intent: unset_active_sheet
+  examples: |
+    - unset active sheet
+    - clear active sheet
+    - remove active sheet
+    - reset active sheet
+    - delete active sheet
+    - /unset_active_sheet
+
+- intent: cancel
+  examples: |
+    - cancel
+    - stop
+    - exit
+    - quit
+    - abort
+    - nevermind
+    - /cancel

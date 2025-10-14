@@ -22,11 +22,7 @@ rules:
   - intent: start
   - action: utter_start
 
-# ----------------------------------------------------------------------
-# MASTER SHEET FORM RULES
-# ----------------------------------------------------------------------
-
-- rule: Activate the master sheet form if the ID isn't provided
+- rule: Activate the master sheet form
   steps:
   - intent: set_master_sheet
   - action: master_sheet_form
@@ -39,10 +35,6 @@ rules:
   - action: master_sheet_form
   - active_loop: null
   - action: action_set_master_sheet
-
-# ----------------------------------------------------------------------
-# ACTIVE SHEET FORM RULES
-# ----------------------------------------------------------------------
 
 - rule: Activate active sheet form
   steps:
@@ -58,11 +50,7 @@ rules:
   - active_loop: null
   - action: action_set_active_sheet
 
-# ----------------------------------------------------------------------
-# SCHEDULE TIME FORM RULES
-# ----------------------------------------------------------------------
-
-- rule: Activate the time form (Button Click)
+- rule: Activate the time form
   steps:
   - intent: set_schedule_time
   - action: time_form
@@ -76,81 +64,83 @@ rules:
   - active_loop: null
   - action: action_set_schedule_time
 
-# ----------------------------------------------------------------------
-# FORM INTERRUPTION RULES (FIXED YAML VALIDATION ERROR)
-# ----------------------------------------------------------------------
-
-- rule: Allow interrupting master_sheet_form with greet
+- rule: Switch from master_sheet_form to active_sheet_form
   condition:
   - active_loop: master_sheet_form
   steps:
-  - intent: greet
-  - action: utter_greet
-  - action: action_listen
-
-- rule: Allow interrupting active_sheet_form with greet
-  condition:
+  - intent: set_active_sheet
+  - active_loop: null
+  - action: active_sheet_form
   - active_loop: active_sheet_form
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: action_listen
 
-- rule: Allow interrupting time_form with greet
-  condition:
-  - active_loop: time_form
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: action_listen
-
-- rule: Allow interrupting master_sheet_form with show_commands
+- rule: Switch from master_sheet_form to time_form
   condition:
   - active_loop: master_sheet_form
   steps:
-  - intent: show_commands
-  - action: utter_show_commands
-  - action: action_listen
+  - intent: set_schedule_time
+  - active_loop: null
+  - action: time_form
+  - active_loop: time_form
 
-- rule: Allow interrupting active_sheet_form with show_commands
+- rule: Switch from active_sheet_form to master_sheet_form
   condition:
   - active_loop: active_sheet_form
   steps:
-  - intent: show_commands
-  - action: utter_show_commands
-  - action: action_listen
+  - intent: set_master_sheet
+  - active_loop: null
+  - action: master_sheet_form
+  - active_loop: master_sheet_form
 
-- rule: Allow interrupting time_form with show_commands
+- rule: Switch from active_sheet_form to time_form
+  condition:
+  - active_loop: active_sheet_form
+  steps:
+  - intent: set_schedule_time
+  - active_loop: null
+  - action: time_form
+  - active_loop: time_form
+
+- rule: Switch from time_form to master_sheet_form
   condition:
   - active_loop: time_form
   steps:
-  - intent: show_commands
-  - action: utter_show_commands
-  - action: action_listen
+  - intent: set_master_sheet
+  - active_loop: null
+  - action: master_sheet_form
+  - active_loop: master_sheet_form
 
-- rule: Allow get_count even in master_sheet_form
+- rule: Switch from time_form to active_sheet_form
+  condition:
+  - active_loop: time_form
+  steps:
+  - intent: set_active_sheet
+  - active_loop: null
+  - action: active_sheet_form
+  - active_loop: active_sheet_form
+
+- rule: Cancel master sheet form
   condition:
   - active_loop: master_sheet_form
   steps:
-  - intent: get_count
-  - action: action_get_count
-  - action: action_listen
+  - intent: cancel
+  - active_loop: null
+  - action: action_cancel
 
-- rule: Allow get_count even in active_sheet_form
+- rule: Cancel active sheet form
   condition:
   - active_loop: active_sheet_form
   steps:
-  - intent: get_count
-  - action: action_get_count
-  - action: action_listen
+  - intent: cancel
+  - active_loop: null
+  - action: action_cancel
 
-- rule: Allow get_count even in time_form
+- rule: Cancel time form
   condition:
   - active_loop: time_form
   steps:
-  - intent: get_count
-  - action: action_get_count
-  - action: action_listen
+  - intent: cancel
+  - active_loop: null
+  - action: action_cancel
 
 - rule: Handle get_count directly
   steps:
@@ -186,3 +176,28 @@ rules:
   steps:
   - intent: show_info
   - action: action_show_info
+
+- rule: Handle unset_schedule_time directly
+  steps:
+  - intent: unset_schedule_time
+  - action: action_unset_schedule_time
+
+- rule: Handle unset_master_sheet directly
+  steps:
+  - intent: unset_master_sheet
+  - action: action_unset_master_sheet
+
+- rule: Handle unset_active_sheet directly
+  steps:
+  - intent: unset_active_sheet
+  - action: action_unset_active_sheet
+
+- rule: Handle cancel directly
+  steps:
+  - intent: cancel
+  - action: action_cancel
+
+- rule: Handle scheduled reminders
+  steps:
+  - intent: action_handle_scheduled_reminder
+  - action: action_handle_scheduled_reminder
