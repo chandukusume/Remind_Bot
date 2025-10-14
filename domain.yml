@@ -1,156 +1,175 @@
-version: "3.1"
+  version: "3.1"
 
-intents:
-  - greet
-  - goodbye
-  - get_count
-  - send_reminder
-  - check_active_sheet
-  - schedule_reminder
-  - stop_reminder
-  - start
-  - restart_reminders
-  - show_commands
-  - set_master_sheet
-  - set_active_sheet
-  - set_schedule_time
-  - show_info
+  session_config:
+    session_expiration_time: 6
+    carry_over_slots: true
 
-entities:
-  - sheet_id
-  - recipient_group
-  - schedule_time
+  intents:
+    - greet
+    - goodbye
+    - get_count
+    - send_reminder
+    - check_active_sheet
+    - schedule_reminder
+    - stop_reminder
+    - start
+    - restart_reminders
+    - show_commands
+    - set_master_sheet
+    - set_active_sheet
+    - set_schedule_time
+    - unset_schedule_time
+    - unset_master_sheet
+    - unset_active_sheet
+    - show_info
+    - cancel
+    - action_handle_scheduled_reminder
 
-slots:
-  master_sheet_id:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_text
-      conditions:
-      - active_loop: master_sheet_form
-        requested_slot: master_sheet_id
+  entities:
+    - sheet_id
+    - recipient_group
+    - schedule_time
 
-  active_sheet_id:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_text
-      conditions:
-      - active_loop: active_sheet_form
-        requested_slot: active_sheet_id
+  slots:
+    master_sheet_id:
+      type: text
+      influence_conversation: false
+      mappings:
+      - type: from_text
+        conditions:
+        - active_loop: master_sheet_form
+          requested_slot: master_sheet_id
 
-  schedule_time:
-    type: text
-    influence_conversation: false
-    mappings:
-    - type: from_entity
-      entity: schedule_time
+    active_sheet_id:
+      type: text
+      influence_conversation: false
+      mappings:
+      - type: from_text
+        conditions:
+        - active_loop: active_sheet_form
+          requested_slot: active_sheet_id
 
-  recipient_group:
-    type: categorical
-    values:
-      - students
-      - faculty
-      - all staff
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: recipient_group
+    schedule_time:
+      type: text
+      influence_conversation: false
+      mappings:
+      - type: from_entity
+        entity: schedule_time
 
-  reminders_active:
-    type: bool
-    influence_conversation: false
-    mappings:
-    - type: custom
+    recipient_group:
+      type: categorical
+      values:
+        - students
+        - faculty
+        - all staff
+      influence_conversation: false
+      mappings:
+      - type: from_entity
+        entity: recipient_group
 
-responses:
-  utter_greet:
-  - text: "Hello! I'm your Form Assistant. How can I help?"
-  - text: "Hey there! What can I do for you?"
+    reminders_active:
+      type: bool
+      influence_conversation: false
+      mappings:
+      - type: custom
 
-  utter_goodbye:
-  - text: "Goodbye!"
-  - text: "Bye! Have a great day."
+  responses:
+    utter_greet:
+    - text: "Hello! I'm your Form Assistant. How can I help?"
+    - text: "Hey there! What can I do for you?"
 
-  utter_start:
-  - text: "Welcome! I can help you track responses for a Google Sheet. What would you like to do?"
+    utter_goodbye:
+    - text: "Goodbye!"
+    - text: "Bye! Have a great day."
 
-  utter_set_active_sheet:
-  - text: "Okay, I am now focused on the sheet with ID: {active_sheet_id}"
+    utter_start:
+    - text: "Welcome! I can help you track responses for a Google Sheet. What would you like to do?"
 
-  utter_check_active_sheet:
-  - text: "The sheet currently being tracked is: {active_sheet_id}"
+    utter_set_active_sheet:
+    - text: "Okay, I am now focused on the sheet with ID: {active_sheet_id}"
 
-  utter_no_active_sheet:
-  - text: "I am not tracking any sheet right now. Please provide a sheet ID to begin."
+    utter_check_active_sheet:
+    - text: "The sheet currently being tracked is: {active_sheet_id}"
 
-  utter_confirm_reminder:
-  - text: "Okay, I will send a reminder to {recipient_group} for the sheet {active_sheet_id}."
+    utter_no_active_sheet:
+    - text: "I am not tracking any sheet right now. Please provide a sheet ID to begin."
 
-  utter_ask_master_sheet_id:
-  - text: "Okay, please send me the Google Sheet ID for the master sheet."
+    utter_confirm_reminder:
+    - text: "Okay, I will send a reminder to {recipient_group} for the sheet {active_sheet_id}."
 
-  utter_ask_active_sheet_id:
-  - text: "Please send me the Google Sheet ID for the active sheet."
+    utter_ask_master_sheet_id:
+    - text: "Okay, please send me the Google Sheet ID for the master sheet."
 
-  utter_ask_schedule_time:
-  - text: "What time interval should I use for reminders? (e.g., 'every 2 hours', 'every 30 minutes', 'every 5 seconds')"
+    utter_ask_active_sheet_id:
+    - text: "Please send me the Google Sheet ID for the active sheet."
+
+    utter_ask_schedule_time:
+    - text: "What time interval should I use for reminders? (e.g., 'every 2 hours', 'every 30 minutes', 'every 5 seconds')"
 
 
 
-  utter_show_commands:
-  - text: "Here are the available commands:"
-    buttons:
-    - title: "Set Master Sheet"
-      payload: '/set_master_sheet'
-    - title: "Set Active Sheet"
-      payload: '/set_active_sheet'
-    - title: "Set Schedule Time"
-      payload: '/set_schedule_time'
-    - title: "Get Count"
-      payload: '/get_count'
-    - title: "Send Reminder"
-      payload: '/send_reminder'
-    - title: "Check Active Sheet"
-      payload: '/check_active_sheet'
+    utter_show_commands:
+    - text: "Here are the available commands:"
+      buttons:
+      - title: "Set Master Sheet"
+        payload: '/set_master_sheet'
+      - title: "Set Active Sheet"
+        payload: '/set_active_sheet'
+      - title: "Set Schedule Time"
+        payload: '/set_schedule_time'
+      - title: "Get Count"
+        payload: '/get_count'
+      - title: "Send Reminder"
+        payload: '/send_reminder'
+      - title: "Unset Schedule Time"
+        payload: '/unset_schedule_time'
+      - title: "Unset Master Sheet"
+        payload: '/unset_master_sheet'
+      - title: "Unset Active Sheet"
+        payload: '/unset_active_sheet'
+      - title: "Cancel"
+        payload: '/cancel'
 
-  utter_reminders_stopped: # ADDED
-  - text: "Okay, I have stopped the reminders."
+    utter_reminders_stopped: # ADDED
+    - text: "Okay, I have stopped the reminders."
 
-  utter_reminders_restarted: # ADDED
-  - text: "Alright, the reminders have been restarted."
+    utter_reminders_restarted: # ADDED
+    - text: "Alright, the reminders have been restarted."
 
-forms:
-  master_sheet_form:
-    required_slots:
-      - master_sheet_id
+  forms:
+    master_sheet_form:
+      required_slots:
+        - master_sheet_id
 
-  active_sheet_form:
-    required_slots:
-      - active_sheet_id
+    active_sheet_form:
+      required_slots:
+        - active_sheet_id
 
-  time_form:
-    required_slots:
-      - schedule_time
+    time_form:
+      required_slots:
+        - schedule_time
 
-actions:
-  # Actions related to the active sheet
-  - action_get_count
-  - action_send_reminder
-  - action_check_active_sheet
-  - action_set_active_sheet
-  - action_restart_reminders
-  - action_schedule_reminder
-  - action_handle_scheduled_reminder
-  - action_stop_reminder      # ADDED
-  - action_show_info
+  actions:
+    # Actions related to the active sheet
+    - action_get_count
+    - action_send_reminder
+    - action_check_active_sheet
+    - action_set_active_sheet
+    - action_restart_reminders
+    - action_schedule_reminder
+    - action_handle_scheduled_reminder
+    - action_stop_reminder      # ADDED
+    - action_show_info
 
-  # Actions for configuration
-  - action_set_master_sheet
-  - action_set_schedule_time
+    # Actions for configuration
+    - action_set_master_sheet
+    - action_set_schedule_time
+    - action_unset_schedule_time
+    - action_unset_master_sheet
+    - action_unset_active_sheet
+    - action_cancel
 
-  # Validation actions for forms
-  - validate_master_sheet_form
-  - validate_active_sheet_form
-  - validate_time_form
+    # Validation actions for forms
+    - validate_master_sheet_form
+    - validate_active_sheet_form
+    - validate_time_form

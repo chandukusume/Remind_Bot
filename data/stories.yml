@@ -40,3 +40,23 @@ stories:
   steps:
   - intent: schedule_reminder
   - action: action_schedule_reminder
+
+- story: User unsets schedule time
+  steps:
+  - intent: unset_schedule_time
+  - action: action_unset_schedule_time
+
+- story: User unsets master sheet
+  steps:
+  - intent: unset_master_sheet
+  - action: action_unset_master_sheet
+
+- story: User unsets active sheet
+  steps:
+  - intent: unset_active_sheet
+  - action: action_unset_active_sheet
+
+- story: User cancels operation
+  steps:
+  - intent: cancel
+  - action: action_cancel

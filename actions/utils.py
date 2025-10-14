@@ -125,3 +125,14 @@ def get_linked_sheet_id(form_id: str) -> str:
         return linked_sheet_id
     except Exception as e:
         raise ConnectionError(f"Error retrieving linked sheet: {e}")
+
+def get_sheet_name(sheet_id: str) -> str:
+    """Get the name of a Google Sheet by its ID."""
+    if not sheet_id:
+        return None
+    try:
+        sheets_client = _get_sheets_client()
+        sheet = sheets_client.open_by_key(sheet_id)
+        return sheet.title
+    except Exception:
+        return f"Sheet ID: {sheet_id}"

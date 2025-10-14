@@ -14,7 +14,7 @@ def get_connection():
         sslmode='require'
     )
 
-def save_master_sheet_id(sheet_id: str):
+def save_master_sheet_id(sheet_id):
     """Save master sheet ID to database."""
     conn = get_connection()
     try:
@@ -28,7 +28,7 @@ def save_master_sheet_id(sheet_id: str):
     finally:
         conn.close()
 
-def save_active_sheet_id(sheet_id: str):
+def save_active_sheet_id(sheet_id):
     """Save active sheet ID to database."""
     conn = get_connection()
     try:
