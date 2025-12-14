@@ -90,8 +90,12 @@ nlu:
     - ping the [teachers](recipient_group)
     - send the reminder to the [undergrads](recipient_group) now
     - remind [everyone](recipient_group)
-    - send reminder
-    - reminder
+    - send reminder now
+    - send the reminder
+    - please send reminder
+    - trigger reminder
+    - dispatch reminder
+    - start sending reminder
 
 # Intents for scheduling reminders
 - intent: set_schedule_time
@@ -134,6 +138,27 @@ nlu:
     - stop the reminders
     - please don't send any more reminders
     - turn off reminders
+    - stop reminder
+    - stop reminders
+    - turn off reminder
+    - disable reminders
+    - cancel reminders
+    - halt reminders
+    - end reminders
+    - quit reminders
+    - /stop_reminder
+
+- intent: force_stop_reminders
+  examples: |
+    - force stop all reminders
+    - emergency stop reminders
+    - kill all reminders
+    - force cancel reminders
+    - immediately stop all reminders
+    - abort all reminders now
+    - /force_stop_reminders
+    - force stop
+    - kill reminders
 
 - intent: show_info
   examples: |

@@ -12,6 +12,7 @@
     - check_active_sheet
     - schedule_reminder
     - stop_reminder
+    - force_stop_reminders
     - start
     - restart_reminders
     - show_commands
@@ -23,7 +24,6 @@
     - unset_active_sheet
     - show_info
     - cancel
-    - action_handle_scheduled_reminder
 
   entities:
     - sheet_id
@@ -121,6 +121,10 @@
         payload: '/get_count'
       - title: "Send Reminder"
         payload: '/send_reminder'
+      - title: "Stop Reminders"
+        payload: '/stop_reminder'
+      - title: "Force Stop All"
+        payload: '/force_stop_reminders'
       - title: "Unset Schedule Time"
         payload: '/unset_schedule_time'
       - title: "Unset Master Sheet"
@@ -159,6 +163,7 @@
     - action_schedule_reminder
     - action_handle_scheduled_reminder
     - action_stop_reminder      # ADDED
+    - action_force_stop_reminders
     - action_show_info
 
     # Actions for configuration

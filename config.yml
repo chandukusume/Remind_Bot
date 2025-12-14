@@ -1,7 +1,16 @@
 recipe: default.v1
 language: en
+
 pipeline:
+# 1. RegexEntityExtractor is added.
+# It will find "start" or "stop" reliably BEFORE the ML model runs.
 - name: WhitespaceTokenizer
+- name: RegexEntityExtractor
+  # Use 'name' to map the regex to your entity
+  regexes:
+  - name: reminder_action
+    pattern: \b(start|begin|activate|turn on|resume|re-enable|continue|restart|stop|shut down|deactivate|cease|turn off|halt|disable|cancel)\b
+
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
@@ -11,13 +20,15 @@ pipeline:
   max_ngram: 4
 - name: DIETClassifier
   epochs: 100
+  constrain_similarities: true
 - name: EntitySynonymMapper
 - name: ResponseSelector
   epochs: 100
+
 policies:
 - name: MemoizationPolicy
 - name: TEDPolicy
   max_history: 5
   epochs: 100
 - name: RulePolicy
-assistant_id: 20250805-133331-moist-skill
+assistant_id: 20251026-182152-jet-block

@@ -1217,3 +1217,350 @@
 [2025-10-14 12:28:22.522] Successfully set schedule_time slot to: 5 minutes
 [2025-10-14 12:28:28.347] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
 [2025-10-14 12:28:31.205] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-14 12:33:31.303] Automatic reminder triggered by scheduler.
+[2025-10-14 12:33:34.813] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-14 12:33:34.814] Next reminder scheduled for: 2025-10-14T07:08:34.813995+00:00
+[2025-10-14 12:38:34.884] Automatic reminder triggered by scheduler.
+[2025-10-14 12:38:37.717] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-14 12:38:37.718] Next reminder scheduled for: 2025-10-14T07:13:37.718021+00:00
+[2025-10-14 12:38:48.238] Unauthorized access attempt by -4781374828
+[2025-10-14 12:38:55.589] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 12:38:57.953] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-14 12:39:14.188] User cancelled current operation
+[2025-10-14 12:43:58.091] Automatic reminder triggered by scheduler.
+[2025-10-14 12:44:01.400] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-14 12:44:01.400] Next reminder scheduled for: 2025-10-14T07:19:01.400863+00:00
+[2025-10-14 12:48:06.549] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 12:48:09.101] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-14 12:49:01.655] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 12:49:04.546] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-14 12:54:04.644] Automatic reminder triggered by scheduler.
+[2025-10-14 12:54:08.381] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-14 12:54:08.382] Next reminder scheduled for: 2025-10-14T07:29:08.382179+00:00
+[2025-10-14 12:59:08.507] Automatic reminder triggered by scheduler.
+[2025-10-14 12:59:11.716] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-14 12:59:11.716] Next reminder scheduled for: 2025-10-14T07:34:11.716406+00:00
+[2025-10-14 13:00:53.940] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-14 13:05:01.784] Schedule time has been cleared
+[2025-10-14 13:05:28.487] Validating schedule_time: '5 minutes'
+[2025-10-14 13:05:28.544] Successfully set schedule_time slot to: 5 minutes
+[2025-10-14 13:05:33.730] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 13:05:37.125] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-14 13:10:37.184] Automatic reminder triggered by scheduler.
+[2025-10-14 13:10:40.513] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-14 13:10:40.513] Next reminder scheduled for: 2025-10-14T07:45:40.513941+00:00
+[2025-10-14 13:15:40.598] Automatic reminder triggered by scheduler.
+[2025-10-14 13:15:43.968] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-14 13:15:43.968] Next reminder scheduled for: 2025-10-14T07:50:43.968790+00:00
+[2025-10-14 13:18:21.251] User requested to stop all reminders - force cancelled.
+[2025-10-14 16:03:41.312] Schedule time has been cleared
+[2025-10-14 16:03:43.573] User cancelled current operation
+[2025-10-14 16:04:02.579] Schedule time has been cleared
+[2025-10-14 16:04:26.297] Validating schedule_time: '10 minutes'
+[2025-10-14 16:04:26.352] Successfully set schedule_time slot to: 10 minutes
+[2025-10-14 16:04:35.198] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-14 16:04:37.972] ✅ SCHEDULED: Recurring reminder started with interval: 0:10:00
+[2025-10-14 16:05:01.709] User requested to stop all reminders - force cancelled.
+[2025-10-28 07:38:45.783] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-28 07:41:36.606] Validating schedule_time: '5 minutes'
+[2025-10-28 07:41:36.796] Successfully set schedule_time slot to: 5 minutes
+[2025-10-28 07:41:44.000] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-28 07:41:47.015] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-28 07:46:47.100] Automatic reminder triggered by scheduler.
+[2025-10-28 07:46:50.850] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-28 07:46:50.851] Next reminder scheduled for: 2025-10-28T02:21:50.851631+00:00
+[2025-10-28 07:49:17.335] ✅ ACTION SERVER: Fresh code loaded
+[2025-10-28 07:50:28.637] Unauthorized access attempt by -4781374828
+[2025-10-28 07:51:14.733] Getting count for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-28 07:51:51.088] Automatic reminder triggered by scheduler.
+[2025-10-28 07:51:55.264] Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-10-28 07:51:55.267] Next reminder scheduled for: 2025-10-28T02:26:55.265498+00:00
+[2025-10-28 07:52:13.052] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-10-28 07:52:15.726] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-10-28 07:52:27.532] User requested to stop all reminders - force cancelled.
+[2025-10-29 14:48:52.467] User cancelled current operation
+[2025-10-31 23:17:06.399] Triggered by sender 1301082863
+[2025-10-31 23:17:06.439] Reminder sent: Error sending reminder: send_telegram_reminder() missing 2 required positional arguments: 'recipient_group' and 'master_sheet_id'
+[2025-11-02 14:11:14.580] ✅ ACTION SERVER: Fresh code loaded
+[2025-11-02 14:14:42.248] Getting count for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-11-02 14:14:53.605] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-11-02 14:14:55.901] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-12-06 07:04:46.018] ✅ ACTION SERVER: Fresh code loaded
+[2025-12-06 07:14:10.763] Validating schedule_time: '5'
+[2025-12-06 07:14:26.787] Validating schedule_time: 'Every 5 minutes'
+[2025-12-06 07:14:26.843] Successfully set schedule_time slot to: Every 5 minutes
+[2025-12-06 07:16:06.114] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-06 07:16:09.134] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-12-06 07:48:56.228] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-06 07:49:01.638] ✅ SCHEDULED: Recurring reminder started with interval: 0:05:00
+[2025-12-08 14:15:41.932] ✅ ACTION SERVER: Fresh code loaded
+[2025-12-08 14:19:02.469] Unauthorized access attempt by 1301082863
+[2025-12-08 14:19:37.500] Validating master_sheet_id: '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-08 14:19:37.500] Validation successful.
+[2025-12-08 14:19:37.558] Unauthorized access attempt by 1301082863
+[2025-12-08 14:23:52.793] ✅ ACTION SERVER: Fresh code loaded
+[2025-12-08 14:24:52.411] Unauthorized access attempt by 1301082863
+[2025-12-08 14:25:10.316] Unauthorized access attempt by 1301082863
+[2025-12-08 14:26:22.263] ✅ ACTION SERVER: Fresh code loaded
+[2025-12-08 14:26:22.264] ALLOWED_USERS loaded: []
+[2025-12-08 14:26:39.303] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: []
+[2025-12-08 14:26:39.303] Unauthorized access attempt by 1301082863
+[2025-12-08 14:34:28.844] ✅ ACTION SERVER: Fresh code loaded
+[2025-12-08 14:34:28.845] ALLOWED_USERS loaded: ['1301082863']
+[2025-12-08 14:36:05.898] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 14:36:05.899] Authorization successful for 1301082863
+[2025-12-08 14:36:19.923] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 14:36:19.923] Authorization successful for 1301082863
+[2025-12-08 14:36:27.263] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 14:36:27.263] Authorization successful for 1301082863
+[2025-12-08 14:36:33.965] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 14:36:33.966] Authorization successful for 1301082863
+[2025-12-08 16:03:30.809] Validating schedule_time: '2 minutes'
+[2025-12-08 16:03:30.887] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 16:03:30.888] Authorization successful for 1301082863
+[2025-12-08 16:03:30.888] Successfully set schedule_time slot to: 2 minutes
+[2025-12-08 16:04:14.387] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 16:04:14.387] Authorization successful for 1301082863
+[2025-12-08 16:04:14.443] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-08 16:04:17.982] ✅ SCHEDULED: Recurring reminder started with interval: 0:02:00
+[2025-12-08 16:57:53.085] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 16:57:53.086] Authorization successful for 1301082863
+[2025-12-08 16:57:53.086] ActionManageReminders triggered with entity: None
+[2025-12-08 16:57:53.086] Could not determine action from entity: None. Asking user.
+[2025-12-08 16:58:07.710] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 16:58:07.710] Authorization successful for 1301082863
+[2025-12-08 16:58:07.763] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-08 16:58:10.779] ✅ SCHEDULED: Recurring reminder started with interval: 0:02:00
+[2025-12-08 17:06:19.117] ✅ ACTION SERVER: Fresh code loaded
+[2025-12-08 17:06:19.120] ALLOWED_USERS loaded: ['1301082863']
+[2025-12-08 17:07:49.665] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:07:49.667] Authorization successful for 1301082863
+[2025-12-08 17:08:05.462] Validating schedule_time: '2'
+[2025-12-08 17:08:13.567] Validating schedule_time: '2 minutes'
+[2025-12-08 17:08:13.637] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:08:13.638] Authorization successful for 1301082863
+[2025-12-08 17:08:13.638] Successfully set schedule_time slot to: 2 minutes
+[2025-12-08 17:08:21.057] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:08:21.057] Authorization successful for 1301082863
+[2025-12-08 17:08:21.168] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-08 17:08:23.824] ✅ SCHEDULED: Recurring reminder started with interval: 0:02:00
+[2025-12-08 17:27:10.941] ✅ ACTION SERVER: Fresh code loaded
+[2025-12-08 17:27:10.942] ALLOWED_USERS loaded: ['1301082863']
+[2025-12-08 17:32:48.469] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:32:48.545] Authorization successful for 1301082863
+[2025-12-08 17:33:09.031] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:33:09.031] Authorization successful for 1301082863
+[2025-12-08 17:33:19.049] Validating schedule_time: '2 minutes'
+[2025-12-08 17:33:19.130] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:33:19.130] Authorization successful for 1301082863
+[2025-12-08 17:33:19.131] Successfully set schedule_time slot to: 2 minutes
+[2025-12-08 17:33:24.090] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:33:24.091] Authorization successful for 1301082863
+[2025-12-08 17:33:24.210] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-08 17:33:26.609] ✅ SCHEDULED: Recurring reminder started with interval: 0:02:00
+[2025-12-08 17:35:26.707] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:35:29.224] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:35:29.225] 🔄 Next reminder scheduled for: 2025-12-08T12:07:29.225183+00:00
+[2025-12-08 17:37:29.330] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:37:31.798] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:37:31.799] 🔄 Next reminder scheduled for: 2025-12-08T12:09:31.799237+00:00
+[2025-12-08 17:39:31.904] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:39:34.951] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:39:34.952] 🔄 Next reminder scheduled for: 2025-12-08T12:11:34.951952+00:00
+[2025-12-08 17:41:35.076] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:41:37.503] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:41:37.504] 🔄 Next reminder scheduled for: 2025-12-08T12:13:37.504610+00:00
+[2025-12-08 17:42:39.158] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:42:39.159] Authorization successful for 1301082863
+[2025-12-08 17:43:37.559] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:43:39.927] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:43:39.928] 🔄 Next reminder scheduled for: 2025-12-08T12:15:39.928858+00:00
+[2025-12-08 17:45:40.068] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:45:43.400] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:45:43.400] 🔄 Next reminder scheduled for: 2025-12-08T12:17:43.400883+00:00
+[2025-12-08 17:47:43.533] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:47:46.209] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:47:46.210] 🔄 Next reminder scheduled for: 2025-12-08T12:19:46.210027+00:00
+[2025-12-08 17:49:46.354] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:49:48.964] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:49:48.965] 🔄 Next reminder scheduled for: 2025-12-08T12:21:48.965465+00:00
+[2025-12-08 17:51:49.084] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:51:51.861] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:51:51.862] 🔄 Next reminder scheduled for: 2025-12-08T12:23:51.862534+00:00
+[2025-12-08 17:51:59.871] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:51:59.871] Authorization successful for 1301082863
+[2025-12-08 17:51:59.968] Getting count for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-08 17:52:05.626] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:52:05.626] Authorization successful for 1301082863
+[2025-12-08 17:53:51.575] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 17:53:51.576] Authorization successful for 1301082863
+[2025-12-08 17:53:51.680] Getting count for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-08 17:53:53.949] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:53:56.519] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:53:56.520] 🔄 Next reminder scheduled for: 2025-12-08T12:25:56.520828+00:00
+[2025-12-08 17:55:56.641] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:55:59.543] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:55:59.544] 🔄 Next reminder scheduled for: 2025-12-08T12:27:59.544130+00:00
+[2025-12-08 17:57:59.613] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 17:58:02.865] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 17:58:02.866] 🔄 Next reminder scheduled for: 2025-12-08T12:30:02.866591+00:00
+[2025-12-08 18:00:02.973] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 18:00:05.815] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 18:00:05.816] 🔄 Next reminder scheduled for: 2025-12-08T12:32:05.816630+00:00
+[2025-12-08 18:02:05.965] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 18:02:08.648] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 18:02:08.649] 🔄 Next reminder scheduled for: 2025-12-08T12:34:08.649117+00:00
+[2025-12-08 18:04:08.713] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 18:04:11.607] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 18:04:11.607] 🔄 Next reminder scheduled for: 2025-12-08T12:36:11.607695+00:00
+[2025-12-08 18:06:11.760] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-08 18:06:14.353] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-08 18:06:14.353] 🔄 Next reminder scheduled for: 2025-12-08T12:38:14.353832+00:00
+[2025-12-08 18:07:10.358] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 18:07:10.358] Authorization successful for 1301082863
+[2025-12-08 18:07:10.360] ActionManageReminders triggered with entity: stop
+[2025-12-08 18:07:10.360] User requested to STOP reminders. Cancelling scheduled job.
+[2025-12-08 18:21:21.603] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-08 18:21:21.604] Authorization successful for 1301082863
+[2025-12-08 18:21:21.732] Getting count for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-10 07:34:15.396] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-10 07:34:15.401] Authorization successful for 1301082863
+[2025-12-10 07:34:15.681] Getting count for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-10 07:34:25.130] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-10 07:34:25.131] Authorization successful for 1301082863
+[2025-12-10 07:34:25.233] Getting count for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-13 21:22:22.452] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:22:22.453] Authorization successful for 1301082863
+[2025-12-13 21:22:37.523] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:22:37.523] Authorization successful for 1301082863
+[2025-12-13 21:22:37.602] Master sheet has been cleared
+[2025-12-13 21:22:47.917] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:22:47.917] Authorization successful for 1301082863
+[2025-12-13 21:22:47.969] Active sheet has been cleared
+[2025-12-13 21:22:51.483] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:22:51.483] Authorization successful for 1301082863
+[2025-12-13 21:22:51.483] Schedule time has been cleared
+[2025-12-13 21:22:56.311] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:22:56.311] Authorization successful for 1301082863
+[2025-12-13 21:24:08.424] Validating master_sheet_id: '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE'
+[2025-12-13 21:24:08.424] Validation successful.
+[2025-12-13 21:24:08.481] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:24:08.481] Authorization successful for 1301082863
+[2025-12-13 21:24:08.537] Successfully set and validated master_sheet_id slot to: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-12-13 21:25:50.499] Validating active_sheet_id: '/unset_master_sheet'
+[2025-12-13 21:25:50.499] Active sheet validation successful.
+[2025-12-13 21:25:50.554] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:25:50.554] Authorization successful for 1301082863
+[2025-12-13 21:25:50.614] Successfully set active_sheet_id slot to: /unset_master_sheet
+[2025-12-13 21:26:01.784] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:26:01.785] Authorization successful for 1301082863
+[2025-12-13 21:26:01.888] Master sheet has been cleared
+[2025-12-13 21:26:17.546] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:26:17.546] Authorization successful for 1301082863
+[2025-12-13 21:26:35.279] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:26:35.279] Authorization successful for 1301082863
+[2025-12-13 21:26:35.343] Active sheet has been cleared
+[2025-12-13 21:26:40.044] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:26:40.044] Authorization successful for 1301082863
+[2025-12-13 21:27:16.929] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:27:16.929] Authorization successful for 1301082863
+[2025-12-13 21:27:28.974] Validating master_sheet_id: '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-13 21:27:28.974] Validation successful.
+[2025-12-13 21:27:29.032] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:27:29.032] Authorization successful for 1301082863
+[2025-12-13 21:27:29.087] Successfully set and validated master_sheet_id slot to: 1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA
+[2025-12-13 21:27:44.023] Validating active_sheet_id: '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE'
+[2025-12-13 21:27:44.023] Active sheet validation successful.
+[2025-12-13 21:27:44.083] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:27:44.083] Authorization successful for 1301082863
+[2025-12-13 21:27:44.138] Successfully set active_sheet_id slot to: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-12-13 21:27:56.320] Validating schedule_time: '2 minutes'
+[2025-12-13 21:27:56.381] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:27:56.381] Authorization successful for 1301082863
+[2025-12-13 21:27:56.381] Successfully set schedule_time slot to: 2 minutes
+[2025-12-13 21:28:00.451] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:28:00.451] Authorization successful for 1301082863
+[2025-12-13 21:28:11.577] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:28:11.578] Authorization successful for 1301082863
+[2025-12-13 21:28:11.578] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-13 21:28:14.053] ✅ SCHEDULED: Recurring reminder started with interval: 0:02:00
+[2025-12-13 21:30:14.171] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-13 21:30:16.678] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-13 21:30:16.679] 🔄 Next reminder scheduled for: 2025-12-13T16:02:16.679182+00:00
+[2025-12-13 21:32:16.768] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-13 21:32:19.265] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-13 21:32:19.265] 🔄 Next reminder scheduled for: 2025-12-13T16:04:19.265399+00:00
+[2025-12-13 21:34:19.327] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-13 21:34:22.221] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-13 21:34:22.222] 🔄 Next reminder scheduled for: 2025-12-13T16:06:22.222474+00:00
+[2025-12-13 21:36:22.328] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-13 21:36:25.348] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-13 21:36:25.348] 🔄 Next reminder scheduled for: 2025-12-13T16:08:25.348269+00:00
+[2025-12-13 21:38:25.467] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-13 21:38:27.979] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-13 21:38:27.979] 🔄 Next reminder scheduled for: 2025-12-13T16:10:27.979650+00:00
+[2025-12-13 21:40:28.080] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-13 21:40:30.942] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-13 21:40:30.942] 🔄 Next reminder scheduled for: 2025-12-13T16:12:30.942607+00:00
+[2025-12-13 21:42:11.950] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:42:11.951] Authorization successful for 1301082863
+[2025-12-13 21:42:11.952] ActionManageReminders triggered with entity: stop
+[2025-12-13 21:42:11.952] User requested to STOP reminders. Cancelling scheduled job.
+[2025-12-13 21:42:18.593] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:42:18.593] Authorization successful for 1301082863
+[2025-12-13 21:42:18.595] Schedule time has been cleared
+[2025-12-13 21:42:21.724] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:42:21.725] Authorization successful for 1301082863
+[2025-12-13 21:42:21.787] Master sheet has been cleared
+[2025-12-13 21:42:24.415] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:42:24.415] Authorization successful for 1301082863
+[2025-12-13 21:42:24.467] Active sheet has been cleared
+[2025-12-13 21:54:27.554] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:54:27.554] Authorization successful for 1301082863
+[2025-12-13 21:54:27.554] Schedule time has been cleared
+[2025-12-13 21:54:34.868] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:54:34.868] Authorization successful for 1301082863
+[2025-12-13 21:54:34.971] Master sheet has been cleared
+[2025-12-13 21:54:38.501] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:54:38.502] Authorization successful for 1301082863
+[2025-12-13 21:54:38.560] Active sheet has been cleared
+[2025-12-13 21:54:44.317] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:54:44.318] Authorization successful for 1301082863
+[2025-12-13 21:55:15.908] Validating master_sheet_id: '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-13 21:55:15.908] Validation successful.
+[2025-12-13 21:55:15.969] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:55:15.969] Authorization successful for 1301082863
+[2025-12-13 21:55:16.037] Successfully set and validated master_sheet_id slot to: 1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA
+[2025-12-13 21:55:25.397] Validating active_sheet_id: '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE'
+[2025-12-13 21:55:25.397] Active sheet validation successful.
+[2025-12-13 21:55:25.462] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:55:25.462] Authorization successful for 1301082863
+[2025-12-13 21:55:25.517] Successfully set active_sheet_id slot to: 1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE
+[2025-12-13 21:55:35.059] Validating schedule_time: '2 minutes'
+[2025-12-13 21:55:35.127] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:55:35.128] Authorization successful for 1301082863
+[2025-12-13 21:55:35.128] Successfully set schedule_time slot to: 2 minutes
+[2025-12-13 21:55:43.374] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 21:55:43.374] Authorization successful for 1301082863
+[2025-12-13 21:55:43.374] Sending immediate reminder for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-13 21:55:46.967] ✅ SCHEDULED: Recurring reminder started with interval: 0:02:00
+[2025-12-13 21:57:47.086] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-13 21:57:49.596] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-13 21:57:49.596] 🔄 Next reminder scheduled for: 2025-12-13T16:29:49.596883+00:00
+[2025-12-13 21:59:49.675] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-13 21:59:52.211] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-13 21:59:52.212] 🔄 Next reminder scheduled for: 2025-12-13T16:31:52.212344+00:00
+[2025-12-13 22:01:52.334] 🔄 SCHEDULED REMINDER TRIGGERED
+[2025-12-13 22:01:55.009] ✅ Scheduled reminder sent: Reminder sent successfully to the Telegram group.
+[2025-12-13 22:01:55.009] 🔄 Next reminder scheduled for: 2025-12-13T16:33:55.009925+00:00
+[2025-12-13 22:02:27.258] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 22:02:27.258] Authorization successful for 1301082863
+[2025-12-13 22:02:27.258] Getting count for active sheet '1r8H8w36dc9vY5c4IZcNxn-qnNSqzPZHor_AEjbk2yzE' using master sheet '1EhkxLV0MrYRzeJAGQOOCuxTMUR0g-QZ0ygy0w44w7AA'
+[2025-12-13 22:02:34.299] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 22:02:34.300] Authorization successful for 1301082863
+[2025-12-13 22:02:41.290] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 22:02:41.291] Authorization successful for 1301082863
+[2025-12-13 22:03:12.682] Authorization check - sender_id: '1301082863' (type: str), ALLOWED_USERS: ['1301082863']
+[2025-12-13 22:03:12.682] Authorization successful for 1301082863
+[2025-12-13 22:03:12.683] ActionManageReminders triggered with entity: stop
+[2025-12-13 22:03:12.683] User requested to STOP reminders. Cancelling scheduled job.

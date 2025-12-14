@@ -162,6 +162,11 @@ rules:
   - intent: stop_reminder
   - action: action_stop_reminder
 
+- rule: Handle force_stop_reminders directly
+  steps:
+  - intent: force_stop_reminders
+  - action: action_force_stop_reminders
+
 - rule: Handle restart_reminders directly
   steps:
   - intent: restart_reminders
@@ -197,7 +202,3 @@ rules:
   - intent: cancel
   - action: action_cancel
 
-- rule: Handle scheduled reminders
-  steps:
-  - intent: action_handle_scheduled_reminder
-  - action: action_handle_scheduled_reminder

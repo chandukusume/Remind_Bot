@@ -37,15 +37,17 @@ def log_message(message: str):
 
 log_message("✅ ACTION SERVER: Fresh code loaded")
 
-# A list of authorized user IDs from Telegram
-ALLOWED_USERS = ['1301082863'] 
+ALLOWED_USERS = [uid.strip() for uid in os.getenv('ALLOWED_USERS', '').split(',') if uid.strip()]
+log_message(f"ALLOWED_USERS loaded: {ALLOWED_USERS}")
 
 def is_authorized(tracker: Tracker) -> bool:
     """Check if the sender is in the allowed users list."""
-    sender_id = tracker.sender_id
+    sender_id = str(tracker.sender_id)
+    log_message(f"Authorization check - sender_id: '{sender_id}' (type: {type(sender_id).__name__}), ALLOWED_USERS: {ALLOWED_USERS}")
     if sender_id not in ALLOWED_USERS:
         log_message(f"Unauthorized access attempt by {sender_id}")
         return False
+    log_message(f"Authorization successful for {sender_id}")
     return True
 
 # --- ACTIONS FOR CONFIGURATION ---
@@ -361,79 +363,141 @@ class ActionScheduleReminder(Action):
             SlotSet("recipient_group", None)
         ]
 
+class ActionManageReminders(Action):
+    """Handles starting and stopping the reminder loop based on an entity."""
+
+    def name(self) -> Text:
+        return "action_manage_reminders"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        # 1. Check authorization
+        if not is_authorized(tracker):
+            dispatcher.utter_message(text="You are not authorized to perform this action.")
+            return []
+
+        # 2. Get the entity ("start" or "stop")
+        action_type = next(tracker.get_latest_entity_values("reminder_action"), None)
+        log_message(f"ActionManageReminders triggered with entity: {action_type}")
+
+        if action_type == "start":
+            # --- This is the "START" logic from your old ActionScheduleReminder ---
+            log_message("User requested to START reminders. Triggering loop.")
+            
+            active_sheet_slot = tracker.get_slot("active_sheet_id")
+            master_sheet_slot = tracker.get_slot("master_sheet_id")
+            
+            active_sheet_db = database.get_active_sheet_id()
+            master_sheet_db = database.get_master_sheet_id()
+            
+            active_sheet_id = active_sheet_slot or active_sheet_db
+            master_sheet_id = master_sheet_slot or master_sheet_db
+            
+            if not active_sheet_id:
+                dispatcher.utter_message(text="❌ Please set an active sheet first using /set_active_sheet")
+                log_message("ERROR: No active sheet ID found")
+                return []
+                
+            if not master_sheet_id:
+                dispatcher.utter_message(text="❌ Please set a master sheet first using /set_master_sheet")
+                log_message("ERROR: No master sheet ID found")
+                return []
+                
+            schedule_time = tracker.get_slot("schedule_time") or "5 minutes"
+            log_message(f"Using schedule time: {schedule_time}")
+            
+            schedule_lower = schedule_time.lower()
+            numbers = ''.join(filter(str.isdigit, schedule_time))
+            num = int(numbers) if numbers else 5
+            
+            if any(word in schedule_lower for word in ['minute', 'min', 'm']):
+                interval = timedelta(minutes=num)
+            elif any(word in schedule_lower for word in ['hour', 'hr', 'h']):
+                interval = timedelta(hours=num)
+            elif any(word in schedule_lower for word in ['second', 'sec', 's']):
+                interval = timedelta(seconds=num)
+            else:
+                interval = timedelta(minutes=num)
+                
+            trigger_time = datetime.now(pytz.UTC) + interval
+            reminder = ReminderScheduled(
+                "action_handle_scheduled_reminder", 
+                trigger_date_time=trigger_time, 
+                name="recurring_reminder_job", 
+                kill_on_user_message=False
+            )
+            
+            ist_tz = pytz.timezone('Asia/Kolkata')
+            trigger_time_ist = trigger_time.astimezone(ist_tz)
+            dispatcher.utter_message(text=f"✅ Reminders started! Sending every {schedule_time}. Next reminder at {trigger_time_ist.strftime('%H:%M:%S')} IST")
+            log_message(f"✅ SCHEDULED: Recurring reminder with interval: {interval}, next trigger: {trigger_time.isoformat()}")
+            
+            return [reminder, SlotSet("recipient_group", None)]
+
+        elif action_type == "stop":
+            # --- This is the "STOP" logic from your old ActionStopReminder ---
+            log_message("User requested to STOP reminders. Cancelling scheduled job.")
+            dispatcher.utter_message(text="🛑 All recurring reminders have been stopped.")
+            # This cancels only the specific reminder loop, which is correct.
+            return [ReminderCancelled(name="recurring_reminder_job")]
+
+        else:
+            # --- Fallback ---
+            log_message(f"Could not determine action from entity: {action_type}. Asking user.")
+            dispatcher.utter_message(text="Sorry, I didn't get whether you want to 'start' or 'stop' reminders. Can you please rephrase?")
+            return []
+
 class ActionHandleScheduledReminder(Action):
     def name(self) -> str:
         return "action_handle_scheduled_reminder"
 
-    def run(self, dispatcher, tracker, domain):
-        log_message("Automatic reminder triggered by scheduler.")
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict) -> list:
+        log_message("🔄 SCHEDULED REMINDER TRIGGERED")
         
-        # Send the reminder
+        # Get sheet IDs from slots or database
         active_sheet_id = tracker.get_slot("active_sheet_id") or database.get_active_sheet_id()
-        master_id = tracker.get_slot("master_sheet_id") or database.get_master_sheet_id()
+        master_sheet_id = tracker.get_slot("master_sheet_id") or database.get_master_sheet_id()
         
-        if active_sheet_id and master_id:
-            try:
-                result_message = utils.send_telegram_reminder(active_sheet_id, "everyone", master_id)
-                log_message(f"Scheduled reminder sent: {result_message}")
-            except Exception as e:
-                log_message(f"ERROR in scheduled reminder: {e}")
+        if not active_sheet_id or not master_sheet_id:
+            log_message("❌ Missing sheet IDs for scheduled reminder")
+            return []
         
-        # Schedule the next reminder
-        schedule_time = tracker.get_slot("schedule_time") or "5 minutes"
-        
-        schedule_lower = schedule_time.lower()
-        numbers = ''.join(filter(str.isdigit, schedule_time))
-        num = int(numbers) if numbers else 5
-        
-        if any(word in schedule_lower for word in ['minute', 'min', 'm']):
-            interval = timedelta(minutes=num)
-        elif any(word in schedule_lower for word in ['hour', 'hr', 'h']):
-            interval = timedelta(hours=num)
-        elif any(word in schedule_lower for word in ['second', 'sec', 's']):
-            interval = timedelta(seconds=num)
-        else:
-            interval = timedelta(minutes=num)
+        try:
+            # Send the reminder
+            result_message = utils.send_telegram_reminder(active_sheet_id, "everyone", master_sheet_id)
+            log_message(f"✅ Scheduled reminder sent: {result_message}")
             
-        next_trigger = datetime.now(pytz.UTC) + interval
-        next_reminder = ReminderScheduled(
-            "action_handle_scheduled_reminder", 
-            trigger_date_time=next_trigger, 
-            name="recurring_reminder_job", 
-            kill_on_user_message=False
-        )
-        
-        log_message(f"Next reminder scheduled for: {next_trigger.isoformat()}")
-        
-        # Clear conversation slots to prevent memory pollution
-        return [
-            next_reminder,
-            SlotSet("recipient_group", None)
-        ]
-
-class ActionStopReminder(Action):
-    def name(self) -> str:
-        return "action_stop_reminder"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        if not is_authorized(tracker):
-            dispatcher.utter_message(text="You are not authorized to perform this action.")
+            # Schedule the next reminder
+            schedule_time = tracker.get_slot("schedule_time") or "5 minutes"
+            schedule_lower = schedule_time.lower()
+            numbers = ''.join(filter(str.isdigit, schedule_time))
+            num = int(numbers) if numbers else 5
+            
+            if any(word in schedule_lower for word in ['minute', 'min', 'm']):
+                interval = timedelta(minutes=num)
+            elif any(word in schedule_lower for word in ['hour', 'hr', 'h']):
+                interval = timedelta(hours=num)
+            elif any(word in schedule_lower for word in ['second', 'sec', 's']):
+                interval = timedelta(seconds=num)
+            else:
+                interval = timedelta(minutes=num)
+                
+            trigger_time = datetime.now(pytz.UTC) + interval
+            reminder = ReminderScheduled(
+                "action_handle_scheduled_reminder", 
+                trigger_date_time=trigger_time, 
+                name="recurring_reminder_job", 
+                kill_on_user_message=False
+            )
+            
+            log_message(f"🔄 Next reminder scheduled for: {trigger_time.isoformat()}")
+            return [reminder]
+            
+        except Exception as e:
+            log_message(f"❌ ERROR in scheduled reminder: {e}")
             return []
-        dispatcher.utter_message(response="utter_reminders_stopped")
-        log_message("User requested to stop all reminders.")
-        return [ReminderCancelled()]
-
-class ActionRestartReminders(Action):
-    def name(self) -> str:
-        return "action_restart_reminders"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        if not is_authorized(tracker):
-            dispatcher.utter_message(text="You are not authorized to perform this action.")
-            return []
-        dispatcher.utter_message(response="utter_reminders_restarted")
-        log_message("User requested to restart reminders.")
-        return [FollowupAction("action_schedule_reminder")]
 
 # --- FORM VALIDATION ACTIONS ---
 
