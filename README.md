@@ -54,15 +54,24 @@ Your automated assistant for tracking student submissions, so you don't have to.
                 pip install foobar   
                 pip install -r requirements.txt
      ```
-####  Configure environment variables:
-- Rename the .env.example file to .env and add your credentials:
+#### Configure environment variables:
 
+**IMPORTANT: Never commit your actual credentials to git!**
 
-#### Code snippet
+1. Copy the template files:
+   ```bash
+   cp .env.example .env
+   cp credentials.json.example credentials.json
+   ```
 
-                 TELEGRAM_BOT_TOKEN='Your_Telegram_Bot_Token_Here'
+2. Edit `.env` with your actual values:
+   ```bash
+   TELEGRAM_BOT_TOKEN=your_actual_bot_token
+   TELEGRAM_CHAT_ID=your_actual_chat_id
+   # ... other variables
+   ```
 
-                 GOOGLE_SHEETS_CREDENTIALS_FILE='path/to/your/credentials.json'
+3. Edit `credentials.json` with your Google Service Account credentials
 
 #### Run the bot :
            
