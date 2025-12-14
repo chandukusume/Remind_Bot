@@ -1,3 +1,4 @@
+# stories.yml
 version: "3.1"
 
 stories:
@@ -26,21 +27,6 @@ stories:
   - intent: check_active_sheet
   - action: action_check_active_sheet
 
-- story: User stops reminders
-  steps:
-  - intent: stop_reminder
-  - action: action_stop_reminder
-
-- story: User restarts reminders
-  steps:
-  - intent: restart_reminders
-  - action: action_restart_reminders
-
-- story: User schedules reminders
-  steps:
-  - intent: schedule_reminder
-  - action: action_schedule_reminder
-
 - story: User unsets schedule time
   steps:
   - intent: unset_schedule_time
@@ -60,3 +46,5 @@ stories:
   steps:
   - intent: cancel
   - action: action_cancel
+
+# --- ALL OLD STORIES FOR stop_reminder, restart_reminders, schedule_reminder are DELETED ---

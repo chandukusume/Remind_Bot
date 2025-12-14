@@ -1,3 +1,4 @@
+# nlu.yml
 version: "3.1"
 
 nlu:
@@ -27,8 +28,10 @@ nlu:
     - start over
     - let's begin again
     - restart
+    - /start
+    - begin
 
-# Intents for setting configuration and the active sheet
+# Intents for configuration
 - intent: set_master_sheet
   examples: |
     - /set_master_sheet
@@ -53,10 +56,8 @@ nlu:
     - use sheet [1s2d3f-CDE-4g5h6j](sheet_id)
     - /set_active_sheet
     - set active sheet
-    - active sheet
-
-
-# Intents for interacting with the active sheet
+    
+# Intents for status and one-off actions
 - intent: get_count
   examples: |
     - /get_count
@@ -79,8 +80,7 @@ nlu:
     - which sheet is active?
     - what's the active sheet?
     - check sheet
-    - active sheet
-
+   
 - intent: send_reminder
   examples: |
     - /send_reminder
@@ -96,35 +96,19 @@ nlu:
     - trigger reminder
     - dispatch reminder
     - start sending reminder
+    - send one time reminder
 
-# Intents for scheduling reminders
 - intent: set_schedule_time
   examples: |
-    - set the schedule time to [every 2 hours](schedule_time)
-    - schedule it for [every 30 minutes](schedule_time)
-    - the time should be [every 5 seconds](schedule_time)
+    - set the time interval to [every 2 hours](schedule_time)
+    - schedule it to repeat [every 30 minutes](schedule_time)
+    - the frequency should be [every 5 seconds](schedule_time)
     - let's set the time to [every 1 hour](schedule_time)
     - set interval to [every 45 minutes](schedule_time)
+    - set the timing
     - /set_schedule_time
     - set schedule time
     - schedule time
-
-- intent: schedule_reminder
-  examples: |
-    - schedule reminders
-    - start reminders
-    - begin reminders
-    - activate reminders
-    - turn on reminders
-    - start sending reminders
-    - schedule recurring reminders
-    - /schedule_reminder
-
-- intent: restart_reminders
-  examples: |
-    - restart the reminders
-    - please start sending reminders again
-    - turn the reminders back on
 
 - intent: show_commands
   examples: |
@@ -132,21 +116,8 @@ nlu:
     - show me the commands
     - help
     - commands
-
-- intent: stop_reminder
-  examples: |
-    - stop the reminders
-    - please don't send any more reminders
-    - turn off reminders
-    - stop reminder
-    - stop reminders
-    - turn off reminder
-    - disable reminders
-    - cancel reminders
-    - halt reminders
-    - end reminders
-    - quit reminders
-    - /stop_reminder
+    - /help
+    - /commands
 
 - intent: force_stop_reminders
   examples: |
@@ -170,6 +141,7 @@ nlu:
     - show me the current config
     - current configuration
     - settings
+    - /info
 
 - intent: unset_schedule_time
   examples: |
@@ -179,6 +151,7 @@ nlu:
     - reset schedule time
     - delete schedule time
     - /unset_schedule_time
+    - remove the schedule
 
 - intent: unset_master_sheet
   examples: |
@@ -207,3 +180,52 @@ nlu:
     - abort
     - nevermind
     - /cancel
+    - I changed my mind
+    - please disregard
+    - wait, cancel that
+
+- intent: manage_reminders
+  examples: |
+    - start reminders
+    - begin the automated reminders
+    - activate reminders
+    - turn on reminders
+    - schedule recurring reminders
+    - /schedule_reminder
+    - restart the reminders
+    - resume reminders
+    - re-enable the reminders
+    - turn the reminders back on
+    - please continue the schedule
+    - /restart_reminders
+    - stop the recurring reminders
+    - shut down the reminder service
+    - deactivate the schedule
+    - cease sending reminders
+    - turn off all reminders
+    - halt the reminder process
+    - disable all future reminders
+    - cancel the current reminder schedule
+    - /stop_reminder
+
+# SYNONYMS ARE CORRECT and map all Regex words to 'start' or 'stop'
+- synonym: start
+  examples: |
+    - begin
+    - activate
+    - turn on
+    - resume
+    - re-enable
+    - turn the reminders back on
+    - continue
+    - restart
+
+- synonym: stop
+  examples: |
+    - shut down
+    - deactivate
+    - cease
+    - turn off
+    - halt
+    - disable
+    - cancel

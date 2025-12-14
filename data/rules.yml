@@ -2,6 +2,30 @@ version: "3.1"
 
 rules:
 
+# --- HIGH PRIORITY INTERRUPTION RULES ---
+# These rules no longer have conditions. They rely on RulePolicy's
+# priority to interrupt any active form.
+
+- rule: Immediately cancel any active form/loop
+  steps:
+  - intent: cancel
+  - action: action_cancel  # Your custom action to say "Cancelled"
+  - active_loop: null     # This is the crucial step that stops the form
+
+- rule: Manage reminders and interrupt any form
+  steps:
+  - intent: manage_reminders
+  - action: action_manage_reminders # This runs your start/stop logic
+  - active_loop: null               # This stops any form that was active
+
+- rule: Force stop ALL reminders immediately
+  steps:
+  - intent: force_stop_reminders
+  - action: action_force_stop_reminders
+  - active_loop: null
+
+# --- GENERAL CONVERSATIONAL RULES ---
+
 - rule: Say hello anytime the user greets
   steps:
   - intent: greet
@@ -22,11 +46,27 @@ rules:
   - intent: start
   - action: utter_start
 
+# --- FORM ACTIVATION RULES ---
+
 - rule: Activate the master sheet form
   steps:
   - intent: set_master_sheet
   - action: master_sheet_form
   - active_loop: master_sheet_form
+
+- rule: Activate active sheet form
+  steps:
+  - intent: set_active_sheet
+  - action: active_sheet_form
+  - active_loop: active_sheet_form
+
+- rule: Activate the time form
+  steps:
+  - intent: set_schedule_time
+  - action: time_form
+  - active_loop: time_form
+
+# --- FORM SUBMISSION RULES ---
 
 - rule: Handle submission of the master sheet form
   condition:
@@ -36,12 +76,6 @@ rules:
   - active_loop: null
   - action: action_set_master_sheet
 
-- rule: Activate active sheet form
-  steps:
-  - intent: set_active_sheet
-  - action: active_sheet_form
-  - active_loop: active_sheet_form
-
 - rule: Handle submission of the active sheet form
   condition:
   - active_loop: active_sheet_form
@@ -49,12 +83,6 @@ rules:
   - action: active_sheet_form
   - active_loop: null
   - action: action_set_active_sheet
-
-- rule: Activate the time form
-  steps:
-  - intent: set_schedule_time
-  - action: time_form
-  - active_loop: time_form
 
 - rule: Handle submission of the time form
   condition:
@@ -64,141 +92,67 @@ rules:
   - active_loop: null
   - action: action_set_schedule_time
 
-- rule: Switch from master_sheet_form to active_sheet_form
-  condition:
-  - active_loop: master_sheet_form
-  steps:
-  - intent: set_active_sheet
-  - active_loop: null
-  - action: active_sheet_form
-  - active_loop: active_sheet_form
-
-- rule: Switch from master_sheet_form to time_form
-  condition:
-  - active_loop: master_sheet_form
-  steps:
-  - intent: set_schedule_time
-  - active_loop: null
-  - action: time_form
-  - active_loop: time_form
-
-- rule: Switch from active_sheet_form to master_sheet_form
-  condition:
-  - active_loop: active_sheet_form
-  steps:
-  - intent: set_master_sheet
-  - active_loop: null
-  - action: master_sheet_form
-  - active_loop: master_sheet_form
-
-- rule: Switch from active_sheet_form to time_form
-  condition:
-  - active_loop: active_sheet_form
-  steps:
-  - intent: set_schedule_time
-  - active_loop: null
-  - action: time_form
-  - active_loop: time_form
-
-- rule: Switch from time_form to master_sheet_form
-  condition:
-  - active_loop: time_form
-  steps:
-  - intent: set_master_sheet
-  - active_loop: null
-  - action: master_sheet_form
-  - active_loop: master_sheet_form
-
-- rule: Switch from time_form to active_sheet_form
-  condition:
-  - active_loop: time_form
-  steps:
-  - intent: set_active_sheet
-  - active_loop: null
-  - action: active_sheet_form
-  - active_loop: active_sheet_form
-
-- rule: Cancel master sheet form
-  condition:
-  - active_loop: master_sheet_form
-  steps:
-  - intent: cancel
-  - active_loop: null
-  - action: action_cancel
-
-- rule: Cancel active sheet form
-  condition:
-  - active_loop: active_sheet_form
-  steps:
-  - intent: cancel
-  - active_loop: null
-  - action: action_cancel
-
-- rule: Cancel time form
-  condition:
-  - active_loop: time_form
-  steps:
-  - intent: cancel
-  - active_loop: null
-  - action: action_cancel
+# --- DIRECT ACTION RULES (No form active) ---
+# These rules use 'active_loop: null' to ensure they
+# ONLY run when no form is active.
 
 - rule: Handle get_count directly
+  condition:
+  - active_loop: null
   steps:
   - intent: get_count
   - action: action_get_count
 
 - rule: Handle send_reminder directly
+  condition:
+  - active_loop: null
   steps:
   - intent: send_reminder
   - action: action_send_reminder
 
 - rule: Handle check_active_sheet directly
+  condition:
+  - active_loop: null
   steps:
   - intent: check_active_sheet
   - action: action_check_active_sheet
 
-- rule: Handle stop_reminder directly
-  steps:
-  - intent: stop_reminder
-  - action: action_stop_reminder
-
-- rule: Handle force_stop_reminders directly
-  steps:
-  - intent: force_stop_reminders
-  - action: action_force_stop_reminders
-
-- rule: Handle restart_reminders directly
-  steps:
-  - intent: restart_reminders
-  - action: action_restart_reminders
-
-- rule: Handle schedule_reminder directly
-  steps:
-  - intent: schedule_reminder
-  - action: action_schedule_reminder
-
 - rule: Handle show_info directly
+  condition:
+  - active_loop: null
   steps:
   - intent: show_info
   - action: action_show_info
 
 - rule: Handle unset_schedule_time directly
+  condition:
+  - active_loop: null
   steps:
   - intent: unset_schedule_time
   - action: action_unset_schedule_time
 
 - rule: Handle unset_master_sheet directly
+  condition:
+  - active_loop: null
   steps:
   - intent: unset_master_sheet
   - action: action_unset_master_sheet
 
 - rule: Handle unset_active_sheet directly
+  condition:
+  - active_loop: null
   steps:
   - intent: unset_active_sheet
   - action: action_unset_active_sheet
 
-- rule: Handle cancel directly
+- rule: Handle all recurring reminder management (when no form is active)
+  condition:
+  - active_loop: null
   steps:
-  - intent: cancel
-  - action: action_cancel
+  - intent: manage_reminders
+  - action: action_manage_reminders
 
+- rule: Execute scheduled reminder
+  steps:
+  - intent: action_handle_scheduled_reminder
+  - action: action_handle_scheduled_reminder
